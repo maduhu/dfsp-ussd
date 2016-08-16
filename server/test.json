@@ -1,5 +1,5 @@
 {
-  "implementation": "dfsp-directory",
+  "implementation": "dfsp-ussd",
   "repl": false,
   "console": false,
   "log": false,
@@ -7,13 +7,13 @@
   "workDir": "./tmp",
   "masterBus": {
     "logLevel": "error",
-    "socket": "dfsp-directory"
+    "socket": "dfsp-ussd"
   },
   "workerBus": {
     "logLevel": "error"
   },
   "performance": {
-    "id": "dfsp-directory",
+    "id": "dfsp-ussd",
     "influx": {
       "host": "influxdb",
       "port": 4444

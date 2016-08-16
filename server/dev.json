@@ -1,5 +1,5 @@
 {
-  "implementation": "dfsp-directory",
+  "implementation": "dfsp-ussd",
   "console": {
     "server": {
       "host": "0.0.0.0",
@@ -22,7 +22,7 @@
   },
   "masterBus": {
     "logLevel": "debug",
-    "socket": "dfsp-directory"
+    "socket": "dfsp-ussd"
   },
   "workerBus": {
     "logLevel": "debug"
