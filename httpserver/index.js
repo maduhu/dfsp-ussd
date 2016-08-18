@@ -5,7 +5,7 @@ module.exports = {
   logLevel: 'trace',
   imports: ['ussd.start'],
   api: ['ussd'],
-  port: 8003,
+  port: 8019,
   bundle: 'ussd',
   dist: path.resolve(__dirname, '../dist'),
   routes: {
