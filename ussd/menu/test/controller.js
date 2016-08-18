@@ -11,7 +11,7 @@ module.exports = {
     })
     .catch((error) => {
       params.error = error
-      return this.redirect('menu/test/wrongUri')
+      return this.redirect('./wrongUri')
     })
   },
   receive: function (params) {
