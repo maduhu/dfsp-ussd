@@ -32,7 +32,7 @@
     "ut-error": "~5.3.14",
     "ut-port-httpserver":"~6.2.3",
     "ut-port-script":"~5.4.3",
-    "ut-port-postgres":"~5.4.1",
+    "ut-port-postgres":"~5.4.0",
     "ut-ussd": "~6.1.0",
     "ut-cache": "~5.4.3",
     "ut-run":"~6.0.1",
