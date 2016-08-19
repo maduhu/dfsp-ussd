@@ -4,7 +4,7 @@ module.exports = {
   },
   receive: function (params) {
     return this.bus.importMethod('directory.user.get')({
-      URI: 'number:' + params.system.message
+      URI: params.system.message
     })
     .then((result) => {
       params.context = result
