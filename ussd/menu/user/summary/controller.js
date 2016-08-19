@@ -3,7 +3,6 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    delete params.error
     return params
   }
 }

@@ -3,9 +3,13 @@ module.exports = {
     return params
   },
   afterSend: function (params) {
+    if (!params.context) {
+      params.context = {}
+    }
     return params
   },
   beforeReceive: function (params) {
+    delete params.context
     return params
   },
   afterReceive: function (params) {
