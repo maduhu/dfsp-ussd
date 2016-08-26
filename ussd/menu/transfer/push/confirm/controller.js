@@ -5,7 +5,7 @@ module.exports = {
       amount: params.destinationAmount
     })
     .then((result) => {
-      params.fee = result.fee && result.fee.amount
+      params.fee = (result.fee && result.fee.amount) || 0
       return params
     })
     .catch((error) => {
