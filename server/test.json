@@ -19,5 +19,21 @@
       "port": 4444
     }
   },
+  "ussd": {
+     "shortCodes": {
+       "*123#": "menu/home"
+     },
+     "wrongInputState": "menu/error/wrongInput",
+     "timeOut": 60,
+     "expireRule": "refresh",
+     "defaultPhone": "0122523365225",
+     "defaultShortCode": "*123#"
+  },
+  "cache": {
+    "storage": "memory",
+    "encoding": "json",
+    "checkFrequency": 1000,
+    "defaultTTL": 3600
+  },
   "db": false
 }
