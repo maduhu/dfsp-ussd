@@ -15,6 +15,9 @@ module.exports = {
     })
   },
   receive: function (params) {
+    if (Number.isNaN(parseFloat(params.system.message))) {
+      return this.redirect('menu/error/wrongInput')
+    }
     params.destinationAmount = params.system.message
     return params
   }
