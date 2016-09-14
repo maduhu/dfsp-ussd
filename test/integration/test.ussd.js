@@ -4,6 +4,7 @@ var test = require('ut-run/test')
 require('dfsp-directory')
 require('dfsp-api')
 require('dfsp-rule')
+require('dfsp-transfer')
 var joi = require('joi')
 const ACCOUNTNUM = '00359######'
 const PHONENUM = '259637'
@@ -278,14 +279,6 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object().keys({
-              destinationName: joi.string(),
-              destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -314,14 +307,7 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object().keys({
-              destinationName: joi.string(),
-              destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
+            transfer: joi.object(),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -350,23 +336,15 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object().keys({
-              destinationName: joi.string(),
-              destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
+            transfer: joi.object(),
             context: joi.object().keys({
               code: joi.number().required(),
-              message: joi.string().valid('User not found').required(),
-              errorPrint: joi.string().required(),
-              type: joi.string().required().valid('Directory.UserNotFound'),
+              message: joi.string().valid('Account not found for userURI=').required(),
+              errorPrint: joi.string().valid('Account not found for userURI=').required(),
               method: joi.string().required().valid('directory.user.get')
             }).required()
           }).required()
-        }).required()).error, null, 'return all params on wuser not found screen')
+        }).required()).error, null, 'return all params on user not found screen')
       }
     }, {
       // back to home
@@ -392,14 +370,7 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object().keys({
-              destinationName: joi.string(),
-              destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
+            transfer: joi.object(),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on home screen')
@@ -428,14 +399,7 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object().keys({
-              destinationName: joi.string(),
-              destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
+            transfer: joi.object(),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -467,10 +431,7 @@ test({
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
+              destinationAccount: joi.string().valid(ACCOUNT).required()
             }),
             context: joi.object()
           }).required()
@@ -503,10 +464,7 @@ test({
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
+              destinationAccount: joi.string().valid(ACCOUNT).required()
             }),
             context: joi.object()
           }).required()
@@ -539,10 +497,7 @@ test({
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
-              destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              fulfillment: joi.string()
+              destinationAccount: joi.string().valid(ACCOUNT).required()
             }),
             context: joi.object()
           }).required()
