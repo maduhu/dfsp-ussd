@@ -1,11 +1,12 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('rule.decision.fetch')({
-      currency: params.destinationCurrency,
-      amount: params.destinationAmount
+      currency: params.transfer.destinationCurrency,
+      amount: params.transfer.destinationAmount,
+      receiver: params.transfer.destinationAccount
     })
     .then((result) => {
-      params.fee = (result.fee && result.fee.amount) || 0
+      params.transfer.fee = (result.fee && result.fee.amount) || 0
       return params
     })
     .catch((error) => {
