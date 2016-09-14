@@ -73,6 +73,7 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
+            transfer: joi.object(),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -101,9 +102,11 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT).required(),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on destination number screen')
@@ -132,11 +135,13 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
@@ -165,12 +170,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on verify screen')
@@ -199,12 +206,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on home screen')
@@ -233,12 +242,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on wrong request in home screen')
@@ -267,12 +278,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -301,12 +314,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -335,12 +350,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object().keys({
               code: joi.number().required(),
               message: joi.string().valid('User not found').required(),
@@ -375,12 +392,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on home screen')
@@ -409,12 +428,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -443,12 +464,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on destination account screen')
@@ -477,12 +500,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on wrong input screen')
@@ -511,12 +536,14 @@ test({
               prevState: joi.string()
             }),
             sourceAccount: joi.string().required().valid(ACCOUNT),
-            destinationName: joi.string(),
-            destinationCurrency: joi.string().required().valid(CURRENCY),
-            destinationAccount: joi.string().valid(ACCOUNT).required(),
-            destinationAmount: joi.string().valid(AMOUNT).required(),
-            fee: joi.number().required(),
-            fulfillment: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required(),
+              fulfillment: joi.string()
+            }),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
