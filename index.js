@@ -1,4 +1,5 @@
 require('dfsp-directory')
 require('dfsp-rule')
 require('dfsp-api')
+require('dfsp-transfer')
 require('ut-run').run({}, module)
