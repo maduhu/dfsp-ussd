@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('rule.decision.fetch')({
+    return this.bus.importMethod('transfer.rule.fetch')({
       currency: params.transfer.destinationCurrency,
       amount: params.transfer.destinationAmount,
       receiver: params.transfer.destinationAccount
