@@ -33,7 +33,7 @@
     "ut-port-jsonrpc": "~5.5.0",
     "ut-port-script": "~5.4.3",
     "ut-port-postgres": "~5.4.0",
-    "ut-ussd": "~6.2.0",
+    "ut-ussd": "~6.4.0",
     "ut-cache": "~5.4.3",
     "ut-run": "~6.0.2",
     "pm2": "1.1.3"
