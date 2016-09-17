@@ -141,7 +141,8 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().valid(ACCOUNT).required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required()
+              fee: joi.number().required(),
+              connectorFee: joi.number().required()
             }),
             context: joi.object()
           }).required()
@@ -177,6 +178,7 @@ test({
               destinationAccount: joi.string().valid(ACCOUNT).required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
+              connectorFee: joi.number().required(),
               fulfillment: joi.string()
             }),
             context: joi.object()
@@ -213,6 +215,7 @@ test({
               destinationAccount: joi.string().valid(ACCOUNT).required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
+              connectorFee: joi.number().required(),
               fulfillment: joi.string()
             }),
             context: joi.object()
@@ -249,6 +252,7 @@ test({
               destinationAccount: joi.string().valid(ACCOUNT).required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
+              connectorFee: joi.number().required(),
               fulfillment: joi.string()
             }),
             context: joi.object()
