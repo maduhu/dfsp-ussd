@@ -1,3 +1,13 @@
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.3...v0.1.4) (2016-09-19)
+
+
+### Bug Fixes
+
+* fix console port settings ([4a28032](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4a28032))
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.2...v0.1.3) (2016-09-19)
 
