@@ -35,14 +35,14 @@
     "ut-port-postgres": "~5.6.2",
     "ut-ussd": "~6.5.0",
     "ut-cache": "~5.4.4",
+    "ut-port-performance": "~5.4.5",
+    "ut-port-console": "~6.1.4",
     "ut-run": "~6.1.2",
     "pm2": "2.0.12"
   },
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-port-performance": "~5.4.5",
-    "ut-port-console": "~6.1.4",
     "ut-tools": "^5.8.1"
   },
   "repository": {
