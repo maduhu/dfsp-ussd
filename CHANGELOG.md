@@ -1,3 +1,14 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.0...v0.1.1) (2016-09-19)
+
+
+### Bug Fixes
+
+* display connector fee ([5f1e807](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/5f1e807))
+* manuall ussd config and ut-ussd dependency bump ([505641c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/505641c))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-09-15)
 
