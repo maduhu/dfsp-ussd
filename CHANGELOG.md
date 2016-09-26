@@ -1,3 +1,13 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.5...v0.2.0) (2016-09-26)
+
+
+### Features
+
+* implement calls to identity service ([19a7221](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/19a7221))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.4...v0.1.5) (2016-09-21)
 
