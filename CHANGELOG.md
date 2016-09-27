@@ -1,3 +1,13 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.1...v0.2.2) (2016-09-27)
+
+
+### Bug Fixes
+
+* find receiver by number ([c5800dc](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c5800dc))
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.0...v0.2.1) (2016-09-27)
 
