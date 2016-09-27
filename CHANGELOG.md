@@ -1,3 +1,80 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.1...v0.2.2) (2016-09-27)
+
+
+### Bug Fixes
+
+* find receiver by number ([c5800dc](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c5800dc))
+
+
+
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.0...v0.2.1) (2016-09-27)
+
+
+### Bug Fixes
+
+* fix dependencies ([4afc1de](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4afc1de))
+
+
+
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.5...v0.2.0) (2016-09-26)
+
+
+### Features
+
+* implement calls to identity service ([19a7221](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/19a7221))
+
+
+
+<a name="0.1.5"></a>
+## [0.1.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.4...v0.1.5) (2016-09-21)
+
+
+
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.3...v0.1.4) (2016-09-19)
+
+
+### Bug Fixes
+
+* fix console port settings ([4a28032](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4a28032))
+
+
+
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.2...v0.1.3) (2016-09-19)
+
+
+### Bug Fixes
+
+* fix dependencies ([4a598f1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4a598f1))
+* update configuration ([c54e9b3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c54e9b3))
+
+
+
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.1...v0.1.2) (2016-09-19)
+
+
+### Bug Fixes
+
+* update dependencies ([8998eef](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8998eef))
+
+
+
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.0...v0.1.1) (2016-09-19)
+
+
+### Bug Fixes
+
+* display connector fee ([5f1e807](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/5f1e807))
+* manuall ussd config and ut-ussd dependency bump ([505641c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/505641c))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-09-15)
 

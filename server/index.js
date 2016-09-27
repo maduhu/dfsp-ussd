@@ -3,12 +3,12 @@ module.exports = {
   ports: [
     require('../httpserver'),
     require('../script'),
-    require('../httpclient/api')
+    require('../httpclient/api'),
+    require('../httpclient/identity')
   ],
   modules: {
     cache: require('ut-cache'),
-    ussd: require('ut-ussd').config({baseDir: path.join(__dirname, '../ussd')}),
-    identity: require('../service/identity')
+    ussd: require('ut-ussd').config({baseDir: path.join(__dirname, '../ussd')})
   },
   validations: {
     ussd: require('ut-ussd/validations')

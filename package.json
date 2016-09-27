@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
@@ -28,22 +28,22 @@
   },
   "dependencies": {
     "joi": "9.0.4",
-    "ut-bus": "~5.4.7",
-    "ut-port-httpserver": "~6.2.6",
-    "ut-port-jsonrpc": "~5.5.0",
-    "ut-port-script": "~5.4.3",
-    "ut-port-postgres": "~5.4.0",
-    "ut-ussd": "~6.4.0",
-    "ut-cache": "~5.4.3",
-    "ut-run": "~6.0.2",
-    "pm2": "1.1.3"
+    "ut-bus": "^5.4.9",
+    "ut-port-httpserver": "^6.5.2",
+    "ut-port-jsonrpc": "^5.5.3",
+    "ut-port-script": "^5.4.4",
+    "ut-port-postgres": "^5.6.6",
+    "ut-ussd": "^6.5.1",
+    "ut-cache": "^5.5.0",
+    "ut-port-performance": "^5.4.6",
+    "ut-port-console": "^6.1.5",
+    "ut-run": "^6.3.1",
+    "pm2": "2.0.12"
   },
   "devDependencies": {
-    "blue-tape": "0.2.0",
+    "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-port-performance": "~5.4.5",
-    "ut-port-console": "~6.1.4",
-    "ut-tools": "^5.8.1"
+    "ut-tools": "^5.8.2"
   },
   "repository": {
     "type": "git",
