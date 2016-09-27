@@ -1,3 +1,13 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.0...v0.2.1) (2016-09-27)
+
+
+### Bug Fixes
+
+* fix dependencies ([4afc1de](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4afc1de))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.1.5...v0.2.0) (2016-09-26)
 
