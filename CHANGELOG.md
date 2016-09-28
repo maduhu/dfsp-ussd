@@ -1,3 +1,13 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.2...v0.2.3) (2016-09-28)
+
+
+### Bug Fixes
+
+* improve transfer execute handling ([d7e4842](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/d7e4842))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.1...v0.2.2) (2016-09-27)
 
