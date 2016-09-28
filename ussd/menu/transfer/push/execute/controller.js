@@ -1,6 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.push.execute')({
+      sourceName: params.system.phone,
       sourceAccount: params.transfer.sourceAccount,
       destinationAccount: params.transfer.destinationAccount,
       destinationAmount: params.transfer.destinationAmount,
@@ -9,6 +10,7 @@ module.exports = {
     })
     .then((result) => {
       params.transfer.fulfillment = result.fulfillment
+      params.transfer.status = result.status
       return params
     })
     .catch((error) => {
