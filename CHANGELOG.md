@@ -1,3 +1,20 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.4...v0.3.0) (2016-09-29)
+
+
+### Bug Fixes
+
+* ask for PIN during self registration ([015e751](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/015e751))
+
+
+### Features
+
+* allow self registration ([e2a5375](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e2a5375))
+* integrate with DFSP-API's ledger.account.get proxy method ([810e274](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/810e274))
+* show error screen where the phone is not registered in the db or there are no accounts associated with it ([09d4ff5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/09d4ff5))
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.3...v0.2.4) (2016-09-28)
 
