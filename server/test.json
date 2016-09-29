@@ -26,7 +26,7 @@
      "wrongInputState": "menu/error/wrongInput",
      "timeOut": 60,
      "expireRule": "refresh",
-     "defaultPhone": "0122523365225",
+     "defaultPhone": "",
      "defaultShortCode": "*123#"
   },
   "cache": {
