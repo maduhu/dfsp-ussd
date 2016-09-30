@@ -1,0 +1,45 @@
+{
+  "implementation": "dfsp-ussd",
+  "repl": false,
+  "console": false,
+  "log": false,
+  "debug": true,
+  "workDir": "./tmp",
+  "masterBus": {
+    "logLevel": "error",
+    "socket": "dfsp-ussd"
+  },
+  "workerBus": {
+    "logLevel": "error"
+  },
+  "ussd": {
+     "shortCodes": {
+       "*123#": "menu/home"
+     },
+     "wrongInputState": "menu/error/wrongInput",
+     "timeOut": 60,
+     "expireRule": "refresh",
+     "defaultPhone": "",
+     "defaultShortCode": "*123#"
+  },
+  "cache": {
+    "storage": "memory",
+    "encoding": "json",
+    "checkFrequency": 1000,
+    "defaultTTL": 3600
+  },
+  "performance": false,
+  "script": {
+    "mock": true
+  },
+  "db": {
+    "logLevel": "trace",
+    "db": {
+      "host": "localhost",
+      "database": "circle_test"
+    },
+    "permission": {
+      "requireSession": true
+    }
+  }
+}
