@@ -44,7 +44,7 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.9.3"
+    "ut-tools": "^5.9.4"
   },
   "repository": {
     "type": "git",
