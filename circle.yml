@@ -10,12 +10,9 @@ test:
   override:
     - npm run circleci:test
 
-dependencies:
-  post:
-    - npm run circleci:build
-
 deployment:
   prod:
     branch: master
     commands:
+      - npm run circleci:build
       - npm run circleci:push
