@@ -1,3 +1,13 @@
+<a name="0.4.3"></a>
+## [0.4.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.4.2...v0.4.3) (2016-10-11)
+
+
+### Bug Fixes
+
+* upgrade ut-tools ([24c9d1c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/24c9d1c))
+
+
+
 <a name="0.4.2"></a>
 ## [0.4.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.4.1...v0.4.2) (2016-10-11)
 
