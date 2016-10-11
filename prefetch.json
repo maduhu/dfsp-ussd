@@ -1,14 +1,12 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.4.1",
+  "version": "0.3.0",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
     "changelog": "ut-changelog",
     "check": "ut-check",
     "circleci:build": "ut-circleci-build",
-    "circleci:push": "ut-circleci-push",
-    "circleci:test": "ut-circleci-test",
     "cover": "ut-cover",
     "gitlab": "ut-gitlab",
     "jenkins": "ut-jenkins",
@@ -46,7 +44,7 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.9.5"
+    "ut-tools": "^5.9.4"
   },
   "repository": {
     "type": "git",
