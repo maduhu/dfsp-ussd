@@ -1,3 +1,23 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.3.0...v0.4.0) (2016-10-11)
+
+
+### Bug Fixes
+
+* add .npmrc ([710687f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/710687f))
+* build image after tests pass ([e0fa341](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e0fa341))
+* fix circle ci build ([bfa9259](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/bfa9259))
+* update dependencies ([acca15d](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/acca15d))
+* upgrade ut-tools ([8a7e1de](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8a7e1de))
+* upgrade ut-tools ([71c9054](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/71c9054))
+
+
+### Features
+
+* add docker build and push ([b158c33](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b158c33))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.2.4...v0.3.0) (2016-09-29)
 
