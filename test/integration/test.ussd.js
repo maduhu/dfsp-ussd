@@ -2,9 +2,14 @@
 
 var test = require('ut-run/test')
 require('dfsp-directory')
-require('dfsp-api')
 require('dfsp-rule')
 require('dfsp-transfer')
+require('dfsp-api')
+require('dfsp-ledger')
+require('dfsp-identity')
+require('dfsp-account')
+require('dfsp-subscription')
+
 var joi = require('joi')
 const ACCOUNTNUM = '00359######'
 const PHONENUM = '259637'

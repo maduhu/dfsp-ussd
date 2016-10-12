@@ -15,7 +15,7 @@
         "logLevel": "error",
         "uri": "/rpc",
         "url": "http://127.0.0.1:8019",
-        "namespace": ["ussd"],
+        "namespace": ["ussd", "identity"],
         "method": "post"
     },
     "performance": {
