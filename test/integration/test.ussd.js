@@ -1,6 +1,6 @@
 /*  eslint ut-lint/exists:0 */
-
 var test = require('ut-run/test')
+var commonFunc = require('./../lib/commonFunctions.js')
 require('dfsp-directory')
 require('dfsp-rule')
 require('dfsp-transfer')
@@ -11,16 +11,17 @@ require('dfsp-account')
 require('dfsp-subscription')
 
 var joi = require('joi')
-const ACCOUNTNUM = '00359######'
-const PHONENUM = '259637'
+const ACCOUNTNUM = commonFunc.generateRandomNumber().toString()
+const PHONENUM = commonFunc.generateRandomNumber().toString()
+const USERNUBMER = commonFunc.generateRandomNumber().toString()
+const USERNAME = 'automationTest' + commonFunc.generateRandomNumber()
+const PIN = '123'
 const INITMSG = '*123#'
-const SENDMONEY = '1'
+const FIRSTOPTION = '1'
 const HOME = '0'
-const BACK = '1'
 const AMOUNT = '1000'
-const VERIFY = '*'
-const ACCOUNT = 'https://####.###/######'
 const CURRENCY = 'TZS'
+const DESTINATIONNUMBER = 'l1p'
 
 test({
   type: 'integration',
@@ -45,23 +46,24 @@ test({
               expire: joi.string(),
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
+              meta: joi.object(),
               routes: joi.object(),
-              message: joi.string().valid(INITMSG),
+              message: joi.string(),
+              prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on home screen')
       }
     }, {
-      // send money screen
-      name: 'Send money menu',
+      // open an account screen
+      name: 'Open an account',
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: SENDMONEY
+        message: FIRSTOPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -73,20 +75,78 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(SENDMONEY),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
               state: joi.string(),
-              requestParams: joi.object(),
-              prevState: joi.string()
+              requestParams: joi.object()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
-            transfer: joi.object(),
-            context: joi.object()
+            context: joi.object(),
+            open: joi.object()
           }).required()
-        }).required()).error, null, 'return all params on send money screen')
+        }).required()).error, null, 'return all params on open an account screen')
       }
     }, {
-      // recepient screen
-      name: 'Enter destination number',
+      // username
+      name: 'Enter username',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: USERNAME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            context: joi.object(),
+            open: joi.object()
+          }).required()
+        }).required()).error, null, 'return all params on enter username screen')
+      }
+    }, {
+      // username
+      name: 'Enter user number',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: USERNUBMER
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            context: joi.object(),
+            open: joi.object()
+          }).required()
+        }).required()).error, null, 'return all params on enter user number screen')
+      }
+    }, {
+      // account
+      name: 'Enter an account',
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
@@ -102,16 +162,142 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(ACCOUNTNUM),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            context: joi.object(),
+            open: joi.object().keys({
+              name: joi.string().valid(USERNAME).required(),
+              number: joi.string().valid(USERNUBMER).required(),
+              account: joi.string().valid(ACCOUNTNUM).required()
+            }).required()
+          }).required()
+        }).required()).error, null, 'return all params on enter an account screen')
+      }
+    }, {
+      // account
+      name: 'Enter PIN',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: PIN
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            context: joi.object()
+          }).required()
+        }).required()).error, null, 'return all params on enter PIN screen')
+      }
+    }, {
+      // account
+      name: 'Account created',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            context: joi.object(),
+            sourceAccount: joi.string()
+          }).required()
+        }).required()).error, null, 'return all params on account created screen')
+      }
+    }, {
+      // send money screen
+      name: 'Send money menu',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: FIRSTOPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string().valid(FIRSTOPTION),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT).required(),
+            sourceAccount: joi.string(),
+            transfer: joi.object(),
+            context: joi.object(),
+            open: joi.object().keys({
+              name: joi.string().valid(USERNAME),
+              number: joi.string().valid(ACCOUNTNUM),
+              account: joi.string().valid(USERNUBMER)
+            })
+          }).required()
+        }).required()).error, null, 'return all params on send money screen')
+      }
+    }, {
+      // recepient screen
+      name: 'Enter destination number',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: DESTINATIONNUMBER
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required()
+              destinationAccount: joi.string().required()
             }),
             context: joi.object()
           }).required()
@@ -135,16 +321,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string().valid(AMOUNT),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
               connectorFee: joi.number().required()
@@ -159,7 +346,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: VERIFY
+        message: PIN
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -171,16 +358,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(VERIFY),
+              meta: joi.object(),
+              message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
               connectorFee: joi.number().required(),
@@ -208,16 +396,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string().valid(HOME),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
               connectorFee: joi.number().required(),
@@ -245,16 +434,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string().valid(HOME),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required(),
+              destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
               connectorFee: joi.number().required(),
@@ -270,7 +460,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: BACK
+        message: FIRSTOPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -282,12 +472,21 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(BACK),
+              meta: joi.object(),
+              message: joi.string().valid(FIRSTOPTION),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string(),
+              destinationAccount: joi.string(),
+              destinationAmount: joi.string().valid(AMOUNT),
+              fee: joi.number(),
+              connectorFee: joi.number()
+            }).required(),
             context: joi.object()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -298,7 +497,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: SENDMONEY
+        message: FIRSTOPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -310,12 +509,13 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(SENDMONEY),
+              meta: joi.object(),
+              message: joi.string().valid(FIRSTOPTION),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object(),
             context: joi.object()
           }).required()
@@ -339,18 +539,21 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object(),
             context: joi.object().keys({
               code: joi.number().required(),
-              message: joi.string().valid('Account not found for userURI=').required(),
-              errorPrint: joi.string().valid('Account not found for userURI=').required(),
-              method: joi.string().required().valid('directory.user.get')
+              type: joi.string().valid('PortRPC'),
+              print: joi.string().valid('Account not found for userURI=number:').required(),
+              errorPrint: joi.string().valid('Account not found for userURI=number:').required(),
+              method: joi.string().required().valid('directory.user.get'),
+              stackInfo: joi.array()
             }).required()
           }).required()
         }).required()).error, null, 'return all params on user not found screen')
@@ -373,12 +576,13 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string().valid(HOME),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object(),
             context: joi.object()
           }).required()
@@ -390,7 +594,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: SENDMONEY
+        message: FIRSTOPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -402,12 +606,13 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(SENDMONEY),
+              meta: joi.object(),
+              message: joi.string().valid(FIRSTOPTION),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object(),
             context: joi.object()
           }).required()
@@ -419,7 +624,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: ACCOUNTNUM
+        message: DESTINATIONNUMBER
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -431,16 +636,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
-              message: joi.string().valid(ACCOUNTNUM),
+              meta: joi.object(),
+              message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required()
+              destinationAccount: joi.string().required()
             }),
             context: joi.object()
           }).required()
@@ -464,16 +670,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required()
+              destinationAccount: joi.string().required()
             }),
             context: joi.object()
           }).required()
@@ -497,16 +704,17 @@ test({
               phone: joi.string().required().valid(PHONENUM),
               backtrack: joi.array(),
               routes: joi.object(),
+              meta: joi.object(),
               message: joi.string().valid(HOME),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string().required().valid(ACCOUNT),
+            sourceAccount: joi.string(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
-              destinationAccount: joi.string().valid(ACCOUNT).required()
+              destinationAccount: joi.string().required()
             }),
             context: joi.object()
           }).required()
