@@ -47,7 +47,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on home screen')
       }
@@ -75,7 +75,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
         }).required()).error, null, 'return all params on open an account screen')
@@ -104,7 +104,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
         }).required()).error, null, 'return all params on enter username screen')
@@ -133,7 +133,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
         }).required()).error, null, 'return all params on enter user number screen')
@@ -162,7 +162,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             open: joi.object().keys({
               name: joi.string().valid(USERNAME).required(),
               number: joi.string().valid(USERNUBMER).required(),
@@ -195,7 +195,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on enter PIN screen')
       }
@@ -223,7 +223,7 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             sourceAccount: joi.string()
           }).required()
         }).required()).error, null, 'return all params on account created screen')
@@ -254,7 +254,7 @@ test({
             }),
             sourceAccount: joi.string(),
             transfer: joi.object(),
-            context: joi.object(),
+            context: joi.object().keys({}).required(),
             open: joi.object().keys({
               name: joi.string().valid(USERNAME),
               number: joi.string().valid(ACCOUNTNUM),
@@ -293,7 +293,7 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on destination number screen')
       }
@@ -330,7 +330,7 @@ test({
               fee: joi.number().required(),
               connectorFee: joi.number().required()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
       }
@@ -365,10 +365,9 @@ test({
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
               fee: joi.number().required(),
-              connectorFee: joi.number().required(),
-              fulfillment: joi.string()
-            }),
-            context: joi.object()
+              connectorFee: joi.number().required()
+            }).required(),
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on verify screen')
       }
@@ -406,7 +405,7 @@ test({
               connectorFee: joi.number().required(),
               fulfillment: joi.string()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on home screen')
       }
@@ -444,7 +443,7 @@ test({
               connectorFee: joi.number().required(),
               fulfillment: joi.string()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on wrong request in home screen')
       }
@@ -481,7 +480,7 @@ test({
               fee: joi.number(),
               connectorFee: joi.number()
             }).required(),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
       }
@@ -511,7 +510,7 @@ test({
             }),
             sourceAccount: joi.string(),
             transfer: joi.object(),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
       }
@@ -578,7 +577,7 @@ test({
             }),
             sourceAccount: joi.string(),
             transfer: joi.object(),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on home screen')
       }
@@ -608,7 +607,7 @@ test({
             }),
             sourceAccount: joi.string(),
             transfer: joi.object(),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
       }
@@ -642,7 +641,7 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on destination account screen')
       }
@@ -676,7 +675,7 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on wrong input screen')
       }
@@ -710,7 +709,7 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required()
             }),
-            context: joi.object()
+            context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
       }
