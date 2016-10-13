@@ -46,7 +46,15 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.9.9"
+    "ut-tools": "^5.9.10",
+    "dfsp-directory": "*",
+    "dfsp-rule": "*",
+    "dfsp-transfer": "*",
+    "dfsp-api": "*",
+    "dfsp-ledger": "*",
+    "dfsp-identity": "*",
+    "dfsp-account": "*",
+    "dfsp-subscription": "*"
   },
   "repository": {
     "type": "git",

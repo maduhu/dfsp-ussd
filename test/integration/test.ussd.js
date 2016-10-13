@@ -1,15 +1,6 @@
-/*  eslint ut-lint/exists:0 */
 var test = require('ut-run/test')
 var commonFunc = require('./../lib/commonFunctions.js')
-require('dfsp-directory')
-require('dfsp-rule')
-require('dfsp-transfer')
-require('dfsp-api')
-require('dfsp-ledger')
-require('dfsp-identity')
-require('dfsp-account')
-require('dfsp-subscription')
-
+var config = require('./../lib/appConfig')
 var joi = require('joi')
 const ACCOUNTNUM = commonFunc.generateRandomNumber().toString()
 const PHONENUM = commonFunc.generateRandomNumber().toString()
@@ -26,8 +17,11 @@ const DESTINATIONNUMBER = 'l1p'
 test({
   type: 'integration',
   name: 'Ussd service',
-  client: require('../client'),
-  clientConfig: require('../client/test'),
+  server: config.server,
+  serverConfig: config.serverConfig,
+  client: config.client,
+  clientConfig: config.clientConfig,
+  peerImplementations: config.peerImplementations,
   steps: function (test, bus, run) {
     run(test, bus, [{
       // home screen
@@ -722,4 +716,4 @@ test({
       }
     }])
   }
-})
+}, module.parent)
