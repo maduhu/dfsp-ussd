@@ -3,7 +3,9 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    params.open.number = params.system.message
+    if (params.system.input.requestParams.proceed) {
+      params.open.number = params.system.message
+    }
     return params
   }
 }
