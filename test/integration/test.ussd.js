@@ -13,6 +13,7 @@ const HOME = '0'
 const AMOUNT = '1000'
 const CURRENCY = 'TZS'
 const DESTINATIONNUMBER = 'l1p'
+const URI = '/closeUSSDSession'
 
 test({
   type: 'integration',
@@ -327,8 +328,8 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              connectorFee: joi.number().required()
+              fee: joi.number().required().invalid(0),
+              connectorFee: joi.number().required().invalid(0)
             }),
             context: joi.object().keys({}).required()
           }).required()
@@ -364,8 +365,8 @@ test({
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required(),
-              connectorFee: joi.number().required()
+              fee: joi.number().required().invalid(0),
+              connectorFee: joi.number().required().invalid(0)
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -685,7 +686,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: HOME
+        message: FIRSTOPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -698,7 +699,7 @@ test({
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
-              message: joi.string().valid(HOME),
+              message: joi.string().valid(FIRSTOPTION),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
@@ -712,6 +713,136 @@ test({
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
+      }
+    }, {
+      // Enter valid amount
+      name: 'Enter valid amount',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: AMOUNT
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }),
+            sourceAccount: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required().invalid(0),
+              connectorFee: joi.number().required().invalid(0)
+            }),
+            context: joi.object().keys({
+            }).required()
+          }).required()
+        }).required()).error, null, 'return all params on amount screen')
+      }
+    }, {
+      // Enter invalid PIN
+      name: 'Enter invalid PIN',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: ''
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }),
+            sourceAccount: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required().invalid(0),
+              connectorFee: joi.number().required().invalid(0)
+            }),
+            context: joi.object().keys({
+              stackInfo: joi.array().required(),
+              statusCode: joi.number().required(),
+              statusMessage: joi.string().required(),
+              print: joi.string().required().valid('HTTP error'),
+              type: joi.string().required(),
+              code: joi.number(),
+              method: joi.string().required()}).required()
+          }).required()
+        }).required()).error, null, 'return all params on amount screen')
+      }
+    }, {
+      // Wrong PIN screen and back to enter PIN screen
+      name: 'Wrong PIN screen',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        message: FIRSTOPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string().required().valid(PHONENUM),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string().required().valid(PHONENUM),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }),
+            sourceAccount: joi.string(),
+            transfer: joi.object().keys({
+              destinationName: joi.string(),
+              destinationCurrency: joi.string().required().valid(CURRENCY),
+              destinationAccount: joi.string().required(),
+              destinationAmount: joi.string().valid(AMOUNT).required(),
+              fee: joi.number().required().invalid(0),
+              connectorFee: joi.number().required().invalid(0)
+            }),
+            context: joi.object().keys({}).required()
+          }).required()
+        }).required()).error, null, 'return all params on amount screen')
+      }
+    }, {
+      // Wrong PIN screen and back to enter PIN screen
+      name: 'Wrong PIN screen',
+      method: 'ussd.request',
+      params: {
+        phone: PHONENUM,
+        uri: URI
+      },
+      error: (error, assert) => {
+        assert.true(error.payload.indexOf('Session Closed') > -1, 'Session Closed')
       }
     }])
   }
