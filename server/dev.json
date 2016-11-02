@@ -42,7 +42,7 @@
        "*123#": "menu/home"
      },
      "wrongInputState": "menu/error/wrongInput",
-     "timeOut": 60,
+     "timeOut": 6000,
      "expireRule": "refresh",
      "defaultPhone": "",
      "defaultShortCode": "*123#"

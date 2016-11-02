@@ -68,5 +68,5 @@
   "publishConfig": {
     "registry": "https://modusbox.jfrog.io/modusbox/api/npm/level1-npm-release"
   },
-  "license": "UNLICENSED"
+  "license": "SEE LICENSE IN LICENSE"
 }
