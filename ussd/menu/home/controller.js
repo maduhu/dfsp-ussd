@@ -1,6 +1,8 @@
 module.exports = {
   send: function (params) {
-    if (params.sourceAccount) {
+    if (!params.user) {
+      params.user = {}
+    } else if (params.user.sourceAccount) {
       return params
     }
     return this.bus.importMethod('subscription.subscription.get')({
@@ -12,15 +14,15 @@ module.exports = {
       })
     })
     .then((res) => {
-      params.name = res.name
+      params.user.name = res.name
       return this.bus.importMethod('ledger.account.get')({
         phoneNumber: params.system.phone
       })
     })
     .then((res) => {
-      params.sourceAccount = res.id
-      params.currencyCode = res.currencyCode
-      params.currencySymbol = res.currencySymbol
+      params.user.sourceAccount = res.id
+      params.user.currencyCode = res.currencyCode
+      params.user.currencySymbol = res.currencySymbol
       return params
     })
     .catch(() => {
