@@ -1,3 +1,4 @@
+/* eslint no-console: 0 */
 var test = require('ut-run/test')
 var commonFunc = require('./../lib/commonFunctions.js')
 var config = require('./../lib/appConfig')
@@ -11,7 +12,7 @@ const INITMSG = '*123#'
 const FIRSTOPTION = '1'
 const HOME = '0'
 const AMOUNT = '1000'
-const CURRENCY = 'TZS'
+const CURRENCY = ['TZS', 'USD']
 const DESTINATIONNUMBER = 'l1p'
 const URI = '/closeUSSDSession'
 
@@ -48,6 +49,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on home screen')
@@ -76,6 +80,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
@@ -105,6 +112,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
@@ -134,6 +144,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required(),
             open: joi.object()
           }).required()
@@ -163,6 +176,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required(),
             open: joi.object().keys({
               name: joi.string().valid(USERNAME).required(),
@@ -196,6 +212,9 @@ test({
               state: joi.string(),
               requestParams: joi.object()
             }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on enter PIN screen')
@@ -225,7 +244,9 @@ test({
               requestParams: joi.object()
             }),
             context: joi.object().keys({}).required(),
-            sourceAccount: joi.string()
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown()
           }).required()
         }).required()).error, null, 'return all params on account created screen')
       }
@@ -253,7 +274,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object(),
             context: joi.object().keys({}).required(),
             open: joi.object().keys({
@@ -288,7 +311,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -322,14 +347,16 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required().invalid(0),
-              connectorFee: joi.number().required().invalid(0)
+              fee: joi.number().required().allow(0),
+              connectorFee: joi.number().required().allow(0)
             }),
             context: joi.object().keys({}).required()
           }).required()
@@ -359,15 +386,17 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required().invalid(0),
-              connectorFee: joi.number().required().invalid(0)
-            }).required(),
+              fee: joi.number().required().allow(0),
+              connectorFee: joi.number().required().allow(0)
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on verify screen')
@@ -396,7 +425,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -405,7 +436,7 @@ test({
               fee: joi.number().required(),
               connectorFee: joi.number().required(),
               fulfillment: joi.string()
-            }),
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on home screen')
@@ -434,7 +465,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -443,7 +476,7 @@ test({
               fee: joi.number().required(),
               connectorFee: joi.number().required(),
               fulfillment: joi.string()
-            }),
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on wrong request in home screen')
@@ -472,7 +505,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string(),
@@ -480,7 +515,7 @@ test({
               destinationAmount: joi.string().valid(AMOUNT),
               fee: joi.number(),
               connectorFee: joi.number()
-            }).required(),
+            }).unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -509,8 +544,10 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
-            transfer: joi.object(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            transfer: joi.object().unknown(),
             context: joi.object().keys({}).required()
           }).required()
         }).required()).error, null, 'return all params on send money screen')
@@ -521,7 +558,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: ''
+        message: 'fail'
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -539,13 +576,15 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
-            transfer: joi.object(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            transfer: joi.object().unknown(),
             context: joi.object().keys({
               code: joi.number().required(),
               type: joi.string().valid('PortRPC'),
-              print: joi.string().valid('Account not found for userURI=number:').required(),
-              errorPrint: joi.string().valid('Account not found for userURI=number:').required(),
+              print: joi.string().valid('Account not found for userURI=number:fail').required(),
+              errorPrint: joi.string().valid('Account not found for userURI=number:fail').required(),
               method: joi.string().required().valid('directory.user.get'),
               stackInfo: joi.array()
             }).required()
@@ -576,7 +615,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object(),
             context: joi.object().keys({}).required()
           }).required()
@@ -606,7 +647,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object(),
             context: joi.object().keys({}).required()
           }).required()
@@ -636,7 +679,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -652,7 +697,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: null
+        message: 'x'
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -670,7 +715,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -704,7 +751,9 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
@@ -738,14 +787,16 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required().invalid(0),
-              connectorFee: joi.number().required().invalid(0)
+              fee: joi.number().required().allow(0),
+              connectorFee: joi.number().required().allow(0)
             }),
             context: joi.object().keys({
             }).required()
@@ -758,7 +809,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: PHONENUM,
-        message: ''
+        message: 'x'
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -776,23 +827,25 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required().invalid(0),
-              connectorFee: joi.number().required().invalid(0)
+              fee: joi.number().required().allow(0),
+              connectorFee: joi.number().required().allow(0)
             }),
             context: joi.object().keys({
               stackInfo: joi.array().required(),
-              statusCode: joi.number().required(),
-              statusMessage: joi.string().required(),
-              print: joi.string().required().valid('HTTP error'),
+              statusCode: joi.number(),
+              statusMessage: joi.string(),
+              print: joi.string().required(),
               type: joi.string().required(),
               code: joi.number(),
-              method: joi.string().required()}).required()
+              method: joi.string().required()}).unknown().required()
           }).required()
         }).required()).error, null, 'return all params on amount screen')
       }
@@ -820,14 +873,16 @@ test({
               requestParams: joi.object(),
               prevState: joi.string()
             }),
-            sourceAccount: joi.string(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
             transfer: joi.object().keys({
               destinationName: joi.string(),
               destinationCurrency: joi.string().required().valid(CURRENCY),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().valid(AMOUNT).required(),
-              fee: joi.number().required().invalid(0),
-              connectorFee: joi.number().required().invalid(0)
+              fee: joi.number().required().allow(0),
+              connectorFee: joi.number().required().allow(0)
             }),
             context: joi.object().keys({}).required()
           }).required()
