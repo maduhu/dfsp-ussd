@@ -12,6 +12,7 @@ module.exports = {
     require('@leveloneproject/dfsp-identity/index_test'),
     require('@leveloneproject/dfsp-account/index_test'),
     require('@leveloneproject/dfsp-subscription/index_test'),
-    require('@leveloneproject/dfsp-ledger/index_test')
+    require('@leveloneproject/dfsp-ledger/index_test'),
+    require('@leveloneproject/dfsp-mock')
   ]
 }
