@@ -4,6 +4,7 @@ module.exports = {
       account: params.user.sourceAccount,
       name: params.invoice.destinationName,
       currencyCode: params.user.currencyCode,
+      currencySymbol: params.user.currencySymbol,
       amount: params.invoice.destinationAmount,
       userNumber: params.invoice.destinationUserNumber,
       dfsp: params.invoice.destinationDfsp,
