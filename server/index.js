@@ -1,4 +1,5 @@
 var path = require('path')
+var ussdValidation = require('ut-ussd/validations')
 module.exports = {
   ports: [
     require('../httpserver'),
@@ -11,6 +12,10 @@ module.exports = {
     ussd: require('ut-ussd').config({baseDir: path.join(__dirname, '../ussd')})
   },
   validations: {
-    ussd: require('ut-ussd/validations')
+    ussd: Object.keys(ussdValidation).reduce((all, key) => {
+      all[key] = ussdValidation[key]
+      all[key].auth = 'basic'
+      return all
+    }, {})
   }
 }

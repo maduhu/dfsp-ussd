@@ -46,7 +46,15 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.9.9"
+    "ut-tools": "^5.9.10",
+    "@leveloneproject/dfsp-directory": "*",
+    "@leveloneproject/dfsp-rule": "*",
+    "@leveloneproject/dfsp-transfer": "*",
+    "@leveloneproject/dfsp-api": "*",
+    "@leveloneproject/dfsp-ledger": "*",
+    "@leveloneproject/dfsp-identity": "*",
+    "@leveloneproject/dfsp-account": "*",
+    "@leveloneproject/dfsp-subscription": "*"
   },
   "repository": {
     "type": "git",
@@ -60,5 +68,5 @@
   "publishConfig": {
     "registry": "https://modusbox.jfrog.io/modusbox/api/npm/level1-npm-release"
   },
-  "license": "UNLICENSED"
+  "license": "SEE LICENSE IN LICENSE"
 }

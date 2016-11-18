@@ -7,13 +7,14 @@ module.exports = {
   api: ['ussd'],
   port: 8019,
   bundle: 'ussd',
+  validationPassThrough: true,
   dist: path.resolve(__dirname, '../dist'),
   routes: {
     rpc: {
       method: '*',
       path: '/rpc/{method?}',
       config: {
-        auth: false
+        auth: 'basic'
       }
     }
   }
