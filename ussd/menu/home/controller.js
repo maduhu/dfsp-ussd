@@ -14,6 +14,7 @@ module.exports = {
       })
     })
     .then((res) => {
+      params.user.userNumber = res.endUserNumber
       params.user.name = res.name
       return this.bus.importMethod('ledger.account.get')({
         phoneNumber: params.system.phone
