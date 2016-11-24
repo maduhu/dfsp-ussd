@@ -9,6 +9,7 @@ module.exports = {
       phoneNumber: params.system.phone
     })
     .then((res) => {
+      params.user.actorId = res.actorId
       return this.bus.importMethod('directory.user.get')({
         URI: 'actor:' + res.actorId
       })
