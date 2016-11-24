@@ -11,7 +11,7 @@ module.exports = {
     .then((res) => {
       params.user.actorId = res.actorId
       return this.bus.importMethod('directory.user.get')({
-        URI: 'actor:' + res.actorId
+        actorId: res.actorId
       })
     })
     .then((res) => {
