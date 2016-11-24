@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.5.0...v0.5.1) (2016-11-24)
+
+
+### Bug Fixes
+
+* swap dfsp with submissionUrl ([5c2fcb8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/5c2fcb8))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.4.4...v0.5.0) (2016-11-22)
 
