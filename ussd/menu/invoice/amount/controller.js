@@ -4,7 +4,7 @@ module.exports = {
       return params
     }
     return this.bus.importMethod('directory.user.get')({
-      URI: 'number:' + params.system.message
+      userNumber: params.system.message
     })
     .then((result) => {
       params.invoice.destinationName = result.name
