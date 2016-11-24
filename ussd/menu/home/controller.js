@@ -26,7 +26,7 @@ module.exports = {
       if (res.length === 1) {
         return this.bus.importMethod('ledger.account.get')({
           accountNumber: res[0].accountNumber
-        }).then(function(res) {
+        }).then((res) => {
           params.user.sourceAccount = res.id
           params.user.currencyCode = res.currencyCode
           params.user.currencySymbol = res.currencySymbol

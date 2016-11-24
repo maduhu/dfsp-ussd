@@ -1,0 +1,11 @@
+<if test="params.user.accounts.length === 1">
+    You don't have any other account to switch to
+    <br/><br/><a id="0" href="menu/home">0. Home</a>
+</if>
+<else>
+    Select Account:
+    <br/>
+    <for each="i from 0 to params.user.availableAccounts.length-1">
+        <br/><a id="${i+1}" href="menu/home?accountNumber=${params.user.availableAccounts[i].accountNumber}">${i+1}. ${params.user.availableAccounts[i].accountNumber}</a>
+    </for>
+</else>
