@@ -1,0 +1,5 @@
+Select Account:
+<br/>
+<for each="i from 0 to params.user.accounts.length-1">
+    <br/><a id="${i+1}" href="menu/home?accountNumber=${params.user.accounts[i].accountNumber}">${i+1}. ${params.user.accounts[i].accountNumber}</a>
+</for>

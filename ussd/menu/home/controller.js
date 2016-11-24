@@ -17,14 +17,24 @@ module.exports = {
     .then((res) => {
       params.user.userNumber = res.endUserNumber
       params.user.name = res.name
-      return this.bus.importMethod('ledger.account.get')({
-        phoneNumber: params.system.phone
+      return this.bus.importMethod('account.account.fetch')({
+        actorId: params.user.actorId
       })
     })
     .then((res) => {
-      params.user.sourceAccount = res.id
-      params.user.currencyCode = res.currencyCode
-      params.user.currencySymbol = res.currencySymbol
+      params.user.accounts = res
+      if (res.length === 1) {
+        return this.bus.importMethod('ledger.account.get')({
+          accountNumber: res[0].accountNumber
+        }).then(function(res) {
+          params.user.sourceAccount = res.id
+          params.user.currencyCode = res.currencyCode
+          params.user.currencySymbol = res.currencySymbol
+          return params
+        })
+      } else if (res.length > 1) {
+        return this.redirect('menu/account/select')
+      }
       return params
     })
     .catch(() => {
