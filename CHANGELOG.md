@@ -1,3 +1,33 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.4.4...v0.5.0) (2016-11-22)
+
+
+### Bug Fixes
+
+* add currencySymbol when creating invoice ([975b6f7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/975b6f7))
+* add userNumber to ussd model ([44a58fd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/44a58fd))
+* comment tests ([c4f3d22](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c4f3d22))
+* fix dependencies ([deefa18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/deefa18))
+* fix dependencies ([b0b8b70](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b0b8b70))
+* fix publishing ([44750ba](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/44750ba))
+* fix step back options ([8a0d72f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8a0d72f))
+* fix tests and linting ([36fa773](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/36fa773))
+* group data in model ([03b6556](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/03b6556))
+* issue [#283](https://github.com/LevelOneProject/dfsp-ussd/issues/283) - DFSP License files are incorrect ([fe1c086](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fe1c086))
+* linting ([3853757](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/3853757))
+* prepare pending transactions menus ([9804beb](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9804beb))
+* remove unused script ([1b9b2af](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1b9b2af))
+* update ut-tools version ([a18a9f4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a18a9f4))
+
+
+### Features
+
+* add screen for creating an invoice ([06af2e2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/06af2e2))
+* bootstrap sell goods flow ([e03a037](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e03a037))
+* fix tests and add possibility to start peer implementations within the test configuration ([adb5644](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/adb5644))
+
+
+
 <a name="0.4.4"></a>
 ## [0.4.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.4.3...v0.4.4) (2016-10-11)
 
