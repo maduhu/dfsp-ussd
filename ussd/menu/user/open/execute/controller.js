@@ -8,7 +8,7 @@ module.exports = {
       password: params.open.password
     })
     .then((result) => {
-      delete params.open
+      params.open.result = result
       return params
     })
     .catch((error) => {
@@ -17,6 +17,7 @@ module.exports = {
     })
   },
   receive: function (params) {
+    delete params.open
     return params
   }
 }
