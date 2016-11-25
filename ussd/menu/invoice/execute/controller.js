@@ -2,7 +2,7 @@ module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.invoice.add')({
       account: params.user.sourceAccount,
-      name: params.invoice.destinationName,
+      name: params.user.name,
       currencyCode: params.user.currencyCode,
       currencySymbol: params.user.currencySymbol,
       amount: params.invoice.destinationAmount,
