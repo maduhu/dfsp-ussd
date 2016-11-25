@@ -4,6 +4,8 @@
 <else>
     Pending Transactions<br/>
     <for each="i from 0 to params.pendingTransactions.length-1">
-        <br/><a id="${i+1}" href="../details?invoiceNotificationId=${params.pendingTransactions[i].invoiceNotificationId}">${i+1}. ${params.pendingTransactions[i].memo}</a>
+        <br/><a id="${i+1}" href="menu/pendingTransactions/details?invoiceUrl=${params.pendingTransactions[i].invoiceUrl}">${i+1}. ${params.pendingTransactions[i].memo}</a>
     </for>
 </else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>

@@ -1,1 +1,8 @@
-To be implemented
+Pending transaction from ${params.pendingTransaction.name} for ${params.pendingTransaction.amount} ${params.pendingTransaction.currencyCode}
+plus fee of ${params.pendingTransaction.fee}.
+Total transaction amount: ${parseFloat(params.pendingTransaction.amount) + parseFloat(params.pendingTransaction.fee)} ${params.pendingTransaction.currencyCode}
+Please enter your PIN to approve or select 2 to reject.
+<br/><a id="*" href="../approve"></a>
+<br/><a id="0" href="menu/home">0. Home</a>
+<br/><a id="1" href="back">1. Back</a>
+<br/><a id="2" href="../reject">2. Reject</a>

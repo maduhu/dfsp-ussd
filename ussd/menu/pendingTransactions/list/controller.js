@@ -1,8 +1,5 @@
 module.exports = {
   send: function (params) {
-    if (params.pendingTransactions) {
-      return params
-    }
     return this.bus.importMethod('transfer.invoiceNotification.fetch')({
       userNumber: params.user.userNumber
     }).then(function (res) {
@@ -13,6 +10,7 @@ module.exports = {
     })
   },
   receive: function (params) {
+    delete params.pendingTransactions
     return params
   }
 }
