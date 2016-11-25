@@ -1,3 +1,13 @@
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.5.2...v0.5.3) (2016-11-25)
+
+
+### Bug Fixes
+
+* display user number when a new wallet is created ([cc47936](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/cc47936))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.5.1...v0.5.2) (2016-11-24)
 

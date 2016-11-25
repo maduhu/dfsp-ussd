@@ -7,7 +7,7 @@ module.exports = {
       currencySymbol: params.user.currencySymbol,
       amount: params.invoice.destinationAmount,
       userNumber: params.invoice.destinationUserNumber,
-      submissionUrl: params.invoice.destinationDfsp,
+      submissionUrl: params.invoice.submissionUrl,
       invoiceInfo: 'Invoice from ' + params.user.name + ' for ' + params.invoice.destinationAmount + ' ' + params.user.currencyCode
     })
     .then((result) => {
