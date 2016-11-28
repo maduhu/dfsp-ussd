@@ -1,3 +1,15 @@
+<a name="0.6.1"></a>
+## [0.6.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.6.0...v0.6.1) (2016-11-25)
+
+
+### Bug Fixes
+
+* comment tests ([c34e497](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c34e497))
+* put back tests and comment cover.js ([da0e0d9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/da0e0d9))
+* typo ([1729263](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1729263))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.5.3...v0.6.0) (2016-11-25)
 
