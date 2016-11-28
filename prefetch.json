@@ -30,7 +30,7 @@
   "dependencies": {
     "joi": "9.0.4",
     "ut-bus": "^5.4.9",
-    "ut-port-httpserver": "^6.5.9",
+    "ut-port-httpserver": "8.1.1",
     "ut-port-jsonrpc": "^5.5.3",
     "ut-port-script": "^5.4.4",
     "ut-port-postgres": "^5.7.0",
@@ -44,7 +44,7 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.9.4"
+    "ut-tools": "^5.10.8"
   },
   "repository": {
     "type": "git",
