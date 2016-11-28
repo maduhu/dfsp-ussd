@@ -4,7 +4,9 @@ module.exports = {
     return params
   },
   receive: function (params) {
-   params.open.number = params.system.message
-   return params;
+    if (!params.system.input.requestParams.skip) {
+      params.open.number = params.system.message
+    }
+    return params
   }
 }
