@@ -1,3 +1,19 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.6.1...v0.7.0) (2016-11-28)
+
+
+### Bug Fixes
+
+* update dependency to ut-tools ([52d3309](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/52d3309))
+
+
+### Features
+
+* add possibility to add existing user number or generate a new one ([aa75bb4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/aa75bb4))
+* add possibility to open  wallets for predefined users ([14d3f9c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/14d3f9c))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.6.0...v0.6.1) (2016-11-25)
 
