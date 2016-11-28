@@ -46,7 +46,7 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.10.7",
+    "ut-tools": "^5.10.8",
     "@leveloneproject/dfsp-directory": "*",
     "@leveloneproject/dfsp-rule": "*",
     "@leveloneproject/dfsp-transfer": "*",
