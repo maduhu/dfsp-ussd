@@ -1,3 +1,18 @@
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.7.1...v0.8.0) (2016-11-30)
+
+
+### Bug Fixes
+
+* linting ([fba1693](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fba1693))
+
+
+### Features
+
+* add more detailed logging to http clients ([75aeda3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/75aeda3))
+
+
+
 <a name="0.7.1"></a>
 ## [0.7.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.7.0...v0.7.1) (2016-11-28)
 
