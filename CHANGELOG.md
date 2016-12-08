@@ -1,3 +1,13 @@
+<a name="0.8.1"></a>
+## [0.8.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.0...v0.8.1) (2016-12-08)
+
+
+### Bug Fixes
+
+* refactoring ([0e49f74](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/0e49f74))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.7.1...v0.8.0) (2016-11-30)
 
