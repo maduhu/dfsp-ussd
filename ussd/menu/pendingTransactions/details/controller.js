@@ -4,8 +4,8 @@ module.exports = {
     // return this.bus.importMethod('transfer.invoiceNotification.get')({
 
     // })
-    return this.bus.importMethod('spsp.invoice.get')({
-      url: params.system.requestParams.invoiceUrl
+    return this.bus.importMethod('spsp.transfer.invoice.get')({
+      receiver: params.system.requestParams.invoiceUrl
     }).then((result) => {
       params.pendingTransaction = result
       params.pendingTransaction.fee = 0

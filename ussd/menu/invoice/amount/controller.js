@@ -3,13 +3,13 @@ module.exports = {
     if (params.invoice.destinationAccount) {
       return params
     }
-    return this.bus.importMethod('spsp.payee.get')({
+    return this.bus.importMethod('spsp.transfer.payee.get')({
       identifier: params.system.message
     })
     .then((result) => {
       params.invoice.destinationName = result.name
       params.invoice.submissionUrl = result.submissionUrl
-      params.invoice.destinationUserNumber = params.system.message
+      params.invoice.identifier = params.system.message
       return params
     })
     .catch((error) => {

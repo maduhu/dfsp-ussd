@@ -1,19 +1,23 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('transfer.rule.fetch')({
+    var msg = {
       currency: params.transfer.destinationCurrency,
       amount: params.transfer.destinationAmount,
-      receiver: params.transfer.destinationAccount
-    })
-    .then((result) => {
-      params.transfer.fee = (result.fee && result.fee.amount) || 0
-      params.transfer.connectorFee = result.connectorFee || 0
-      return params
-    })
-    .catch((error) => {
-      params.context = error
-      return this.redirect('menu/user/wrongUri')
-    })
+      identifier: params.transfer.identifier
+    }
+    return this.bus.importMethod('rule.decision.fetch')(msg)
+      .then(result => {
+        params.transfer.fee = result.fee && result.fee.amount || 0
+        return this.bus.importMethod('spsp.rule.decision.fetch')(msg)
+      })
+      .then(result => {
+        params.transfer.connectorFee = result.sourceAmount && (result.sourceAmount - msg.amount) || 0
+        return params
+      })
+      .catch((error) => {
+        params.context = error
+        return this.redirect('menu/user/wrongUri')
+      })
   },
   receive: function (params) {
     if (params.system.input.requestParams.proceed) {

@@ -6,7 +6,7 @@ module.exports = {
       currencyCode: params.user.currencyCode,
       currencySymbol: params.user.currencySymbol,
       amount: params.invoice.destinationAmount,
-      userNumber: params.invoice.destinationUserNumber,
+      userNumber: params.invoice.identifier,
       submissionUrl: params.invoice.submissionUrl,
       invoiceInfo: 'Invoice from ' + params.user.name + ' for ' + params.invoice.destinationAmount + ' ' + params.user.currencyCode
     })
