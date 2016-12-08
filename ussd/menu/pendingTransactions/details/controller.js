@@ -9,6 +9,7 @@ module.exports = {
     }).then((result) => {
       params.pendingTransaction = result
       params.pendingTransaction.fee = 0
+      params.pendingTransaction.receiver = params.system.requestParams.invoiceUrl
       return params
     })
   },

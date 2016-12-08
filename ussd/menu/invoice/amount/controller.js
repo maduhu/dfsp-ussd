@@ -8,7 +8,7 @@ module.exports = {
     })
     .then((result) => {
       params.invoice.destinationName = result.name
-      params.invoice.submissionUrl = result.submissionUrl
+      params.invoice.spspServer = result.spspServer
       params.invoice.identifier = params.system.message
       return params
     })

@@ -11,6 +11,7 @@ module.exports = {
       params.transfer.destinationCurrency = result.currencyCode
       params.transfer.destinationAccount = result.account
       params.transfer.identifier = params.system.message
+      params.transfer.receiver = result.spspServer + '/receivers/' + params.system.message
       return params
     })
     .catch((error) => {
