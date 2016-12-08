@@ -1,3 +1,13 @@
+<a name="0.8.2"></a>
+## [0.8.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.1...v0.8.2) (2016-12-08)
+
+
+### Bug Fixes
+
+* add receiver when approving pending transaction and making p2p transfer ([08d447c](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/08d447c))
+
+
+
 <a name="0.8.1"></a>
 ## [0.8.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.0...v0.8.1) (2016-12-08)
 
