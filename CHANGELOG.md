@@ -1,3 +1,13 @@
+<a name="0.8.3"></a>
+## [0.8.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.2...v0.8.3) (2016-12-09)
+
+
+### Bug Fixes
+
+* pass userNumber as sourceIdentifier when transacting ([de1bcca](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/de1bcca))
+
+
+
 <a name="0.8.2"></a>
 ## [0.8.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.1...v0.8.2) (2016-12-08)
 
