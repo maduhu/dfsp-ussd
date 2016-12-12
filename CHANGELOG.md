@@ -1,3 +1,13 @@
+<a name="0.8.8"></a>
+## [0.8.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.7...v0.8.8) (2016-12-12)
+
+
+### Bug Fixes
+
+* remove pin step when sending invoice notifications ([b022df2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b022df2))
+
+
+
 <a name="0.8.7"></a>
 ## [0.8.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.6...v0.8.7) (2016-12-12)
 
