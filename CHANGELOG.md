@@ -1,3 +1,13 @@
+<a name="0.8.7"></a>
+## [0.8.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.6...v0.8.7) (2016-12-12)
+
+
+### Bug Fixes
+
+* typo ([e004b73](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e004b73))
+
+
+
 <a name="0.8.6"></a>
 ## [0.8.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.5...v0.8.6) (2016-12-12)
 
