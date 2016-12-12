@@ -16,8 +16,12 @@ module.exports = {
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment
         params.pendingTransaction.status = result.status
-        return params
+        return this.bus.importMethod('transfer.invoiceNotification.edit')({
+          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId,
+          statusCode: 'e'
+        })
       })
+      .then((result) => params)
       .catch((error) => {
         params.context = error
         return this.redirect('menu/user/wrongUri')
