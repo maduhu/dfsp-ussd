@@ -1,3 +1,13 @@
+<a name="0.8.4"></a>
+## [0.8.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.3...v0.8.4) (2016-12-12)
+
+
+### Bug Fixes
+
+* show only invoice notifications with pending status ([29bd3b6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/29bd3b6))
+
+
+
 <a name="0.8.3"></a>
 ## [0.8.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.2...v0.8.3) (2016-12-09)
 
