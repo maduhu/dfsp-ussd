@@ -1,3 +1,13 @@
+<a name="0.8.5"></a>
+## [0.8.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.4...v0.8.5) (2016-12-12)
+
+
+### Bug Fixes
+
+* delete pending transactions after leaving invoice details screen ([902cfd7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/902cfd7))
+
+
+
 <a name="0.8.4"></a>
 ## [0.8.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.3...v0.8.4) (2016-12-12)
 
