@@ -7,7 +7,7 @@ module.exports = {
       params.pendingTransaction = result
       params.pendingTransaction.invoiceNotificationId = pendingTransaction.invoiceNotificationId
       params.pendingTransaction.fee = 0
-      params.pendingTransaction.receiver = params.system.requestParams.invoiceUrl
+      params.pendingTransaction.receiver = pendingTransaction.invoiceUrl
       return params
     })
   },
