@@ -2,12 +2,12 @@ module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.invoice.add')({
       account: params.user.sourceAccount,
-      name: params.invoice.destinationName,
+      name: params.user.name,
       currencyCode: params.user.currencyCode,
       currencySymbol: params.user.currencySymbol,
       amount: params.invoice.destinationAmount,
-      userNumber: params.invoice.destinationUserNumber,
-      submissionUrl: params.invoice.submissionUrl,
+      userNumber: params.invoice.identifier,
+      spspServer: params.invoice.spspServer,
       invoiceInfo: 'Invoice from ' + params.user.name + ' for ' + params.invoice.destinationAmount + ' ' + params.user.currencyCode
     })
     .then((result) => {

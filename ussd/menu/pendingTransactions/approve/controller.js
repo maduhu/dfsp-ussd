@@ -6,9 +6,9 @@ module.exports = {
     })
     .then((res) => {
       return this.bus.importMethod('transfer.push.execute')({
-        sourceName: params.user.name,
+        sourceIdentifier: params.user.userNumber,
         sourceAccount: params.user.sourceAccount,
-        destinationAccount: params.pendingTransaction.account,
+        receiver: params.pendingTransaction.receiver,
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
         fee: params.pendingTransaction.fee
@@ -16,8 +16,12 @@ module.exports = {
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment
         params.pendingTransaction.status = result.status
-        return params
+        return this.bus.importMethod('transfer.invoiceNotification.edit')({
+          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId,
+          statusCode: 'e'
+        })
       })
+      .then((result) => params)
       .catch((error) => {
         params.context = error
         return this.redirect('menu/user/wrongUri')

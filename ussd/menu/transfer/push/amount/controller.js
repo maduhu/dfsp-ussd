@@ -3,13 +3,15 @@ module.exports = {
     if (params.transfer.destinationAccount) {
       return params
     }
-    return this.bus.importMethod('spsp.payee.get')({
+    return this.bus.importMethod('spsp.transfer.payee.get')({
       identifier: params.system.message
     })
     .then((result) => {
       params.transfer.destinationName = result.name
       params.transfer.destinationCurrency = result.currencyCode
       params.transfer.destinationAccount = result.account
+      params.transfer.identifier = params.system.message
+      params.transfer.receiver = result.spspServer + '/receivers/' + params.system.message
       return params
     })
     .catch((error) => {

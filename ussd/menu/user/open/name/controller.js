@@ -1,6 +1,5 @@
 module.exports = {
   send: function (params) {
-    params.open = {}
     return params
   },
   receive: function (params) {
