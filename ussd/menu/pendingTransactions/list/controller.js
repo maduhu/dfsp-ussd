@@ -11,7 +11,6 @@ module.exports = {
     })
   },
   receive: function (params) {
-    delete params.pendingTransactions
     return params
   }
 }
