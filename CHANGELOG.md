@@ -1,3 +1,13 @@
+<a name="0.8.6"></a>
+## [0.8.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.5...v0.8.6) (2016-12-12)
+
+
+### Bug Fixes
+
+* set status: rejected when rejecting a pending transaction ([014fc5b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/014fc5b))
+
+
+
 <a name="0.8.5"></a>
 ## [0.8.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.4...v0.8.5) (2016-12-12)
 
