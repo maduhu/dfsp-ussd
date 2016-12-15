@@ -1,3 +1,13 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.8...v0.9.0) (2016-12-15)
+
+
+### Features
+
+* add check balance functionallity ([f6ae110](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f6ae110))
+
+
+
 <a name="0.8.8"></a>
 ## [0.8.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.7...v0.8.8) (2016-12-12)
 
