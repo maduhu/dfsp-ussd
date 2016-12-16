@@ -24,12 +24,14 @@ module.exports = {
     .then((res) => {
       params.user.accounts = res
       if (res.length === 1) {
+        var accountNumber = res[0].accountNumber
         return this.bus.importMethod('ledger.account.get')({
-          accountNumber: res[0].accountNumber
+          accountNumber: accountNumber
         }).then((res) => {
           params.user.sourceAccount = res.id
           params.user.currencyCode = res.currencyCode
           params.user.currencySymbol = res.currencySymbol
+          params.user.sourceAccountNumber = accountNumber
           return params
         })
       } else if (res.length > 1) {
