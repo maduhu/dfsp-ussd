@@ -11,7 +11,10 @@ module.exports = {
         receiver: params.pendingTransaction.receiver,
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
-        fee: params.pendingTransaction.fee
+        memo: {
+          fee: params.pendingTransaction.fee,
+          transferType: 'invoice'
+        }
       })
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment

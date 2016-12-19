@@ -6,7 +6,10 @@ module.exports = {
       receiver: params.transfer.receiver,
       destinationAmount: params.transfer.destinationAmount,
       currency: params.transfer.destinationCurrency,
-      fee: params.transfer.fee
+      memo: {
+        fee: params.transfer.fee,
+        transferType: 'p2p'
+      }
     })
     .then((result) => {
       params.transfer.fulfillment = result.fulfillment
