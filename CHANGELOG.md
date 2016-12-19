@@ -1,3 +1,18 @@
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.9.1...v0.10.0) (2016-12-19)
+
+
+### Bug Fixes
+
+* store sourceAccountNumber in ussd session ([df9f3f2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/df9f3f2))
+
+
+### Features
+
+* pass more detailed memo when transacting ([a0af5c9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a0af5c9))
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.9.0...v0.9.1) (2016-12-16)
 
