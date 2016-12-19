@@ -13,7 +13,7 @@ module.exports = {
         currency: params.pendingTransaction.currencyCode,
         memo: JSON.stringify({
           fee: params.pendingTransaction.fee,
-          transferType: 'invoice'
+          transferCode: 'invoice'
         })
       })
       .then((result) => {

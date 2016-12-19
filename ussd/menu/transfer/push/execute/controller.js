@@ -8,7 +8,7 @@ module.exports = {
       currency: params.transfer.destinationCurrency,
       memo: JSON.stringify({
         fee: params.transfer.fee,
-        transferType: 'p2p'
+        transferCode: 'p2p'
       })
     })
     .then((result) => {
