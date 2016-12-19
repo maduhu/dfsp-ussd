@@ -1,3 +1,13 @@
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.0...v0.10.1) (2016-12-19)
+
+
+### Bug Fixes
+
+* pass memo as strign when transacting ([a140e18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a140e18))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.9.1...v0.10.0) (2016-12-19)
 
