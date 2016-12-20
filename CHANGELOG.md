@@ -1,3 +1,13 @@
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.2...v0.11.0) (2016-12-20)
+
+
+### Features
+
+* add debitName and creditName to memo object ([b770f8e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b770f8e))
+
+
+
 <a name="0.10.2"></a>
 ## [0.10.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.1...v0.10.2) (2016-12-19)
 
