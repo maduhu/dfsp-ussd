@@ -1,3 +1,68 @@
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.2...v0.11.0) (2016-12-20)
+
+
+### Features
+
+* add debitName and creditName to memo object ([b770f8e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b770f8e))
+
+
+
+<a name="0.10.2"></a>
+## [0.10.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.1...v0.10.2) (2016-12-19)
+
+
+### Bug Fixes
+
+* rename transferType into transferCode in memo object ([6be520f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/6be520f))
+
+
+
+<a name="0.10.1"></a>
+## [0.10.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.0...v0.10.1) (2016-12-19)
+
+
+### Bug Fixes
+
+* pass memo as strign when transacting ([a140e18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a140e18))
+
+
+
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.9.1...v0.10.0) (2016-12-19)
+
+
+### Bug Fixes
+
+* store sourceAccountNumber in ussd session ([df9f3f2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/df9f3f2))
+
+
+### Features
+
+* pass more detailed memo when transacting ([a0af5c9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a0af5c9))
+
+
+
+<a name="0.9.1"></a>
+## [0.9.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.9.0...v0.9.1) (2016-12-16)
+
+
+### Bug Fixes
+
+* update dependencies ([d9f4ad9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/d9f4ad9))
+
+
+
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.8...v0.9.0) (2016-12-15)
+
+
+### Features
+
+* add check balance functionallity ([f6ae110](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f6ae110))
+
+
+
 <a name="0.8.8"></a>
 ## [0.8.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.8.7...v0.8.8) (2016-12-12)
 

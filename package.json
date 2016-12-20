@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.8.8",
+  "version": "0.11.0",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
@@ -31,16 +31,16 @@
   },
   "dependencies": {
     "joi": "9.0.4",
-    "ut-bus": "^5.4.9",
-    "ut-port-httpserver": "8.1.1",
-    "ut-port-jsonrpc": "^5.5.4",
-    "ut-port-script": "^5.4.4",
-    "ut-port-postgres": "^5.7.0",
-    "ut-ussd": "^6.5.4",
-    "ut-cache": "^5.5.1",
-    "ut-port-performance": "^5.4.6",
-    "ut-port-console": "^6.1.5",
-    "ut-run": "^6.3.1",
+    "ut-bus": "^5.7.0",
+    "ut-port-httpserver": "8.1.8",
+    "ut-port-jsonrpc": "^5.5.9",
+    "ut-port-script": "^5.4.7",
+    "ut-port-postgres": "^5.7.5",
+    "ut-ussd": "^6.5.8",
+    "ut-cache": "^5.5.3",
+    "ut-port-performance": "^5.4.7",
+    "ut-port-console": "^6.1.12",
+    "ut-run": "^7.2.1",
     "pm2": "2.0.12"
   },
   "devDependencies": {
