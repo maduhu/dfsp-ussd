@@ -5,9 +5,7 @@ module.exports = {
       accountNumber: params.user.sourceAccountNumber,
       isDefault: true
     }).then((res) => {
-      
-    }).catch((err) => {
-      var x = 1
+      return params
     })
   },
   receive: function (params) {
