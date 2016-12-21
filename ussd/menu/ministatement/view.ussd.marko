@@ -1,0 +1,12 @@
+<if test="!params.ministatements">
+    No ministatements found!
+</if>
+<else>
+    Ministatements:
+    <br/><br/>Name;Amount;Date
+    <for each="i from 0 to params.ministatements.length-1">
+        <br/>${params.ministatements[i].name};${params.ministatements[i].amount};${params.ministatements[i].date}
+    </for>
+</else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>
