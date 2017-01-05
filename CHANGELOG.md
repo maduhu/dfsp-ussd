@@ -1,3 +1,22 @@
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.11.1...v0.12.0) (2017-01-05)
+
+
+### Bug Fixes
+
+* linting ([e97295b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e97295b))
+* ministatement ([7bfd162](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/7bfd162))
+* store sourceAccountNumber in ussd session ([8e14e3e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8e14e3e))
+
+
+### Features
+
+* add functionallity for changing the default account from edit account menu ([c8ed194](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c8ed194))
+* add ministatement functionallity ([8862279](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8862279))
+* add switch account functionallity ([39d57f5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/39d57f5))
+
+
+
 <a name="0.11.1"></a>
 ## [0.11.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.11.0...v0.11.1) (2017-01-05)
 
