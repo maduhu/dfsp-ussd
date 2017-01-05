@@ -1,11 +1,11 @@
-<if test="!params.ministatements">
-    No ministatements found!
+<if test="!params.ministatement">
+    No transfer history!
 </if>
 <else>
-    Ministatements:
+    Ministatement:
     <br/><br/>Name;Amount;Date
-    <for each="i from 0 to params.ministatements.length-1">
-        <br/>${params.ministatements[i].name};${params.ministatements[i].amount};${params.ministatements[i].date}
+    <for each="i from 0 to params.ministatement.length-1">
+        <br/>${params.ministatement[i].name};${params.ministatement[i].amount};${params.ministatement[i].date}
     </for>
 </else>
 <br/>
