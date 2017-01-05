@@ -1,3 +1,13 @@
+<a name="0.11.1"></a>
+## [0.11.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.11.0...v0.11.1) (2017-01-05)
+
+
+### Bug Fixes
+
+* set connectorFee to 0 in case /quoteDestinationAmount returns an error ([63b8c77](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/63b8c77))
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.10.2...v0.11.0) (2016-12-20)
 
