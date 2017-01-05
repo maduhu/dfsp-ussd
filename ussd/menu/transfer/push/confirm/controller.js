@@ -9,10 +9,14 @@ module.exports = {
       .then(result => {
         params.transfer.fee = result.fee && result.fee.amount || 0
         return this.bus.importMethod('spsp.rule.decision.fetch')(msg)
-      })
-      .then(result => {
-        params.transfer.connectorFee = result.sourceAmount && (result.sourceAmount - msg.amount) || 0
-        return params
+          .then(result => {
+            params.transfer.connectorFee = result.sourceAmount && (result.sourceAmount - msg.amount) || 0
+            return params
+          })
+          .catch(e => {
+            params.transfer.connectorFee = 0
+            return params
+          })
       })
       .catch((error) => {
         params.context = error
