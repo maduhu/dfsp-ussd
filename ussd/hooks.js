@@ -10,6 +10,9 @@ module.exports = {
   },
   beforeReceive: function (params) {
     delete params.context
+    if (!params.system.input) {
+      return this.redirect('menu/error/wrongInput')
+    }
     return params
   },
   afterReceive: function (params) {

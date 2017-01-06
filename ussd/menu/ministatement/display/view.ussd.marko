@@ -1,0 +1,12 @@
+<if test="!params.ministatement">
+    No transfer history!
+</if>
+<else>
+    Ministatement:
+    <br/><br/>Name;Amount;Date
+    <for each="i from 0 to params.ministatement.length-1">
+        <br/>${params.ministatement[i].name};${params.ministatement[i].amount};${params.ministatement[i].date}
+    </for>
+</else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>
