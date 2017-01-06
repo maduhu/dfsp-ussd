@@ -1,3 +1,13 @@
+<a name="0.12.1"></a>
+## [0.12.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.0...v0.12.1) (2017-01-06)
+
+
+### Bug Fixes
+
+* round the connector fee, add pin to minstatement, add pin to balance check, fix date on ministatement, fees for approaval of pending transacitons, create new account - balance on both accounts are the same ([be208e4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/be208e4))
+
+
+
 <a name="0.12.0"></a>
 # [0.12.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.11.1...v0.12.0) (2017-01-05)
 
