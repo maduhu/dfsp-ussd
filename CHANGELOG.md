@@ -1,3 +1,14 @@
+<a name="0.13.0"></a>
+# [0.13.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.2...v0.13.0) (2017-01-09)
+
+
+### Features
+
+* prepare account name change screens ([9f99380](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9f99380))
+* prepare close account screens ([f3f9c10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f3f9c10))
+
+
+
 <a name="0.12.2"></a>
 ## [0.12.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.1...v0.12.2) (2017-01-09)
 
