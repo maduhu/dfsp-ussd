@@ -1,3 +1,13 @@
+<a name="0.12.2"></a>
+## [0.12.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.1...v0.12.2) (2017-01-09)
+
+
+### Bug Fixes
+
+* typo ([f09ef5d](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f09ef5d))
+
+
+
 <a name="0.12.1"></a>
 ## [0.12.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.0...v0.12.1) (2017-01-06)
 
