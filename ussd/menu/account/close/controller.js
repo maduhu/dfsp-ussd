@@ -11,7 +11,7 @@ module.exports = {
         accountNumber: params.user.sourceAccountNumber
       })
       .then((account) => {
-        if (false && Number(account.balance) > 0) {
+        if (Number(account.balance) > 0) {
           return this.redirect('./forbidden/balance')
         }
         return params
