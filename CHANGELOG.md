@@ -1,3 +1,18 @@
+<a name="0.14.0"></a>
+# [0.14.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.13.0...v0.14.0) (2017-01-11)
+
+
+### Bug Fixes
+
+* make date with dash instead of space ([71644ab](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/71644ab))
+
+
+### Features
+
+* add primary account pin verification ([62dda84](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/62dda84))
+
+
+
 <a name="0.13.0"></a>
 # [0.13.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.2...v0.13.0) (2017-01-09)
 
