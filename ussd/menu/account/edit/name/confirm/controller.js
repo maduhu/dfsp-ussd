@@ -12,7 +12,13 @@ module.exports = {
         password: params.system.message
       })
       .then((result) => {
-        return params
+        return this.bus.importMethod('ledger.account.edit')({
+          accountNumber: params.user.sourceAccountNumber,
+          name: params.newAccountName
+        })
+        .then((res) => {
+          return params
+        })
       })
       .catch((error) => {
         delete params.newAccountName
