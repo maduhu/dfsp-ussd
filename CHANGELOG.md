@@ -1,3 +1,18 @@
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.15.0...v0.16.0) (2017-01-12)
+
+
+### Bug Fixes
+
+* unit tests ([a496c76](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a496c76))
+
+
+### Features
+
+* close account ([c4eda2f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c4eda2f))
+
+
+
 <a name="0.15.0"></a>
 # [0.15.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.1...v0.15.0) (2017-01-12)
 
