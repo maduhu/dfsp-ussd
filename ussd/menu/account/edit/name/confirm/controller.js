@@ -17,6 +17,13 @@ module.exports = {
           name: params.newAccountName
         })
         .then((res) => {
+          params.user.accounts = params.user.accounts.map((acc) => {
+            if (acc.accountNumber === params.user.sourceAccountNumber) {
+              acc.name = params.newAccountName
+            }
+            return acc
+          })
+          delete params.newAccountName
           return params
         })
       })
