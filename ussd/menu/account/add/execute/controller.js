@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('ledger.account.edit')({
+    return this.bus.importMethod('ledger.account.add')({
       accountNumber: params.open.name,
       balance: 1000,
       name: params.open.name
