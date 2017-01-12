@@ -1,3 +1,20 @@
+<a name="0.17.0"></a>
+# [0.17.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.16.0...v0.17.0) (2017-01-12)
+
+
+### Bug Fixes
+
+* create account.account by accountNumber, not account name ([d93f98e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/d93f98e))
+* update account name in session on account rename ([7055110](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/7055110))
+
+
+### Features
+
+* account rename ([560840b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/560840b))
+* show account number in info menu ([bb5d0c6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/bb5d0c6))
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.15.0...v0.16.0) (2017-01-12)
 
