@@ -7,7 +7,7 @@ module.exports = {
     .then((res) => {
       return this.bus.importMethod('account.account.add')({
         actorId: params.user.actorId,
-        accountNumber: res.name,
+        accountNumber: res.accountNumber,
         isDefault: params.open.isDefault
       })
     })
