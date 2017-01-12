@@ -1,3 +1,14 @@
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.1...v0.15.0) (2017-01-12)
+
+
+### Features
+
+* add account information in manage accaunt sub-menu ([3d6ae92](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/3d6ae92))
+* add local fee in confirm successfull transaction page (send money) ([43fd61a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/43fd61a))
+
+
+
 <a name="0.14.1"></a>
 ## [0.14.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.0...v0.14.1) (2017-01-12)
 
