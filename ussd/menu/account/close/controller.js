@@ -37,9 +37,7 @@ module.exports = {
             accountNumber: params.user.accounts.map((el) => el.accountNumber)
           })
           .then((res) => {
-            params.user.accounts = params.user.accounts.filter((el) => {
-              return res.some((e) => e.accountNumber === el.accountNumber)
-            })
+            params.user.accounts = res
             if (res.length === 1) {
               var accountNumber = res[0].accountNumber
               return this.bus.importMethod('ledger.account.get')({

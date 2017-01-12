@@ -6,6 +6,6 @@
     Select Account:
     <br/>
     <for each="i from 0 to params.user.availableAccounts.length-1">
-        <br/><a id="${i+1}" href="menu/home?accountNumber=${params.user.availableAccounts[i].accountNumber}">${i+1}. ${params.user.availableAccounts[i].accountNumber}</a>
+        <br/><a id="${i+1}" href="menu/home?accountNumber=${params.user.availableAccounts[i].accountNumber}">${i+1}. ${params.user.availableAccounts[i].name}</a>
     </for>
 </else>
