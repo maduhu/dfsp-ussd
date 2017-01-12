@@ -1,7 +1,9 @@
 Destination name: ${params.transfer.destinationName}
 <br/>Amount: ${params.transfer.destinationAmount} ${params.transfer.destinationCurrency}
 <br/>Local fee: ${params.transfer.fee}
-<br/>Connector fee: ${params.transfer.connectorFee}
+<if test="params.transfer.connectorFee != 0">
+    <br/>Connector fee: ${params.transfer.connectorFee}
+</if>
 <br/><a id="*" href="../execute">Enter PIN to confirm</a>
 <a id="*" href="../execute?proceed=1"></a>
 <br/>

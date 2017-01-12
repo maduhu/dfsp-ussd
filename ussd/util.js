@@ -2,6 +2,6 @@ var monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
 
 module.exports = {
   formatDate: function (d) {
-    return d.getDate() + ' ' + monthNames[d.getMonth()] // + ' ' + d.getFullYear()
+    return d.getDate() + '-' + monthNames[d.getMonth()] // + ' ' + d.getFullYear()
   }
 }

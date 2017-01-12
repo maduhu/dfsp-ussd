@@ -1,3 +1,54 @@
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.15.0...v0.16.0) (2017-01-12)
+
+
+### Bug Fixes
+
+* unit tests ([a496c76](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a496c76))
+
+
+### Features
+
+* close account ([c4eda2f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c4eda2f))
+
+
+
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.1...v0.15.0) (2017-01-12)
+
+
+### Features
+
+* add account information in manage accaunt sub-menu ([3d6ae92](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/3d6ae92))
+* add local fee in confirm successfull transaction page (send money) ([43fd61a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/43fd61a))
+
+
+
+<a name="0.14.1"></a>
+## [0.14.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.0...v0.14.1) (2017-01-12)
+
+
+### Bug Fixes
+
+* hide connector fee in case of zero ([1d5520f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1d5520f))
+
+
+
+<a name="0.14.0"></a>
+# [0.14.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.13.0...v0.14.0) (2017-01-11)
+
+
+### Bug Fixes
+
+* make date with dash instead of space ([71644ab](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/71644ab))
+
+
+### Features
+
+* add primary account pin verification ([62dda84](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/62dda84))
+
+
+
 <a name="0.13.0"></a>
 # [0.13.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.12.2...v0.13.0) (2017-01-09)
 
