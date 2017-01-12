@@ -23,12 +23,12 @@ module.exports = {
             }
             return acc
           })
+          params.user.sourceAccountName = params.newAccountName
           delete params.newAccountName
           return params
         })
       })
       .catch((error) => {
-        delete params.newAccountName
         params.context = error
         return this.redirect('menu/error/wrongPin')
       })

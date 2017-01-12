@@ -34,6 +34,7 @@ module.exports = {
               params.user.sourceAccount = res.id
               params.user.currencyCode = res.currencyCode
               params.user.currencySymbol = res.currencySymbol
+              params.user.sourceAccountName = res.name
               params.user.sourceAccountNumber = accountNumber
               return params
             })

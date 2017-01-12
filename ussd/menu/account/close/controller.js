@@ -47,6 +47,7 @@ module.exports = {
                 params.user.currencyCode = res.currencyCode
                 params.user.currencySymbol = res.currencySymbol
                 params.user.sourceAccountNumber = accountNumber
+                params.user.sourceAccountName = res.name
                 return params
               })
             } else if (res.length > 1) {
