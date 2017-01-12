@@ -32,17 +32,14 @@ module.exports = {
           accountNumber: params.user.sourceAccountNumber,
           isDisabled: true
         })
-        .then((account) => {
-          return this.bus.importMethod('account.account.fetch')({
-            actorId: params.user.actorId
-          })
-        })
-        .then((res) => {
+        .then(() => {
           return this.bus.importMethod('ledger.account.fetch')({
-            accountNumber: res.map((el) => el.accountNumber)
+            accountNumber: params.user.accounts.map((el) => el.accountNumber)
           })
           .then((res) => {
-            params.user.accounts = res
+            params.user.accounts = params.user.accounts.filter((el) => {
+              return res.some((e) => e.accountNumber === el.accountNumber)
+            })
             if (res.length === 1) {
               var accountNumber = res[0].accountNumber
               return this.bus.importMethod('ledger.account.get')({
