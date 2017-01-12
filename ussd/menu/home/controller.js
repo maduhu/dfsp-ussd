@@ -20,30 +20,30 @@ module.exports = {
       return this.bus.importMethod('account.account.fetch')({
         actorId: params.user.actorId
       })
-    })
-    .then((r) => {
-      return this.bus.importMethod('ledger.account.fetch')({
-        accountNumber: r.map((el) => el.accountNumber)
-      })
-      .then((res) => {
-        params.user.accounts = params.user.accounts.filter((el) => {
-          return r.some((e) => e.accountNumber === el.accountNumber)
+      .then((r) => {
+        return this.bus.importMethod('ledger.account.fetch')({
+          accountNumber: r.map((el) => el.accountNumber)
         })
-        if (res.length === 1) {
-          var accountNumber = res[0].accountNumber
-          return this.bus.importMethod('ledger.account.get')({
-            accountNumber: accountNumber
-          }).then((res) => {
-            params.user.sourceAccount = res.id
-            params.user.currencyCode = res.currencyCode
-            params.user.currencySymbol = res.currencySymbol
-            params.user.sourceAccountNumber = accountNumber
-            return params
+        .then((res) => {
+          params.user.accounts = r.filter((el) => {
+            return res.some((e) => e.accountNumber === el.accountNumber)
           })
-        } else if (res.length > 1) {
-          return this.redirect('menu/account/select')
-        }
-        return params
+          if (res.length === 1) {
+            var accountNumber = res[0].accountNumber
+            return this.bus.importMethod('ledger.account.get')({
+              accountNumber: accountNumber
+            }).then((res) => {
+              params.user.sourceAccount = res.id
+              params.user.currencyCode = res.currencyCode
+              params.user.currencySymbol = res.currencySymbol
+              params.user.sourceAccountNumber = accountNumber
+              return params
+            })
+          } else if (res.length > 1) {
+            return this.redirect('menu/account/select')
+          }
+          return params
+        })
       })
     })
     .catch(() => {
