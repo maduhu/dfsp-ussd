@@ -1,3 +1,13 @@
+<a name="0.14.1"></a>
+## [0.14.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.14.0...v0.14.1) (2017-01-12)
+
+
+### Bug Fixes
+
+* hide connector fee in case of zero ([1d5520f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1d5520f))
+
+
+
 <a name="0.14.0"></a>
 # [0.14.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.13.0...v0.14.0) (2017-01-11)
 
