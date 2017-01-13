@@ -1,3 +1,13 @@
+<a name="0.17.2"></a>
+## [0.17.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.1...v0.17.2) (2017-01-13)
+
+
+### Bug Fixes
+
+* open account flow bug ([58f58b8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/58f58b8))
+
+
+
 <a name="0.17.1"></a>
 ## [0.17.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.0...v0.17.1) (2017-01-12)
 
