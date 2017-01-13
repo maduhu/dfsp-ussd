@@ -4,7 +4,7 @@ module.exports = {
       userNumber: params.open.number,
       name: params.open.name,
       phoneNumber: params.system.phone,
-      accountNumber: params.open.account,
+      accountName: params.open.account,
       password: params.open.password
     })
     .then((result) => {
