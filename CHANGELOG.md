@@ -1,3 +1,13 @@
+<a name="0.17.3"></a>
+## [0.17.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.2...v0.17.3) (2017-01-13)
+
+
+### Bug Fixes
+
+* wallet add ([4fac746](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4fac746))
+
+
+
 <a name="0.17.2"></a>
 ## [0.17.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.1...v0.17.2) (2017-01-13)
 
