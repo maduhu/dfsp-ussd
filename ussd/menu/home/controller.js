@@ -25,7 +25,10 @@ module.exports = {
           accountNumber: r.map((el) => el.accountNumber)
         })
         .then((res) => {
-          params.user.accounts = res
+          params.user.accounts = res.map((led) => {
+            led.isDefault = r.filter((acc) => { return acc.accountNumber === led.accountNumber })[0].isDefault
+            return led
+          })
           if (res.length === 1) {
             var accountNumber = res[0].accountNumber
             return this.bus.importMethod('ledger.account.get')({
@@ -36,6 +39,7 @@ module.exports = {
               params.user.currencySymbol = res.currencySymbol
               params.user.sourceAccountName = res.name
               params.user.sourceAccountNumber = accountNumber
+              params.user.isDefault = params.user.accounts.filter((acc) => acc.accountNumber === params.user.sourceAccountNumber)[0].isDefault
               return params
             })
           } else if (res.length > 1) {

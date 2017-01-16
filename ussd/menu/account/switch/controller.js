@@ -16,6 +16,7 @@ module.exports = {
       params.user.currencySymbol = res.currencySymbol
       params.user.sourceAccountNumber = params.system.input.requestParams.accountNumber
       params.user.sourceAccountName = res.name
+      params.user.isDefault = params.user.accounts.filter((acc) => { return acc.accountNumber === params.user.sourceAccountNumber })[0].isDefault
       delete params.user.availableAccounts
       return params
     })
