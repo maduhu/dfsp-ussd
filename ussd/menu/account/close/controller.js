@@ -1,3 +1,4 @@
+var userHelper = require('../../../userHelper')
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('account.account.get')({
@@ -41,22 +42,13 @@ module.exports = {
                     accountNumber: r.map((el) => el.accountNumber)
                   })
                     .then((res) => {
-                      params.user.accounts = res.map((led) => {
-                        led.isDefault = r.filter((acc) => { return acc.accountNumber === led.accountNumber })[0].isDefault
-                        return led
-                      })
+                      params.user.accounts = userHelper.setAccountsStatus(r, res)
                       if (res.length === 1) {
                         var accountNumber = res[0].accountNumber
                         return this.bus.importMethod('ledger.account.get')({
                           accountNumber: accountNumber
-                        }).then((res) => {
-                          params.user.sourceAccount = res.id
-                          params.user.currencyCode = res.currencyCode
-                          params.user.currencySymbol = res.currencySymbol
-                          params.user.sourceAccountNumber = accountNumber
-                          params.user.sourceAccountName = res.name
-                          params.user.isDefault = params.user.accounts.filter((acc) => acc.accountNumber === params.user.sourceAccountNumber)[0].isDefault
-                          return params
+                        }).then((result) => {
+                          return userHelper.setUserParams(result, accountNumber, params)
                         })
                       } else if (res.length > 1) {
                         return this.redirect('menu/account/select')
