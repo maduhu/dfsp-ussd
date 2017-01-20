@@ -2,7 +2,8 @@ var userHelper = require('../../../userHelper')
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('account.account.get')({
-      accountNumber: params.user.sourceAccountNumber
+      accountNumber: params.user.sourceAccountNumber,
+      actorId: params.user.actorId
     })
     .then((account) => {
       if (account.isDefault) {

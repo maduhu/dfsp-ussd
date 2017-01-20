@@ -1,9 +1,10 @@
 Welcome ${params.user.name}!
 <br/>
-<br/><a id="1" href="../transfer/push/destination">1. Send money</a>
-<br/><a id="2" href="../invoice/destination">2. Sell Goods</a>
-<br/><a id="3" href="../pendingTransactions/list">3. Pending Transactions</a>
-<br/><a id="4" href="../account/manage">4. Manage account</a>
-<br/><a id="5" href="../account/switch">5. Switch account</a>
-<br/><a id="6" href="../balanceCheck">6. Check balance</a>
-<br/><a id="7" href="../ministatement">7. Ministatement</a>
+<var name="ind" value=0 />
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../transfer/push/destination">${ind}. Send money</a></if>
+<br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a>
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../pendingTransactions/list">${ind}. Pending Transactions</a></if>
+<br/><a id="${++ind}" href="../account/manage">${ind}. Manage account</a>
+<br/><a id="${++ind}" href="../account/switch">${ind}. Switch account</a>
+<br/><a id="${++ind}" href="../balanceCheck">${ind}. Check balance</a>
+<br/><a id="${++ind}" href="../ministatement">${ind}. Ministatement</a>

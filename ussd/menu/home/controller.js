@@ -18,6 +18,18 @@ module.exports = {
     .then((res) => {
       params.user.userNumber = res.endUserNumber
       params.user.name = res.name
+      return this.bus.importMethod('identity.get')({
+        username: res.name,
+        type: 'password'
+      })
+      .then((r) => {
+        if (!r.hashParams || r.hashParams.length === 0) {
+          return this.redirect('menu/user/missingPin')
+        }
+        return params
+      })
+    })
+    .then((res) => {
       return this.bus.importMethod('account.account.fetch')({
         actorId: params.user.actorId
       })

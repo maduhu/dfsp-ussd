@@ -1,5 +1,21 @@
 module.exports = {
   send: function (params) {
-    return params
+    return this.bus.importMethod('account.account.fetch')({
+      accountNumber: params.user.sourceAccountNumber
+    })
+    .then((res) => {
+      return this.bus.importMethod('directory.user.fetch')({
+        actorId: res.map((el) => parseInt(el.actorId))
+      })
+      .then((r) => {
+        params.context = {
+          holders: r.map((el) => ({
+            name: el.name,
+            isSignatory: res.filter((acc) => acc.actorId === '' + el.actorId)[0].isSignatory
+          }))
+        }
+        return params
+      })
+    })
   }
 }
