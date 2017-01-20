@@ -23,7 +23,8 @@ module.exports = {
     .then((res) => {
       var signatoryUsers = res.filter((el) => el.isSignatory)
       if (signatoryUsers.length === 1 && signatoryUsers[0].actorId === params.remove.actorId) {
-        return this.redirect('./error')
+        params.context = {errorPrint: 'The account must have at least one signatory holder!'}
+        return this.redirect('menu/error/generic')
       }
       return params
     })

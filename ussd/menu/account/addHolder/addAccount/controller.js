@@ -21,7 +21,7 @@ module.exports = {
     })
     .catch((error) => {
       params.context = error
-      return this.redirect('../error')
+      return this.redirect('menu/error/generic')
     })
   }
 }
