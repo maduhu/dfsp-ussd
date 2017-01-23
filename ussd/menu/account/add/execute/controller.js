@@ -8,7 +8,8 @@ module.exports = {
       return this.bus.importMethod('account.account.add')({
         actorId: params.user.actorId,
         accountNumber: res.accountNumber,
-        isDefault: params.open.isDefault
+        isDefault: params.open.isDefault,
+        isSignatory: true
       })
     })
   },

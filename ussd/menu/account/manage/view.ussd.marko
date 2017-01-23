@@ -1,7 +1,10 @@
 Select which action you would like to take:
 <br/>
+<var name="ind" value=0 />
 <br/><a id="0" href="menu/home">0. Home</a>
-<br/><a id="1" href="../add/name">1. Add account</a>
-<br/><a id="2" href="../edit">2. Edit account</a>
-<br/><a id="3" href="../close">3. Close account</a>
-<br/><a id="4" href="../info">4. Account info</a>
+<br/><a id="${++ind}1" href="../add/name">${ind}. Add account</a>
+<br/><a id="${++ind}" href="../edit">${ind}. Edit account</a>
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../close">${ind}. Close account</a></if>
+<br/><a id="${++ind}" href="../info">${ind}. Account info</a>
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../addHolder/name">${ind}. Add holder</a></if>
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../removeHolder">${ind}. Remove holder</a></if>

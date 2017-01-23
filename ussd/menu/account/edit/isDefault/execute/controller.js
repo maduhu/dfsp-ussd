@@ -5,6 +5,11 @@ module.exports = {
       accountNumber: params.user.sourceAccountNumber,
       isDefault: true
     }).then((res) => {
+      params.user.isDefault = true
+      params.user.accounts = params.user.accounts.map((acc) => {
+        acc.accountNumber === params.user.sourceAccountNumber ? acc.isDefault = true : acc.isDefault = false
+        return acc
+      })
       return params
     })
   },
