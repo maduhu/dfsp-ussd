@@ -52,6 +52,7 @@ module.exports = {
                           return userHelper.setUserParams(result, accountNumber, params)
                         })
                       } else if (res.length > 1) {
+                        params.context.message = 'Your account ' + params.user.sourceAccountName + ' was successfully closed.'
                         return this.redirect('menu/account/select')
                       }
                       return params
