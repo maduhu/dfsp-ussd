@@ -9,7 +9,7 @@ module.exports = {
     return params
   },
   beforeReceive: function (params) {
-    delete params.context
+    params.context = {}
     if (!params.system.input) {
       return this.redirect('menu/error/wrongInput')
     }
