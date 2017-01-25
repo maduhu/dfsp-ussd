@@ -1,3 +1,4 @@
+var userHelper = require('../../../userHelper')
 module.exports = {
   send: function (params) {
     return params
@@ -7,11 +8,7 @@ module.exports = {
       accountNumber: params.system.input.requestParams.accountNumber
     })
     .then((res) => {
-      params.user.sourceAccount = res.id
-      params.user.currencyCode = res.currencyCode
-      params.user.currencySymbol = res.currencySymbol
-      params.user.sourceAccountNumber = params.system.input.requestParams.accountNumber
-      params.user.sourceAccountName = res.name
+      params = userHelper.setUserParams(res, params.system.input.requestParams.accountNumber, params)
       return params
     })
   }

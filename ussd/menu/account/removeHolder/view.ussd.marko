@@ -1,0 +1,7 @@
+Account holders:
+<br/>
+<for each="i from 0 to params.context.holders.length-1">
+    <br/><a id="${i+1}" href="menu/account/removeHolder/pin?holderActorId=${params.context.holders[i].actorId}">${i+1}.  ${params.context.holders[i].name}</a>
+</for>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>

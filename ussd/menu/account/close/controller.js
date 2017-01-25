@@ -1,7 +1,9 @@
+var userHelper = require('../../../userHelper')
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('account.account.get')({
-      accountNumber: params.user.sourceAccountNumber
+      accountNumber: params.user.sourceAccountNumber,
+      actorId: params.user.actorId
     })
     .then((account) => {
       if (account.isDefault) {
@@ -27,43 +29,44 @@ module.exports = {
         username: params.system.phone,
         password: params.system.message
       })
-      .then((result) => {
-        return this.bus.importMethod('ledger.account.edit')({
-          accountNumber: params.user.sourceAccountNumber,
-          isDisabled: true
-        })
-        .then(() => {
-          return this.bus.importMethod('ledger.account.fetch')({
-            accountNumber: params.user.accounts.map((el) => el.accountNumber)
+        .then((result) => {
+          return this.bus.importMethod('ledger.account.edit')({
+            accountNumber: params.user.sourceAccountNumber,
+            isDisabled: true
           })
-          .then((res) => {
-            params.user.accounts = res
-            if (res.length === 1) {
-              var accountNumber = res[0].accountNumber
-              return this.bus.importMethod('ledger.account.get')({
-                accountNumber: accountNumber
-              }).then((res) => {
-                params.user.sourceAccount = res.id
-                params.user.currencyCode = res.currencyCode
-                params.user.currencySymbol = res.currencySymbol
-                params.user.sourceAccountNumber = accountNumber
-                params.user.sourceAccountName = res.name
-                return params
+            .then(() => {
+              return this.bus.importMethod('account.account.fetch')({
+                actorId: params.user.actorId
               })
-            } else if (res.length > 1) {
-              return this.redirect('menu/account/select')
-            }
-            return params
-          })
+                .then((r) => {
+                  return this.bus.importMethod('ledger.account.fetch')({
+                    accountNumber: r.map((el) => el.accountNumber)
+                  })
+                    .then((res) => {
+                      params.user.accounts = userHelper.setAccountsStatus(r, res)
+                      if (res.length === 1) {
+                        var accountNumber = res[0].accountNumber
+                        return this.bus.importMethod('ledger.account.get')({
+                          accountNumber: accountNumber
+                        }).then((result) => {
+                          return userHelper.setUserParams(result, accountNumber, params)
+                        })
+                      } else if (res.length > 1) {
+                        params.context.message = 'Your account ' + params.user.sourceAccountName + ' was successfully closed.'
+                        return this.redirect('menu/account/select')
+                      }
+                      return params
+                    })
+                })
+            })
+            .catch(() => {
+              return this.redirect('menu/error/generic')
+            })
         })
-        .catch(() => {
-          return this.redirect('menu/error/generic')
+        .catch((error) => {
+          params.context = error
+          return this.redirect('menu/error/wrongPin')
         })
-      })
-      .catch((error) => {
-        params.context = error
-        return this.redirect('menu/error/wrongPin')
-      })
     }
     return params
   }

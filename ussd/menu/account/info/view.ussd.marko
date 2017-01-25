@@ -3,8 +3,13 @@ Account information
 <br/>Account number: ${params.user.sourceAccountNumber}
 <br/>Account name: ${params.user.sourceAccountName}
 <br/>User number: ${params.user.userNumber}
-<br/>User name: ${params.user.name}
 <br/>Currency: ${params.user.currencyCode}
+<br/>Account status: ${params.user.isDefault ? 'Primary' : 'Secondary'}
+<br/>
+<br/>Account holders:
+<for each="i from 0 to params.context.holders.length-1">
+    <br/>* ${params.context.holders[i].name}<if test="params.context.holders[i].isSignatory"> (Signatory)</if>
+</for>
 <br/>
 <br/><a id="0" href="menu/home">0. Home</a>
 <br/><a id="1" href="back">1. Back</a>
