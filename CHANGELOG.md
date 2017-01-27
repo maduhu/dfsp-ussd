@@ -1,3 +1,13 @@
+<a name="0.18.1"></a>
+## [0.18.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.0...v0.18.1) (2017-01-27)
+
+
+### Bug Fixes
+
+* tag after push and before build ([45730ba](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/45730ba))
+
+
+
 <a name="0.18.0"></a>
 # [0.18.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.3...v0.18.0) (2017-01-27)
 
