@@ -17,5 +17,9 @@ module.exports = {
         return params
       })
     })
+    .catch((err) => {
+      params.context = err
+      return this.redirect('menu/error/generic')
+    })
   }
 }

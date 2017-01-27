@@ -4,6 +4,9 @@ module.exports = {
     return params
   },
   receive: function (params) {
+    if (!params.system.input.requestParams.proceed) {
+      return params
+    }
     return this.bus.importMethod('spsp.transfer.payee.get')({
       identifier: params.system.message
     })
