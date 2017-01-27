@@ -1,3 +1,23 @@
+<a name="0.18.0"></a>
+# [0.18.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.3...v0.18.0) (2017-01-27)
+
+
+### Bug Fixes
+
+* add more exceptions to .gitignore ([53dbce4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/53dbce4))
+* bug fixing in account management screens ([01213f6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/01213f6))
+* show success close account message if user has more than 2 left active accounts ([1e08b51](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1e08b51))
+* update dependency to ut-tools ([8523022](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8523022))
+
+
+### Features
+
+* add account status in account info page ([93bd631](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/93bd631))
+* manage account holders ([a321ba2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a321ba2))
+* remove option to make the primary account again primary ([f0629d7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f0629d7))
+
+
+
 <a name="0.17.3"></a>
 ## [0.17.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.17.2...v0.17.3) (2017-01-13)
 
