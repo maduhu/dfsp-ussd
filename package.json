@@ -7,6 +7,7 @@
     "changelog": "ut-changelog",
     "check": "ut-check",
     "circleci:build": "ut-circleci-build",
+    "circleci:tag": "ut-circleci-tag",
     "circleci:push": "ut-circleci-push",
     "circleci:test": "ut-circleci-test",
     "cover": "ut-cover",
