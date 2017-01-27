@@ -1,3 +1,13 @@
+<a name="0.18.2"></a>
+## [0.18.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.1...v0.18.2) (2017-01-27)
+
+
+### Bug Fixes
+
+* add circleci push command ([63a63f5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/63a63f5))
+
+
+
 <a name="0.18.1"></a>
 ## [0.18.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.0...v0.18.1) (2017-01-27)
 
