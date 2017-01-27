@@ -19,4 +19,5 @@ deployment:
     branch: master
     commands:
       - npm run circleci:build
+      - npm run circleci:tag
       - npm run circleci:push
