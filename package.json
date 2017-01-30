@@ -7,6 +7,7 @@
     "changelog": "ut-changelog",
     "check": "ut-check",
     "circleci:build": "ut-circleci-build",
+    "circleci:cover": "ut-circleci-cover",
     "circleci:tag": "ut-circleci-tag",
     "circleci:push": "ut-circleci-push",
     "circleci:test": "ut-circleci-test",
@@ -47,7 +48,7 @@
   "devDependencies": {
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.13.3",
+    "ut-tools": "^5.13.5",
     "@leveloneproject/dfsp-directory": "*",
     "@leveloneproject/dfsp-rule": "*",
     "@leveloneproject/dfsp-transfer": "*",
