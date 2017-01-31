@@ -1,3 +1,13 @@
+<a name="0.18.3"></a>
+## [0.18.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.2...v0.18.3) (2017-01-31)
+
+
+### Bug Fixes
+
+* circleci settings and npm commands ([b88fdfd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b88fdfd))
+
+
+
 <a name="0.18.2"></a>
 ## [0.18.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.1...v0.18.2) (2017-01-27)
 
