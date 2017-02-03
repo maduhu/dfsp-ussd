@@ -17,9 +17,9 @@ module.exports = {
     })
     .then((res) => {
       params.user.userNumber = res.endUserNumber
-      params.user.name = res.name
+      params.user.name = res.firstName + ' ' + res.lastName
       return this.bus.importMethod('identity.get')({
-        username: res.name,
+        username: params.system.phone,
         type: 'password'
       })
       .then((r) => {
