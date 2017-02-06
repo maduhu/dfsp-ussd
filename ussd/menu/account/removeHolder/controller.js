@@ -9,7 +9,7 @@ module.exports = {
       })
       .then((r) => {
         params.context = {
-          holders: r.map((el) => ({name: el.name, actorId: el.actorId}))
+          holders: r.map((el) => ({name: el.firstName + ' ' + el.lastName, actorId: el.actorId}))
         }
         return params
       })

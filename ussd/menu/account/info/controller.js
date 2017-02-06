@@ -10,7 +10,7 @@ module.exports = {
       .then((r) => {
         params.context = {
           holders: r.map((el) => ({
-            name: el.name,
+            name: el.firstName + ' ' + el.lastName,
             isSignatory: res.filter((acc) => acc.actorId === '' + el.actorId)[0].isSignatory
           }))
         }
