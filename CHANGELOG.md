@@ -1,3 +1,18 @@
+<a name="0.19.0"></a>
+# [0.19.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.3...v0.19.0) (2017-02-06)
+
+
+### Bug Fixes
+
+* handle back option ([7083162](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/7083162))
+
+
+### Features
+
+* add first name, last name, dob and nationalId to directory users ([b47157b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b47157b))
+
+
+
 <a name="0.18.3"></a>
 ## [0.18.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.18.2...v0.18.3) (2017-01-31)
 
