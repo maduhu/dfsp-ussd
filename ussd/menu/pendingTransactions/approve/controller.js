@@ -11,6 +11,7 @@ module.exports = {
         receiver: params.pendingTransaction.receiver,
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
+        fee: params.pendingTransaction.fee,
         memo: JSON.stringify({
           fee: params.pendingTransaction.fee,
           transferCode: 'invoice',
