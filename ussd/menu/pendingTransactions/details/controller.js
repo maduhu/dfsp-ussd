@@ -13,7 +13,7 @@ module.exports = {
         amount: Number(invoice.amount)
       })
       .then(result => {
-        params.pendingTransaction.fee = result.fee && result.fee.amount || 0
+        params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0
         return this.bus.importMethod('spsp.rule.decision.fetch')({
           currency: invoice.currencyCode,
           amount: Number(invoice.amount),
