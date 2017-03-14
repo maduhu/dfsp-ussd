@@ -1,7 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.push.execute')({
-      sourceIdentifier: params.user.userNumber,
+      sourceIdentifier: params.user.identifier,
       sourceAccount: params.user.sourceAccount,
       receiver: params.transfer.receiver,
       destinationAmount: params.transfer.destinationAmount,

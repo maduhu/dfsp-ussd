@@ -6,7 +6,7 @@ module.exports = {
     })
     .then((res) => {
       return this.bus.importMethod('transfer.push.execute')({
-        sourceIdentifier: params.user.userNumber,
+        sourceIdentifier: params.user.identifier,
         sourceAccount: params.user.sourceAccount,
         receiver: params.pendingTransaction.receiver,
         destinationAmount: params.pendingTransaction.amount,

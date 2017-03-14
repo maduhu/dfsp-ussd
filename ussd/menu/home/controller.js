@@ -16,7 +16,7 @@ module.exports = {
       })
     })
     .then((res) => {
-      params.user.userNumber = res.endUserNumber
+      params.user.identifier = res.identifiers[0].identifier
       params.user.name = res.firstName + ' ' + res.lastName
       return this.bus.importMethod('identity.get')({
         username: params.system.phone,
