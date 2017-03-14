@@ -3,7 +3,7 @@ module.exports = {
     return this.bus.importMethod('account.account.add')({
       actorId: '' + params.add.actorId,
       accountNumber: params.user.sourceAccountNumber,
-      isDefault: params.add.isDefault,
+      isDefault: false,
       isSignatory: params.add.isSignatory
     })
     .then((res) => {
