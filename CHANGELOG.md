@@ -1,3 +1,13 @@
+<a name="0.19.4"></a>
+## [0.19.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.3...v0.19.4) (2017-03-15)
+
+
+### Bug Fixes
+
+* add support for different identifier types ([46b2b33](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/46b2b33))
+
+
+
 <a name="0.19.3"></a>
 ## [0.19.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.2...v0.19.3) (2017-03-14)
 
