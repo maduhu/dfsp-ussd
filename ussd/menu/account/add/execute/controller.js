@@ -12,6 +12,10 @@ module.exports = {
         isSignatory: true
       })
     })
+    .catch((error) => {
+      params.context = error
+      return this.redirect('menu/error/generic')
+    })
   },
   receive: function (params) {
     return params
