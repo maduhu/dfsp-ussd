@@ -36,6 +36,8 @@
     "ut-bus": "^5.7.0",
     "ut-port-httpserver": "8.1.8",
     "ut-port-jsonrpc": "^5.5.9",
+
+    "ut-port-http": "^6.4.1",
     "ut-port-script": "^5.4.7",
     "ut-port-postgres": "^5.7.5",
     "ut-ussd": "^6.6.0",
