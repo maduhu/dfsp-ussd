@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.19.5",
+  "version": "0.19.6",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
@@ -36,7 +36,6 @@
     "ut-bus": "^5.7.0",
     "ut-port-httpserver": "8.1.8",
     "ut-port-jsonrpc": "^5.5.9",
-
     "ut-port-http": "^6.4.1",
     "ut-port-script": "^5.4.7",
     "ut-port-postgres": "^5.7.5",

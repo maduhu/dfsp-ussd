@@ -1,3 +1,13 @@
+<a name="0.19.6"></a>
+## [0.19.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.5...v0.19.6) (2017-03-15)
+
+
+### Bug Fixes
+
+* add dependency to ut-port-http ([335eec3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/335eec3))
+
+
+
 <a name="0.19.5"></a>
 ## [0.19.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.4...v0.19.5) (2017-03-15)
 
