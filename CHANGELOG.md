@@ -1,3 +1,13 @@
+<a name="0.19.5"></a>
+## [0.19.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.4...v0.19.5) (2017-03-15)
+
+
+### Bug Fixes
+
+* show proper error to the user in case new account name is already taken ([ef5e4eb](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/ef5e4eb))
+
+
+
 <a name="0.19.4"></a>
 ## [0.19.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.3...v0.19.4) (2017-03-15)
 
