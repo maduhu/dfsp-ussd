@@ -1,7 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.invoiceNotification.fetch')({
-      userNumber: params.user.userNumber,
+      identifier: params.user.identifier,
       statusCode: 'p'
     }).then(function (res) {
       if (Array.isArray(res) && res.length) {

@@ -1,7 +1,8 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('wallet.add')({
-      userNumber: params.open.number,
+      identifier: params.open.number,
+      identifierTypeCode: 'phn',
       firstName: params.open.firstName,
       lastName: params.open.lastName,
       dob: params.open.dob,
