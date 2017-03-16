@@ -1,0 +1,6 @@
+Current default DFSP: ${params.defaultDFSP.shortName}
+<br/>Select new default DFSP:
+<br/>
+<for each="i from 0 to params.dfsp.length-1">
+    <br/><a id="${i+1}" href="./execute?dfsp=${params.dfsp[i].shortName}">${i+1}. ${params.dfsp[i].shortName}</a>
+</for>

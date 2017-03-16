@@ -3,7 +3,7 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    params.open.firstName = params.system.message
+    params.open = {firstName: params.system.message}
     return params
   }
 }
