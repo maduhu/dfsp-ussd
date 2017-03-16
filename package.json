@@ -35,6 +35,8 @@
     "joi": "9.0.4",
     "ut-bus": "^5.7.0",
     "ut-port-httpserver": "8.1.8",
+
+    "ut-port-http": "^6.4.1",
     "ut-port-jsonrpc": "^5.5.16",
     "ut-port-script": "^5.4.7",
     "ut-port-postgres": "^5.7.5",
