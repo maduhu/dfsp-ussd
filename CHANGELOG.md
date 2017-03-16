@@ -1,3 +1,13 @@
+<a name="0.19.7"></a>
+## [0.19.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.6...v0.19.7) (2017-03-16)
+
+
+### Bug Fixes
+
+* remove dependency to ut-port-http as the newest version of ut-port-jsonrpc has it as a dependency ([e58130b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e58130b))
+
+
+
 <a name="0.19.6"></a>
 ## [0.19.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.5...v0.19.6) (2017-03-15)
 
