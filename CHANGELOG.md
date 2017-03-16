@@ -1,3 +1,14 @@
+<a name="0.19.8"></a>
+## [0.19.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.7...v0.19.8) (2017-03-16)
+
+
+### Bug Fixes
+
+* remove blank line ([2186b31](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/2186b31))
+* update dependency to ut-port-http ([e3a42cf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/e3a42cf))
+
+
+
 <a name="0.19.7"></a>
 ## [0.19.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.6...v0.19.7) (2017-03-16)
 
