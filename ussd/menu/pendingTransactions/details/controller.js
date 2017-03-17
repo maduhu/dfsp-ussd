@@ -17,7 +17,8 @@ module.exports = {
         return this.bus.importMethod('spsp.rule.decision.fetch')({
           currency: invoice.currencyCode,
           amount: Number(invoice.amount),
-          identifier: invoice.identifier
+          identifier: invoice.identifier,
+          identifierType: invoice.identifierType
         })
         .then(result => {
           if (result.sourceAmount) {

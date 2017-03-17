@@ -2,7 +2,7 @@ module.exports = {
   send: function (params) {
     return this.bus.importMethod('wallet.add')({
       identifier: params.system.phone,
-      identifierTypeCode: 'phn',
+      identifierType: 'phn',
       firstName: params.open.firstName,
       lastName: params.open.lastName,
       dob: params.open.dob,
