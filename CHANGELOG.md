@@ -1,3 +1,13 @@
+<a name="0.20.0"></a>
+# [0.20.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.8...v0.20.0) (2017-03-20)
+
+
+### Features
+
+* hide remove holder menu if there is only one holder ([13d1bcd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/13d1bcd))
+
+
+
 <a name="0.19.8"></a>
 ## [0.19.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.7...v0.19.8) (2017-03-16)
 
