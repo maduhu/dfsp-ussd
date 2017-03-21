@@ -1,3 +1,13 @@
+<a name="0.20.1"></a>
+## [0.20.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.0...v0.20.1) (2017-03-21)
+
+
+### Bug Fixes
+
+* remove holder pin check back option not working ([93e1afa](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/93e1afa))
+
+
+
 <a name="0.20.0"></a>
 # [0.20.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.8...v0.20.0) (2017-03-20)
 
