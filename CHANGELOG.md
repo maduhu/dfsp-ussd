@@ -1,3 +1,13 @@
+<a name="0.20.2"></a>
+## [0.20.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.1...v0.20.2) (2017-03-23)
+
+
+### Bug Fixes
+
+* handle no account use case to correctly construct ussd menus ([3c613c8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/3c613c8))
+
+
+
 <a name="0.20.1"></a>
 ## [0.20.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.0...v0.20.1) (2017-03-21)
 
