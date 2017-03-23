@@ -1,5 +1,6 @@
 Welcome ${params.user.name}!
 <br/>
+<if test="params.user.accounts">
 <var name="ind" value=0 />
 <if test="params.user.isSignatory"><br/><a id="${++ind}" href="../transfer/push/destination">${ind}. Send money</a></if>
 <br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a>
@@ -8,3 +9,7 @@ Welcome ${params.user.name}!
 <br/><a id="${++ind}" href="../account/switch">${ind}. Switch account</a>
 <br/><a id="${++ind}" href="../balanceCheck">${ind}. Check balance</a>
 <br/><a id="${++ind}" href="../ministatement">${ind}. Ministatement</a>
+</if>
+<else>
+<br/><a id="1" href="../account/manage">1. Manage account</a>
+</else>

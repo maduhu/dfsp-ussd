@@ -43,7 +43,8 @@ module.exports = {
             var accountNumber = res[0].accountNumber
             return this.bus.importMethod('ledger.account.get')({
               accountNumber: accountNumber
-            }).then((result) => {
+            })
+            .then((result) => {
               params = userHelper.setUserParams(result, accountNumber, params)
               return params
             })
@@ -52,6 +53,7 @@ module.exports = {
           }
           return params
         })
+        .catch(() => params)
       })
     })
     .catch(() => {

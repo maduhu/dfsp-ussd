@@ -1,5 +1,6 @@
 Select which action you would like to take:
 <br/>
+<if test="params.user.accounts">
 <var name="ind" value=0 />
 <br/><a id="0" href="menu/home">0. Home</a>
 <br/><a id="${++ind}" href="../add/name">${ind}. Add account</a>
@@ -8,3 +9,7 @@ Select which action you would like to take:
 <br/><a id="${++ind}" href="../info">${ind}. Account info</a>
 <if test="params.user.isSignatory"><br/><a id="${++ind}" href="../addHolder/identifier">${ind}. Add holder</a></if>
 <if test="params.user.isSignatory && params.context.holders.length > 1"><br/><a id="${++ind}" href="../removeHolder">${ind}. Remove holder</a></if>
+</if>
+<else>
+<br/><a id="1" href="../add/name">1. Add account</a>
+</else>
