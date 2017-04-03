@@ -1,3 +1,13 @@
+<a name="0.21.1"></a>
+## [0.21.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.0...v0.21.1) (2017-04-03)
+
+
+### Bug Fixes
+
+* update ut-port-httpserver ([c8bcc82](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c8bcc82))
+
+
+
 <a name="0.21.0"></a>
 # [0.21.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.2...v0.21.0) (2017-04-03)
 
