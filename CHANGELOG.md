@@ -1,3 +1,13 @@
+<a name="0.21.0"></a>
+# [0.21.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.2...v0.21.0) (2017-04-03)
+
+
+### Features
+
+* dynamic session resuming ([f248f1f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f248f1f))
+
+
+
 <a name="0.20.2"></a>
 ## [0.20.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.1...v0.20.2) (2017-03-23)
 
