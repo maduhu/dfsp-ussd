@@ -23,6 +23,7 @@ module.exports = {
         type: 'password'
       })
       .then((r) => {
+        params.user.roles = r.roles.map((el) => el.name)
         if (!r.hashParams || r.hashParams.length === 0) {
           return this.redirect('menu/user/missingPin')
         }

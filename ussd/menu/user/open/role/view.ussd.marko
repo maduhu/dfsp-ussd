@@ -1,0 +1,6 @@
+Choose role:
+<a id="*" href="../pin?proceed=0"></a>
+<br/><br/><a id="0" href="back">0. Back</a>
+<for each="i from 0 to params.context.roles.length-1">
+    <br/><a id="${i+1}" href="../pin?proceed=0&name=${params.context.roles[i].name}">${i+1}. ${params.context.roles[i].name}</a>
+</for>
