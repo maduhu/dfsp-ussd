@@ -1,3 +1,13 @@
+<a name="0.22.0"></a>
+# [0.22.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.1...v0.22.0) (2017-04-04)
+
+
+### Features
+
+* add cash in/out functionality ([dabb154](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/dabb154))
+
+
+
 <a name="0.21.1"></a>
 ## [0.21.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.0...v0.21.1) (2017-04-03)
 
