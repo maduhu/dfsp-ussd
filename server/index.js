@@ -4,8 +4,7 @@ module.exports = {
   ports: [
     require('../httpserver'),
     require('../script'),
-    require('../httpclient/api'),
-    require('../httpclient/identity')
+    require('../httpclient/api')
   ],
   modules: {
     cache: require('ut-cache'),
