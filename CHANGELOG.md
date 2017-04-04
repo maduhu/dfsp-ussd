@@ -1,3 +1,13 @@
+<a name="0.22.1"></a>
+## [0.22.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.22.0...v0.22.1) (2017-04-04)
+
+
+### Bug Fixes
+
+* remove identity dependency ([fc854d0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fc854d0))
+
+
+
 <a name="0.22.0"></a>
 # [0.22.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.1...v0.22.0) (2017-04-04)
 
