@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('identity.role.fetch')({
+    return this.bus.importMethod('account.role.fetch')({
       isPublic: true
     })
     .then((res) => {
@@ -9,7 +9,7 @@ module.exports = {
     })
   },
   receive: function (params) {
-    params.open.role = params.system.input.requestParams.name
+    params.open.roleName = params.system.input.requestParams.name
     return params
   }
 }

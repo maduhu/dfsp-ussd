@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('account.account.fetch')({
+    return this.bus.importMethod('account.actorAccount.fetch')({
       accountNumber: params.user.sourceAccountNumber
     })
     .then((res) => {

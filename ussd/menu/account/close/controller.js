@@ -1,9 +1,8 @@
 var userHelper = require('../../../userHelper')
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('account.account.get')({
-      accountNumber: params.user.sourceAccountNumber,
-      actorId: params.user.actorId
+    return this.bus.importMethod('account.actorAccount.get')({
+      actorAccountId: params.user.actorAccountId
     })
     .then((account) => {
       if (account.isDefault) {
@@ -35,7 +34,7 @@ module.exports = {
             isDisabled: true
           })
             .then(() => {
-              return this.bus.importMethod('account.account.fetch')({
+              return this.bus.importMethod('account.actorAccount.fetch')({
                 actorId: params.user.actorId
               })
                 .then((r) => {

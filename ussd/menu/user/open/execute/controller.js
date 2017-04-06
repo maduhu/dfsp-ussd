@@ -10,7 +10,7 @@ module.exports = {
       phoneNumber: params.system.phone,
       accountName: params.open.account,
       password: params.open.password,
-      roles: [params.open.role]
+      roleName: params.open.roleName
     })
     .then((result) => {
       params.open.result = result

@@ -1,13 +1,12 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('account.account.remove')({
-      accountNumber: params.user.sourceAccountNumber,
-      actorId: params.remove.actorId
+    return this.bus.importMethod('account.actorAccount.remove')({
+      accountNumber: params.user.actorAccountId
     })
     .then((result) => {
       var actorId = params.remove.actorId
       delete params.remove
-      return this.bus.importMethod('account.account.fetch')({
+      return this.bus.importMethod('account.actorAccount.fetch')({
         actorId: actorId
       })
       .then((accounts) => {
@@ -20,9 +19,8 @@ module.exports = {
         .then((ledgers) => {
           var primaryAccount = accounts.filter((el) => el.isDefault)
           if (primaryAccount.length < 1 && ledgers.length > 0) {
-            return this.bus.importMethod('account.account.edit')({
-              actorId: actorId,
-              accountNumber: ledgers[0].accountNumber,
+            return this.bus.importMethod('account.actorAccount.edit')({
+              actorAccountId: primaryAccount.actorAccountId,
               isDefault: true
             })
           }

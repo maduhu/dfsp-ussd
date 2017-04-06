@@ -3,24 +3,17 @@ module.exports = {
     var msg = {
       currency: params.cashin.destinationCurrency,
       amount: params.cashin.destinationAmount,
-      identifier: params.cashin.identifier
+      destinationIdentifier: params.cashin.identifier,
+      destinationAccount: params.cashin.destinationAccount,
+      sourceAccount: params.user.sourceAccountName,
+      sourceIdentifier: params.user.identifier,
+      transferType: 'cashOut'
     }
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
         params.cashin.fee = (result.fee && result.fee.amount) || 0
-        return this.bus.importMethod('spsp.rule.decision.fetch')(msg)
-          .then(result => {
-            if (result.sourceAmount) {
-              params.cashin.connectorFee = Math.round((result.sourceAmount - msg.amount) * 100) / 100
-            } else {
-              params.cashin.connectorFee = 0
-            }
-            return params
-          })
-          .catch(e => {
-            params.cashin.connectorFee = 0
-            return params
-          })
+        params.cashin.connectorFee = (result.connectorFee && result.connectorFee) || 0
+        return params
       })
       .catch((error) => {
         params.context = error

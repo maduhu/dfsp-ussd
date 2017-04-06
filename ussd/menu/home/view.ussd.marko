@@ -2,15 +2,15 @@ Welcome ${params.user.name}!
 <br/>
 <if test="params.user.accounts">
 <var name="ind" value=0 />
-<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../transfer/push/destination">${ind}. Send money</a></if>
-<if test="params.user.roles.indexOf('merchant') > -1"><br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a></if>
-<if test="params.user.roles.indexOf('agent') > -1"><br/><a id="${++ind}" href="../cashin/destination?proceed=1">${ind}. Cash in</a></if>
-<if test="params.user.roles.indexOf('agent') > -1"><br/><a id="${++ind}" href="../cashout/destination?proceed=1">${ind}. Cash out</a></if>
+<if test="params.user.isSignatory && params.user.permissions.indexOf('p2p') > -1"><br/><a id="${++ind}" href="../transfer/push/destination">${ind}. Send money</a></if>
+<if test="params.user.permissions.indexOf('invoice') > -1"><br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a></if>
+<if test="params.user.permissions.indexOf('cashIn') > -1"><br/><a id="${++ind}" href="../cashin/destination?proceed=1">${ind}. Cash in</a></if>
+<if test="params.user.permissions.indexOf('cashOut') > -1"><br/><a id="${++ind}" href="../cashout/destination?proceed=1">${ind}. Cash out</a></if>
 <if test="params.user.isSignatory"><br/><a id="${++ind}" href="../pendingTransactions/list">${ind}. Pending Transactions</a></if>
 <br/><a id="${++ind}" href="../account/manage">${ind}. Manage account</a>
 <br/><a id="${++ind}" href="../account/switch">${ind}. Switch account</a>
-<br/><a id="${++ind}" href="../balanceCheck">${ind}. Check balance</a>
-<br/><a id="${++ind}" href="../ministatement">${ind}. Ministatement</a>
+<if test="params.user.permissions.indexOf('balanceCheck') > -1"><br/><a id="${++ind}" href="../balanceCheck">${ind}. Check balance</a></if>
+<if test="params.user.permissions.indexOf('ministatement') > -1"><br/><a id="${++ind}" href="../ministatement">${ind}. Ministatement</a></if>
 </if>
 <else>
 <br/><a id="1" href="../account/manage">1. Manage account</a>
