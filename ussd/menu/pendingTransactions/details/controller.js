@@ -15,11 +15,11 @@ module.exports = {
         destinationAccount: params.pendingTransaction.receiver,
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
-        transferType: invoice.type
+        transferType: 'invoice'
       })
       .then(result => {
         params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0
-        params.pendingTransaction.connectorFee = (result.connectorFee && result.connectorFee) || 0
+        params.pendingTransaction.connectorFee = result.connectorFee
         return params
       })
     })

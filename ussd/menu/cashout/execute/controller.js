@@ -7,12 +7,12 @@ module.exports = {
       destinationAmount: params.cashout.destinationAmount,
       currency: params.cashout.destinationCurrency,
       fee: params.cashout.fee,
-      memo: JSON.stringify({
+      memo: {
         fee: params.cashout.fee,
         transferCode: 'cashOut',
         debitName: params.cashout.destinationName,
         creditName: params.cashout.senderName
-      })
+      }
     })
     .then((result) => {
       params.cashout.fulfillment = result.fulfillment

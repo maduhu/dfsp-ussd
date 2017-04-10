@@ -12,12 +12,12 @@ module.exports = {
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
         fee: params.pendingTransaction.fee,
-        memo: JSON.stringify({
+        memo: {
           fee: params.pendingTransaction.fee,
           transferCode: 'invoice',
           debitName: params.user.name,
           creditName: params.pendingTransaction.name
-        })
+        }
       })
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment
