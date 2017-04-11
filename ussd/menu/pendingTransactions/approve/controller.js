@@ -22,9 +22,8 @@ module.exports = {
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment
         params.pendingTransaction.status = result.status
-        return this.bus.importMethod('transfer.invoiceNotification.edit')({
-          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId,
-          statusCode: 'e'
+        return this.bus.importMethod('transfer.invoiceNotification.execute')({
+          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId
         })
       })
       .then((result) => params)

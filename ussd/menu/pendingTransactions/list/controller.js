@@ -2,7 +2,7 @@ module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.invoiceNotification.fetch')({
       identifier: params.user.identifier,
-      statusCode: 'p'
+      status: 'pending'
     }).then(function (res) {
       if (Array.isArray(res) && res.length) {
         params.pendingTransactions = res
