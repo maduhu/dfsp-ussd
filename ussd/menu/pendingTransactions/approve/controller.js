@@ -12,19 +12,18 @@ module.exports = {
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
         fee: params.pendingTransaction.fee,
-        memo: JSON.stringify({
+        memo: {
           fee: params.pendingTransaction.fee,
           transferCode: 'invoice',
           debitName: params.user.name,
           creditName: params.pendingTransaction.name
-        })
+        }
       })
       .then((result) => {
         params.pendingTransaction.fulfillment = result.fulfillment
         params.pendingTransaction.status = result.status
-        return this.bus.importMethod('transfer.invoiceNotification.edit')({
-          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId,
-          statusCode: 'e'
+        return this.bus.importMethod('transfer.invoiceNotification.execute')({
+          invoiceNotificationId: params.pendingTransaction.invoiceNotificationId
         })
       })
       .then((result) => params)

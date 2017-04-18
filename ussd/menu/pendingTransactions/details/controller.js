@@ -10,27 +10,17 @@ module.exports = {
       params.pendingTransaction.receiver = pendingTransaction.invoiceUrl
       return this.bus.importMethod('rule.decision.fetch')({
         currency: invoice.currencyCode,
-        amount: Number(invoice.amount)
+        amount: Number(invoice.amount),
+        destinationIdentifier: params.pendingTransaction.identifier,
+        destinationAccount: params.pendingTransaction.receiver,
+        sourceAccount: params.user.sourceAccountName,
+        sourceIdentifier: params.user.identifier,
+        transferType: 'invoice'
       })
       .then(result => {
         params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0
-        return this.bus.importMethod('spsp.rule.decision.fetch')({
-          currency: invoice.currencyCode,
-          amount: Number(invoice.amount),
-          identifier: invoice.identifier
-        })
-        .then(result => {
-          if (result.sourceAmount) {
-            params.pendingTransaction.connectorFee = Math.round((result.sourceAmount - Number(invoice.amount)) * 100) / 100
-          } else {
-            params.pendingTransaction.connectorFee = 0
-          }
-          return params
-        })
-        .catch(e => {
-          params.pendingTransaction.connectorFee = 0
-          return params
-        })
+        params.pendingTransaction.connectorFee = result.connectorFee
+        return params
       })
     })
     .catch((error) => {

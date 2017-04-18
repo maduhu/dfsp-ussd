@@ -1,8 +1,7 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('transfer.invoiceNotification.edit')({
-      invoiceNotificationId: params.pendingTransaction.invoiceNotificationId,
-      statusCode: 'r'
+    return this.bus.importMethod('transfer.invoiceNotification.reject')({
+      invoiceNotificationId: params.pendingTransaction.invoiceNotificationId
     })
     .then(result => params)
     .catch((error) => {

@@ -23,7 +23,6 @@ module.exports = {
         type: 'password'
       })
       .then((r) => {
-        params.user.roles = r.roles.map((el) => el.name)
         if (!r.hashParams || r.hashParams.length === 0) {
           return this.redirect('menu/user/missingPin')
         }
@@ -31,7 +30,7 @@ module.exports = {
       })
     })
     .then((res) => {
-      return this.bus.importMethod('account.account.fetch')({
+      return this.bus.importMethod('account.actorAccount.fetch')({
         actorId: params.user.actorId
       })
       .then((r) => {

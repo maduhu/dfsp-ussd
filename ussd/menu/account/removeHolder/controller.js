@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('account.account.fetch')({
+    return this.bus.importMethod('account.actorAccount.fetch')({
       accountNumber: params.user.sourceAccountNumber
     })
     .then((res) => {
@@ -21,7 +21,7 @@ module.exports = {
   },
   receive: function (params) {
     params.remove = {actorId: params.system.input.requestParams.holderActorId}
-    return this.bus.importMethod('account.account.fetch')({
+    return this.bus.importMethod('account.actorAccount.fetch')({
       accountNumber: params.user.sourceAccountNumber
     })
     .then((res) => {

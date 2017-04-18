@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('account.account.add')({
+    return this.bus.importMethod('account.actorAccount.add')({
       actorId: '' + params.add.actorId,
       accountNumber: params.user.sourceAccountNumber,
       isDefault: false,
