@@ -1,3 +1,20 @@
+<a name="0.23.0"></a>
+# [0.23.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.22.1...v0.23.0) (2017-04-18)
+
+
+### Bug Fixes
+
+* fix calls from ussd to transfer.invoice and transfer.invoiceNotification db functions ([179c59a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/179c59a))
+* pass memo as object to dfsp-api ([8a5a02a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8a5a02a))
+* refactor rule.decision.fetch ([44a31b0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/44a31b0))
+
+
+### Features
+
+* version bump for account permissions ([a8276a1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a8276a1))
+
+
+
 <a name="0.22.1"></a>
 ## [0.22.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.22.0...v0.22.1) (2017-04-04)
 
