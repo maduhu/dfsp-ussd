@@ -1,0 +1,11 @@
+<if test="!params.pendingTransactions">
+    No incoming transactions found!
+</if>
+<else>
+    Incoming Transactions<br/>
+    <for each="i from 0 to params.pendingTransactions.length-1">
+        <br/><a id="${i+1}" href="menu/pendingTransactions/incoming/details?index=${i}">${i+1}. ${params.pendingTransactions[i].memo}</a>
+    </for>
+</else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>

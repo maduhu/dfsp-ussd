@@ -6,7 +6,7 @@ Welcome ${params.user.name}!
 <if test="params.user.permissions.indexOf('invoice') > -1"><br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a></if>
 <if test="params.user.permissions.indexOf('cashIn') > -1"><br/><a id="${++ind}" href="../cashin/destination?proceed=1">${ind}. Cash in</a></if>
 <if test="params.user.permissions.indexOf('cashOut') > -1"><br/><a id="${++ind}" href="../cashout/destination?proceed=1">${ind}. Cash out</a></if>
-<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../pendingTransactions/list">${ind}. Pending Transactions</a></if>
+<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../pendingTransactions/${params.user.permissions.indexOf('invoice') > -1 ? 'choose' : 'incoming'}">${ind}. Pending Transactions</a></if>
 <br/><a id="${++ind}" href="../account/manage">${ind}. Manage account</a>
 <br/><a id="${++ind}" href="../account/switch">${ind}. Switch account</a>
 <if test="params.user.permissions.indexOf('balanceCheck') > -1"><br/><a id="${++ind}" href="../balanceCheck">${ind}. Check balance</a></if>
