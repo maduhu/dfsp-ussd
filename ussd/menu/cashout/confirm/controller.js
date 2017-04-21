@@ -13,6 +13,7 @@ module.exports = {
       .then(result => {
         params.cashout.fee = (result.fee && result.fee.amount) || 0
         params.cashout.connectorFee = result.connectorFee
+        params.cashout.commission = (result.commission && result.commission.amount) || 0
         return params
       })
       .catch((error) => {

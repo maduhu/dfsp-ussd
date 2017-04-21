@@ -9,6 +9,7 @@ module.exports = {
       fee: params.cashout.fee,
       memo: {
         fee: params.cashout.fee,
+        commission: params.cashout.commission,
         transferCode: 'cashOut',
         debitName: params.cashout.destinationName,
         creditName: params.cashout.senderName

@@ -13,6 +13,7 @@ module.exports = {
       .then(result => {
         params.cashin.fee = (result.fee && result.fee.amount) || 0
         params.cashin.connectorFee = result.connectorFee
+        params.cashin.commission = (result.commission && result.commission.amount) || 0
         return params
       })
       .catch((error) => {
