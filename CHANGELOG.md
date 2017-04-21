@@ -1,3 +1,14 @@
+<a name="0.23.2"></a>
+## [0.23.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.1...v0.23.2) (2017-04-21)
+
+
+### Bug Fixes
+
+* add shrinkwrap ([dba6617](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/dba6617))
+* shrinkwrap private nexus links ([11f8b98](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/11f8b98))
+
+
+
 <a name="0.23.1"></a>
 ## [0.23.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.0...v0.23.1) (2017-04-21)
 
