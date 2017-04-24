@@ -8,6 +8,7 @@ module.exports = {
       params.pendingTransaction = invoice
       params.pendingTransaction.invoiceNotificationId = pendingTransaction.invoiceNotificationId
       params.pendingTransaction.receiver = pendingTransaction.invoiceUrl
+      params.pendingTransaction.transferCode = (invoice.invoiceType === 'cashOut' ? 'cashOut' : 'invoice')
       return this.bus.importMethod('rule.decision.fetch')({
         currency: invoice.currencyCode,
         amount: Number(invoice.amount),
@@ -15,7 +16,7 @@ module.exports = {
         destinationAccount: params.pendingTransaction.receiver,
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
-        transferType: 'invoice'
+        transferType: params.pendingTransaction.transferCode
       })
       .then(result => {
         params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0

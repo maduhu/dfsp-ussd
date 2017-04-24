@@ -1,26 +1,16 @@
 module.exports = {
   send: function (params) {
-    if (params.cashout.account) {
+    if (params.cashOut.destinationAccount) {
       return params
     }
     return this.bus.importMethod('spsp.transfer.payee.get')({
-      identifier: params.user.identifier
+      identifier: params.system.message
     })
     .then((result) => {
-      params.cashout.destinationName = result.name
-      params.cashout.destinationCurrency = result.currencyCode
-      params.cashout.destinationAccount = result.account
-      params.cashout.identifier = params.user.identifier
-      params.cashout.receiver = result.spspServer + '/receivers/' + params.user.identifier
-      return this.bus.importMethod('spsp.transfer.payee.get')({
-        identifier: params.system.message
-      })
-      .then((result) => {
-        params.cashout.senderName = result.name
-        params.cashout.senderAccount = result.account
-        params.cashout.senderIdentifier = params.system.message
-        return params
-      })
+      params.cashOut.destinationName = result.name
+      params.cashOut.spspServer = result.spspServer
+      params.cashOut.identifier = params.system.message
+      return params
     })
     .catch((error) => {
       params.context = error
@@ -32,9 +22,9 @@ module.exports = {
       return this.redirect('menu/error/wrongInput')
     }
     if (params.system.input.requestParams.proceed) {
-      params.cashout.destinationAmount = params.system.message
+      params.cashOut.destinationAmount = params.system.message
     } else {
-      delete params.cashout
+      delete params.cashOut
     }
     return params
   }

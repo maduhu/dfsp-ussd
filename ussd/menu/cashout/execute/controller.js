@@ -1,23 +1,18 @@
 module.exports = {
   send: function (params) {
-    return this.bus.importMethod('transfer.push.execute')({
-      sourceIdentifier: params.cashout.senderIdentifier,
-      sourceAccount: params.cashout.senderAccount,
-      receiver: params.cashout.receiver,
-      destinationAmount: params.cashout.destinationAmount,
-      currency: params.cashout.destinationCurrency,
-      fee: params.cashout.fee,
-      memo: {
-        fee: params.cashout.fee,
-        commission: params.cashout.commission,
-        transferCode: 'cashOut',
-        debitName: params.cashout.destinationName,
-        creditName: params.cashout.senderName
-      }
+    return this.bus.importMethod('transfer.invoice.add')({
+      account: params.user.sourceAccount,
+      name: params.user.name,
+      currencyCode: params.user.currencyCode,
+      currencySymbol: params.user.currencySymbol,
+      amount: params.cashOut.destinationAmount,
+      identifier: params.cashOut.identifier,
+      merchantIdentifier: params.user.identifier,
+      spspServer: params.cashOut.spspServer,
+      invoiceType: 'cashOut',
+      invoiceInfo: 'Cashout request from ' + params.user.name + ' for ' + params.cashOut.destinationAmount + ' ' + params.user.currencyCode
     })
     .then((result) => {
-      params.cashout.fulfillment = result.fulfillment
-      params.cashout.status = result.status
       return params
     })
     .catch((error) => {
@@ -26,7 +21,7 @@ module.exports = {
     })
   },
   receive: function (params) {
-    delete params.cashout
+    delete params.cashOut
     return params
   }
 }

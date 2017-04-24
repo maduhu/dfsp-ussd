@@ -1,6 +1,6 @@
 module.exports = {
   send: function (params) {
-    params.cashOut = {}
+    params.cashout = {}
     return params
   }
 }
