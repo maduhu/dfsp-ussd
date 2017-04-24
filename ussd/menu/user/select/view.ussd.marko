@@ -1,5 +1,5 @@
-<br/><br/>Select User:
+Select User:
 <br/>
 <for each="i from 0 to params.users.length-1">
-    <br/><a id="${i+1}" href="#">${i+1}. ${params.users[i].name}</a>
+    <br/><a id="${i+1}" href="menu/home?actorId=${params.users[i].actorId}">${i+1}. ${params.users[i].actorId + params.users[i].firstName + ' ' + params.users[i].lastName}</a>
 </for>
