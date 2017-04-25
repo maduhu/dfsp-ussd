@@ -14,6 +14,7 @@ module.exports = {
     })
     .then((result) => {
       params.open.result = result
+      params.user = {actorId: result.actorId}
       return params
     })
     .catch((error) => {

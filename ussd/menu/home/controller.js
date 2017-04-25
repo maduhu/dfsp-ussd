@@ -6,18 +6,25 @@ module.exports = {
     } else if (params.user.sourceAccount) {
       return params
     }
+    var promise = Promise.resolve()
     if (!params.user.actorId) {
-      return this.bus.importMethod('subscription.subscription.fetch')({
-        phoneNumber: params.system.phone
+      promise = promise.then(() => {
+        return this.bus.importMethod('subscription.subscription.fetch')({
+          phoneNumber: params.system.phone
+        })
+          .then((subRes) => {
+            if (subRes.length > 1) {
+              params.subscribers = subRes
+              promise = promise.then(() => this.redirect('menu/user/select'))
+            }
+            params.user.actorId = subRes[0].actorId
+          })
+          .catch(() => {
+            return this.redirect('menu/user/missingAccount')
+          })
       })
-      .then((subRes) => {
-        if (subRes.length > 1) {
-          params.subscribers = subRes
-          return this.redirect('menu/user/select')
-        }
-        params.user.actorId = subRes[0].actorId
-      })
-    } else {
+    }
+    promise = promise.then(() => {
       return this.bus.importMethod('directory.user.get')({
         actorId: params.user.actorId
       })
@@ -28,43 +35,44 @@ module.exports = {
             actorId: params.user.actorId,
             type: 'password'
           })
-          .then((r) => {
-            if (!r.hashParams || r.hashParams.length === 0) {
-              return this.redirect('menu/user/missingPin')
-            }
-            return params
-          })
+            .then((r) => {
+              if (!r.hashParams || r.hashParams.length === 0) {
+                return this.redirect('menu/user/missingPin')
+              }
+              return params
+            })
         })
         .then((res) => {
           return this.bus.importMethod('account.actorAccount.fetch')({
             actorId: params.user.actorId
           })
-          .then((r) => {
-            return this.bus.importMethod('ledger.account.fetch')({
-              accountNumber: r.map((el) => el.accountNumber)
-            })
-            .then((res) => {
-              params.user.accounts = userHelper.setAccountsStatus(r, res)
-              if (res.length === 1) {
-                var accountNumber = res[0].accountNumber
-                return this.bus.importMethod('ledger.account.get')({
-                  accountNumber: accountNumber
-                })
-                .then((result) => {
-                  params = userHelper.setUserParams(result, accountNumber, params)
+            .then((r) => {
+              return this.bus.importMethod('ledger.account.fetch')({
+                accountNumber: r.map((el) => el.accountNumber)
+              })
+                .then((res) => {
+                  params.user.accounts = userHelper.setAccountsStatus(r, res)
+                  if (res.length === 1) {
+                    var accountNumber = res[0].accountNumber
+                    return this.bus.importMethod('ledger.account.get')({
+                      accountNumber: accountNumber
+                    })
+                      .then((result) => {
+                        params = userHelper.setUserParams(result, accountNumber, params)
+                        return params
+                      })
+                  } else if (res.length > 1) {
+                    return this.redirect('menu/account/select')
+                  }
                   return params
                 })
-              } else if (res.length > 1) {
-                return this.redirect('menu/account/select')
-              }
-              return params
+                .catch(() => params)
             })
-            .catch(() => params)
-          })
         })
-      .catch(() => {
-        return this.redirect('menu/user/missingAccount')
-      })
-    }
+        .catch(() => {
+          return this.redirect('menu/user/missingAccount')
+        })
+    })
+    return promise
   }
 }

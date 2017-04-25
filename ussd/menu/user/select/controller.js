@@ -9,7 +9,7 @@ module.exports = {
     })
   },
   receive: function (params) {
-    params.user.actorId = params.system.input.requestParams.actorId
+    params.user = {actorId: params.system.input.requestParams.actorId}
     return params
   }
 }
