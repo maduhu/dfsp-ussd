@@ -13,7 +13,7 @@ module.exports = {
             phoneNumber: params.system.phone
           })
             .then((result) => {
-              if (!result[0].actorId) {
+              if (!result.length) {
                 params.userToAdd = user
                 return params
               } else {

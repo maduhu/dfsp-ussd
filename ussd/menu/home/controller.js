@@ -15,7 +15,7 @@ module.exports = {
           .then((subRes) => {
             if (subRes.length > 1) {
               params.subscribers = subRes
-              promise = promise.then(() => this.redirect('menu/user/select'))
+              return this.redirect('menu/user/select')
             }
             params.user.actorId = subRes[0].actorId
           })
@@ -25,6 +25,9 @@ module.exports = {
       })
     }
     promise = promise.then(() => {
+      if (!params.user.actorId) {
+        return params
+      }
       return this.bus.importMethod('directory.user.get')({
         actorId: params.user.actorId
       })
@@ -69,10 +72,10 @@ module.exports = {
                 .catch(() => params)
             })
         })
-        .catch(() => {
-          return this.redirect('menu/user/missingAccount')
-        })
     })
     return promise
+      .catch(() => {
+        return this.redirect('menu/user/missingAccount')
+      })
   }
 }

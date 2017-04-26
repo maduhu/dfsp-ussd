@@ -1,4 +1,4 @@
-<var name="ind" value=0 />
+<var name="ind" value=1 />
 <if test="params.userToAdd.exist">
     User with this identifier is already assigned to this phone
     <br/>
@@ -14,4 +14,6 @@
    There aren't any users associated with this identifier
    <br/>
 </else>
-<br/><a id="${++ind}" href="../addUser">${ind}. Back</a>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>
+<br/><a id="1" href="../addUser">1. Back</a>
