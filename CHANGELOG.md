@@ -1,3 +1,13 @@
+<a name="0.23.4"></a>
+## [0.23.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.3...v0.23.4) (2017-04-28)
+
+
+### Bug Fixes
+
+* modify user add ([a6a1772](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a6a1772))
+
+
+
 <a name="0.23.3"></a>
 ## [0.23.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.2...v0.23.3) (2017-04-28)
 
