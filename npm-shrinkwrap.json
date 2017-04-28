@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.23.2",
+  "version": "0.23.3",
   "dependencies": {
     "abstract-leveldown": {
       "version": "2.6.1",
