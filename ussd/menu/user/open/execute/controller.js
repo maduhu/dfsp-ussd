@@ -1,19 +1,20 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('wallet.add')({
-      identifier: params.open.number,
-      identifierTypeCode: 'phn',
+      identifier: params.open.username,
+      identifierTypeCode: 'eur',
       firstName: params.open.firstName,
       lastName: params.open.lastName,
       dob: params.open.dob,
       nationalId: params.open.nationalId,
       phoneNumber: params.system.phone,
-      accountName: params.open.account,
+      accountName: params.open.username,
       password: params.open.password,
       roleName: params.open.roleName
     })
     .then((result) => {
       params.open.result = result
+      params.user = {actorId: result.actorId}
       return params
     })
     .catch((error) => {
