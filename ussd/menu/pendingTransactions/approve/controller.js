@@ -1,7 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('identity.check')({
-      username: params.system.phone,
+      username: params.user.identifier,
       password: params.system.message
     })
     .then((res) => {

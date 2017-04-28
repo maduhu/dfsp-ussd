@@ -3,7 +3,7 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    params.open.username = params.system.message
+    params.open.accountName = params.system.message
     return params
   }
 }
