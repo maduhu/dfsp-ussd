@@ -14,7 +14,8 @@ module.exports = {
         fee: params.pendingTransaction.fee,
         memo: {
           fee: params.pendingTransaction.fee,
-          transferCode: 'invoice',
+          commission: params.pendingTransaction.commission,
+          transferCode: params.pendingTransaction.transferCode,
           debitName: params.user.name,
           creditName: params.pendingTransaction.name
         }

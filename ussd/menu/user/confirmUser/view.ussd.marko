@@ -1,0 +1,19 @@
+<var name="ind" value=1 />
+<if test="params.userToAdd.exist">
+    User with this identifier is already assigned to this phone
+    <br/>
+    <br/><a id="${++ind}" href="menu/home">${ind}. Home</a>
+</if>
+<else-if test="params.userToAdd.actorId">
+    Confirm matched user:
+    <br/>${params.userToAdd.firstName + ' ' + params.userToAdd.lastName}
+    <br/>
+    <br/><a id="${++ind}" href="../execute">${ind}. Confirm</a>
+</else-if>
+<else>
+   There aren't any users associated with this identifier
+   <br/>
+</else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>
+<br/><a id="1" href="../addUser">1. Back</a>
