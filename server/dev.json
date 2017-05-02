@@ -43,7 +43,7 @@
      },
      "wrongInputState": "menu/error/wrongInput",
      "resumeState": "menu/resume",
-     "timeOut": 75,
+     "timeOut": 3600,
      "expireRule": "refresh",
      "defaultPhone": "",
      "defaultShortCode": "*123#"
