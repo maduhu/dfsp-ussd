@@ -1,3 +1,13 @@
+<a name="0.23.6"></a>
+## [0.23.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.5...v0.23.6) (2017-05-02)
+
+
+### Bug Fixes
+
+* show both incoming and outgoing invoices for merchant ([a964d48](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a964d48))
+
+
+
 <a name="0.23.5"></a>
 ## [0.23.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.4...v0.23.5) (2017-05-02)
 
