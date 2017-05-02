@@ -1,3 +1,13 @@
+<a name="0.23.7"></a>
+## [0.23.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.6...v0.23.7) (2017-05-02)
+
+
+### Bug Fixes
+
+* rename 'invoice reject' to 'invoice cancel' ([1e8f0e7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1e8f0e7))
+
+
+
 <a name="0.23.6"></a>
 ## [0.23.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.5...v0.23.6) (2017-05-02)
 
