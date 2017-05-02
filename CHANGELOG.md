@@ -1,3 +1,13 @@
+<a name="0.23.5"></a>
+## [0.23.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.4...v0.23.5) (2017-05-02)
+
+
+### Bug Fixes
+
+* increase timeout ([1c69cd4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1c69cd4))
+
+
+
 <a name="0.23.4"></a>
 ## [0.23.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.3...v0.23.4) (2017-04-28)
 
