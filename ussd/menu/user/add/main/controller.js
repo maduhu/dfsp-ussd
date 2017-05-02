@@ -3,7 +3,7 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    params.open.account = params.system.message
+    params.open = {}
     return params
   }
 }

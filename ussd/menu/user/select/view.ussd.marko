@@ -1,0 +1,5 @@
+Select User:
+<br/>
+<for each="i from 0 to params.users.length-1">
+    <br/><a id="${i+1}" href="menu/home?actorId=${params.users[i].actorId}">${i+1}. ${params.users[i].firstName + ' ' + params.users[i].lastName}</a>
+</for>

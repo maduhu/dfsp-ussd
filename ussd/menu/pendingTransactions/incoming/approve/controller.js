@@ -1,7 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('identity.check')({
-      username: params.system.phone,
+      username: params.user.identifier,
       password: params.system.message
     })
     .then((res) => {
@@ -14,7 +14,8 @@ module.exports = {
         fee: params.pendingTransaction.fee,
         memo: {
           fee: params.pendingTransaction.fee,
-          transferCode: 'invoice',
+          commission: params.pendingTransaction.commission,
+          transferCode: params.pendingTransaction.transferCode,
           debitName: params.user.name,
           creditName: params.pendingTransaction.name
         }

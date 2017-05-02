@@ -1,3 +1,52 @@
+<a name="0.23.5"></a>
+## [0.23.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.4...v0.23.5) (2017-05-02)
+
+
+### Bug Fixes
+
+* increase timeout ([1c69cd4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1c69cd4))
+
+
+
+<a name="0.23.4"></a>
+## [0.23.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.3...v0.23.4) (2017-04-28)
+
+
+### Bug Fixes
+
+* modify user add ([a6a1772](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a6a1772))
+
+
+
+<a name="0.23.3"></a>
+## [0.23.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.2...v0.23.3) (2017-04-28)
+
+
+### Bug Fixes
+
+* add ability to add existing customer from the system to phone number ([28ad358](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/28ad358))
+* add incrementing index for confirm user menu ([84414bb](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/84414bb))
+* add pin verification before let the user to navigate to Add user menu ([04b8dd8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/04b8dd8))
+* add some more logic around selecting user in home menu ([1d01e50](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1d01e50))
+* fix home controller to handle not selected user ([ef31599](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/ef31599))
+* implement cash-out with pending transaction ([9c3fc9f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9c3fc9f))
+* implement commissions for cash-in and cash-out ([eeb3760](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/eeb3760))
+* pass commission in memo when transacting ([8ade575](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8ade575))
+* prepare add many users for one phone number ([6a9841a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/6a9841a))
+
+
+
+<a name="0.23.2"></a>
+## [0.23.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.1...v0.23.2) (2017-04-21)
+
+
+### Bug Fixes
+
+* add shrinkwrap ([dba6617](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/dba6617))
+* shrinkwrap private nexus links ([11f8b98](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/11f8b98))
+
+
+
 <a name="0.23.1"></a>
 ## [0.23.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.0...v0.23.1) (2017-04-21)
 

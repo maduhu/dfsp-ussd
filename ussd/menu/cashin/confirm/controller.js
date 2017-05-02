@@ -13,6 +13,7 @@ module.exports = {
       .then(result => {
         params.cashin.fee = (result.fee && result.fee.amount) || 0
         params.cashin.connectorFee = result.connectorFee
+        params.cashin.commission = (result.commission && result.commission.amount) || 0
         return params
       })
       .catch((error) => {
@@ -23,7 +24,7 @@ module.exports = {
   receive: function (params) {
     if (params.system.input.requestParams.proceed) {
       return this.bus.importMethod('identity.check')({
-        username: params.system.phone,
+        username: params.user.identifier,
         password: params.system.message
       })
       .then((result) => {
