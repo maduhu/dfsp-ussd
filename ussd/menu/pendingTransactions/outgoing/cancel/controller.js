@@ -1,7 +1,8 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.invoice.cancel')({
-      invoiceId: params.pendingTransaction.invoiceId
+      invoiceId: params.pendingTransaction.invoiceId,
+      identifier: params.user.identifier
     })
     .then(result => params)
     .catch((error) => {
