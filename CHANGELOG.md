@@ -1,3 +1,14 @@
+<a name="0.23.10"></a>
+## [0.23.10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.9...v0.23.10) (2017-05-04)
+
+
+### Bug Fixes
+
+* add check for PIN for matched user before adding him ([a43447e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a43447e))
+* Make all USSD menu items title case ([4d6ffda](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4d6ffda))
+
+
+
 <a name="0.23.9"></a>
 ## [0.23.9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.8...v0.23.9) (2017-05-03)
 
