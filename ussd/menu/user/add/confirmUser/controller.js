@@ -1,7 +1,8 @@
 module.exports = {
   send: function (params) {
+    var searchedIdentifier = params.userToAdd.searchedIdentifier
     return this.bus.importMethod('directory.user.get')({
-      identifier: params.userToAdd.identifier
+      identifier: searchedIdentifier
     })
       .then((user) => {
         if (!user.actorId) {
@@ -15,6 +16,7 @@ module.exports = {
             .then((result) => {
               if (!result.length) {
                 params.userToAdd = user
+                params.userToAdd.searchedIdentifier = searchedIdentifier
                 return params
               } else {
                 params.userToAdd.exist = true
