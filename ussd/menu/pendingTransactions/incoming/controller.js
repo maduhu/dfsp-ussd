@@ -6,6 +6,8 @@ module.exports = {
     }).then(function (res) {
       if (Array.isArray(res) && res.length) {
         params.pendingTransactions = res
+      } else {
+        delete params.pendingTransactions
       }
       return params
     })
