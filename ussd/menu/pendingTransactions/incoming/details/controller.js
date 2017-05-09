@@ -12,7 +12,7 @@ module.exports = {
       return this.bus.importMethod('rule.decision.fetch')({
         currency: invoice.currencyCode,
         amount: Number(invoice.amount),
-        destinationIdentifier: params.pendingTransaction.identifier,
+        destinationIdentifier: params.pendingTransaction.merchantIdentifier,
         destinationAccount: params.pendingTransaction.receiver,
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
