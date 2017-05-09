@@ -1,3 +1,13 @@
+<a name="0.23.12"></a>
+## [0.23.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.11...v0.23.12) (2017-05-09)
+
+
+### Bug Fixes
+
+* take destination identifier from merchant identifier ([41d3463](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/41d3463))
+
+
+
 <a name="0.23.11"></a>
 ## [0.23.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.10...v0.23.11) (2017-05-09)
 
