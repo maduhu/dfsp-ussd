@@ -1,3 +1,13 @@
+<a name="0.23.11"></a>
+## [0.23.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.10...v0.23.11) (2017-05-09)
+
+
+### Bug Fixes
+
+* clear the list with pending transactions in case there aren't any left ([64784cf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/64784cf))
+
+
+
 <a name="0.23.10"></a>
 ## [0.23.10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.9...v0.23.10) (2017-05-04)
 
