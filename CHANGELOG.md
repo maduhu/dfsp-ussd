@@ -1,3 +1,13 @@
+<a name="0.23.14"></a>
+## [0.23.14](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.13...v0.23.14) (2017-05-10)
+
+
+### Bug Fixes
+
+* change logmode to long ([92aad13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/92aad13))
+
+
+
 <a name="0.23.13"></a>
 ## [0.23.13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.12...v0.23.13) (2017-05-10)
 
