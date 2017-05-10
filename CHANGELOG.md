@@ -1,3 +1,13 @@
+<a name="0.23.13"></a>
+## [0.23.13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.12...v0.23.13) (2017-05-10)
+
+
+### Bug Fixes
+
+* remove colors from stdout by default ([2d18c61](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/2d18c61))
+
+
+
 <a name="0.23.12"></a>
 ## [0.23.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.11...v0.23.12) (2017-05-09)
 
