@@ -1,0 +1,11 @@
+Destination name: ${params.cashin.destinationName}
+<br/>Amount: ${params.cashin.destinationAmount} ${params.cashin.destinationCurrency}
+<br/>Local fee: ${params.cashin.fee}
+<if test="params.cashin.connectorFee != 0">
+    <br/>Connector fee: ${params.cashin.connectorFee}
+</if>
+<br/><a id="*" href="../execute">Enter PIN to confirm</a>
+<a id="*" href="../execute?proceed=1"></a>
+<br/>
+<br/><a id="0" href="menu/home">0. Main menu</a>
+<br/><a id="1" href="back">1. Back</a>

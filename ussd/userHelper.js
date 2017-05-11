@@ -9,6 +9,8 @@ module.exports = {
     result.user.sourceAccountNumber = accountNumber
     result.user.isDefault = acc.isDefault
     result.user.isSignatory = acc.isSignatory
+    result.user.actorAccountId = acc.actorAccountId
+    result.user.permissions = acc.permissions
     return result
   },
   setAccountsStatus: function (accounts, ledAccounts) {
@@ -16,6 +18,8 @@ module.exports = {
       let account = this.getAccount(accounts, led.accountNumber)
       led.isDefault = account.isDefault
       led.isSignatory = account.isSignatory
+      led.actorAccountId = account.actorAccountId
+      led.permissions = account.permissions
       return led
     })
     return result

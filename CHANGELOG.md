@@ -1,3 +1,235 @@
+<a name="0.23.14"></a>
+## [0.23.14](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.13...v0.23.14) (2017-05-10)
+
+
+### Bug Fixes
+
+* change logmode to long ([92aad13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/92aad13))
+
+
+
+<a name="0.23.13"></a>
+## [0.23.13](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.12...v0.23.13) (2017-05-10)
+
+
+### Bug Fixes
+
+* remove colors from stdout by default ([2d18c61](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/2d18c61))
+
+
+
+<a name="0.23.12"></a>
+## [0.23.12](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.11...v0.23.12) (2017-05-09)
+
+
+### Bug Fixes
+
+* take destination identifier from merchant identifier ([41d3463](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/41d3463))
+
+
+
+<a name="0.23.11"></a>
+## [0.23.11](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.10...v0.23.11) (2017-05-09)
+
+
+### Bug Fixes
+
+* clear the list with pending transactions in case there aren't any left ([64784cf](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/64784cf))
+
+
+
+<a name="0.23.10"></a>
+## [0.23.10](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.9...v0.23.10) (2017-05-04)
+
+
+### Bug Fixes
+
+* add check for PIN for matched user before adding him ([a43447e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a43447e))
+* Make all USSD menu items title case ([4d6ffda](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4d6ffda))
+
+
+
+<a name="0.23.9"></a>
+## [0.23.9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.8...v0.23.9) (2017-05-03)
+
+
+### Bug Fixes
+
+* pass sender identifier to transfer.invoice.cancel ([a14768e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a14768e))
+
+
+
+<a name="0.23.8"></a>
+## [0.23.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.7...v0.23.8) (2017-05-02)
+
+
+### Bug Fixes
+
+* add cancel invoice screens ([b284d45](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b284d45))
+
+
+
+<a name="0.23.7"></a>
+## [0.23.7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.6...v0.23.7) (2017-05-02)
+
+
+### Bug Fixes
+
+* rename 'invoice reject' to 'invoice cancel' ([1e8f0e7](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1e8f0e7))
+
+
+
+<a name="0.23.6"></a>
+## [0.23.6](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.5...v0.23.6) (2017-05-02)
+
+
+### Bug Fixes
+
+* show both incoming and outgoing invoices for merchant ([a964d48](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a964d48))
+
+
+
+<a name="0.23.5"></a>
+## [0.23.5](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.4...v0.23.5) (2017-05-02)
+
+
+### Bug Fixes
+
+* increase timeout ([1c69cd4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1c69cd4))
+
+
+
+<a name="0.23.4"></a>
+## [0.23.4](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.3...v0.23.4) (2017-04-28)
+
+
+### Bug Fixes
+
+* modify user add ([a6a1772](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a6a1772))
+
+
+
+<a name="0.23.3"></a>
+## [0.23.3](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.2...v0.23.3) (2017-04-28)
+
+
+### Bug Fixes
+
+* add ability to add existing customer from the system to phone number ([28ad358](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/28ad358))
+* add incrementing index for confirm user menu ([84414bb](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/84414bb))
+* add pin verification before let the user to navigate to Add user menu ([04b8dd8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/04b8dd8))
+* add some more logic around selecting user in home menu ([1d01e50](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1d01e50))
+* fix home controller to handle not selected user ([ef31599](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/ef31599))
+* implement cash-out with pending transaction ([9c3fc9f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9c3fc9f))
+* implement commissions for cash-in and cash-out ([eeb3760](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/eeb3760))
+* pass commission in memo when transacting ([8ade575](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8ade575))
+* prepare add many users for one phone number ([6a9841a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/6a9841a))
+
+
+
+<a name="0.23.2"></a>
+## [0.23.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.1...v0.23.2) (2017-04-21)
+
+
+### Bug Fixes
+
+* add shrinkwrap ([dba6617](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/dba6617))
+* shrinkwrap private nexus links ([11f8b98](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/11f8b98))
+
+
+
+<a name="0.23.1"></a>
+## [0.23.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.0...v0.23.1) (2017-04-21)
+
+
+
+<a name="0.23.0"></a>
+# [0.23.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.22.1...v0.23.0) (2017-04-18)
+
+
+### Bug Fixes
+
+* fix calls from ussd to transfer.invoice and transfer.invoiceNotification db functions ([179c59a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/179c59a))
+* pass memo as object to dfsp-api ([8a5a02a](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/8a5a02a))
+* refactor rule.decision.fetch ([44a31b0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/44a31b0))
+
+
+### Features
+
+* version bump for account permissions ([a8276a1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/a8276a1))
+
+
+
+<a name="0.22.1"></a>
+## [0.22.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.22.0...v0.22.1) (2017-04-04)
+
+
+### Bug Fixes
+
+* remove identity dependency ([fc854d0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fc854d0))
+
+
+
+<a name="0.22.0"></a>
+# [0.22.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.1...v0.22.0) (2017-04-04)
+
+
+### Features
+
+* add cash in/out functionality ([dabb154](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/dabb154))
+
+
+
+<a name="0.21.1"></a>
+## [0.21.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.21.0...v0.21.1) (2017-04-03)
+
+
+### Bug Fixes
+
+* update ut-port-httpserver ([c8bcc82](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c8bcc82))
+
+
+
+<a name="0.21.0"></a>
+# [0.21.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.2...v0.21.0) (2017-04-03)
+
+
+### Features
+
+* dynamic session resuming ([f248f1f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/f248f1f))
+
+
+
+<a name="0.20.2"></a>
+## [0.20.2](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.1...v0.20.2) (2017-03-23)
+
+
+### Bug Fixes
+
+* handle no account use case to correctly construct ussd menus ([3c613c8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/3c613c8))
+
+
+
+<a name="0.20.1"></a>
+## [0.20.1](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.20.0...v0.20.1) (2017-03-21)
+
+
+### Bug Fixes
+
+* remove holder pin check back option not working ([93e1afa](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/93e1afa))
+
+
+
+<a name="0.20.0"></a>
+# [0.20.0](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.8...v0.20.0) (2017-03-20)
+
+
+### Features
+
+* hide remove holder menu if there is only one holder ([13d1bcd](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/13d1bcd))
+
+
+
 <a name="0.19.8"></a>
 ## [0.19.8](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.19.7...v0.19.8) (2017-03-16)
 

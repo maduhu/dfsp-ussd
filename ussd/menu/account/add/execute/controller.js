@@ -5,7 +5,7 @@ module.exports = {
       name: params.open.name
     })
     .then((res) => {
-      return this.bus.importMethod('account.account.add')({
+      return this.bus.importMethod('account.actorAccount.add')({
         actorId: params.user.actorId,
         accountNumber: res.accountNumber,
         isDefault: params.open.isDefault,

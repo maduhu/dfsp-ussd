@@ -3,24 +3,17 @@ module.exports = {
     var msg = {
       currency: params.transfer.destinationCurrency,
       amount: params.transfer.destinationAmount,
-      identifier: params.transfer.identifier
+      destinationIdentifier: params.transfer.identifier,
+      destinationAccount: params.transfer.destinationAccount,
+      sourceAccount: params.user.sourceAccountName,
+      sourceIdentifier: params.user.identifier,
+      transferType: 'p2p'
     }
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
         params.transfer.fee = (result.fee && result.fee.amount) || 0
-        return this.bus.importMethod('spsp.rule.decision.fetch')(msg)
-          .then(result => {
-            if (result.sourceAmount) {
-              params.transfer.connectorFee = Math.round((result.sourceAmount - msg.amount) * 100) / 100
-            } else {
-              params.transfer.connectorFee = 0
-            }
-            return params
-          })
-          .catch(e => {
-            params.transfer.connectorFee = 0
-            return params
-          })
+        params.transfer.connectorFee = result.connectorFee
+        return params
       })
       .catch((error) => {
         params.context = error
@@ -30,7 +23,7 @@ module.exports = {
   receive: function (params) {
     if (params.system.input.requestParams.proceed) {
       return this.bus.importMethod('identity.check')({
-        username: params.system.phone,
+        username: params.user.identifier,
         password: params.system.message
       })
       .then((result) => {

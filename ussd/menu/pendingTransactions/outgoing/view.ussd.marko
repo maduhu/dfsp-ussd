@@ -1,0 +1,11 @@
+<if test="!params.pendingTransactions">
+    No outgoind transactions found!
+</if>
+<else>
+    Outgoing Transactions<br/>
+    <for each="i from 0 to params.pendingTransactions.length-1">
+        <br/><a id="${i+1}" href="menu/pendingTransactions/outgoing/details?index=${i}">${i+1}. ${params.pendingTransactions[i].invoiceType} invoice for ${params.pendingTransactions[i].amount} ${params.pendingTransactions[i].currencyCode}</a>
+    </for>
+</else>
+<br/>
+<br/><a id="0" href="menu/home">0. Home</a>

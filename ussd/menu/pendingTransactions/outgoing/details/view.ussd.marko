@@ -1,0 +1,6 @@
+Pending ${params.pendingTransaction.invoiceType} transaction for ${params.pendingTransaction.amount} ${params.pendingTransaction.currencyCode}
+<if test="params.pendingTransaction.payers && params.pendingTransaction.payers.length > 0"><br/>Payers: ${params.pendingTransaction.payers.map((el) => el.identifier).join(',')}</if>
+<br/>If you want to reject it please select 2.
+<br/><a id="0" href="menu/home">0. Home</a>
+<br/><a id="1" href="back">1. Back</a>
+<br/><a id="2" href="../cancel">2. Reject</a>

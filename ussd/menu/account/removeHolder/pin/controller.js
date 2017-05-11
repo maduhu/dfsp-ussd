@@ -3,16 +3,20 @@ module.exports = {
     return params
   },
   receive: function (params) {
-    return this.bus.importMethod('identity.check')({
-      username: params.system.phone,
-      password: params.system.message
-    })
-    .then((result) => {
+    if (params.system.input.requestParams.proceed) {
+      return this.bus.importMethod('identity.check')({
+        username: params.user.identifier,
+        password: params.system.message
+      })
+      .then((result) => {
+        return params
+      })
+      .catch((error) => {
+        params.context = error
+        return this.redirect('menu/error/wrongPin')
+      })
+    } else {
       return params
-    })
-    .catch((error) => {
-      params.context = error
-      return this.redirect('menu/error/wrongPin')
-    })
+    }
   }
 }

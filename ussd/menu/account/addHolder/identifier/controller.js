@@ -13,7 +13,7 @@ module.exports = {
     })
     .then((res) => {
       Object.assign(params.add, res)
-      return this.bus.importMethod('account.account.fetch')({
+      return this.bus.importMethod('account.actorAccount.fetch')({
         actorId: '' + res.actorId,
         accountNumber: params.user.sourceAccountNumber
       })
