@@ -49,7 +49,8 @@
     "timeOut": 3600,
     "expireRule": "refresh",
     "defaultPhone": "",
-    "defaultShortCode": "*123#"
+    "defaultShortCode": "*123#",
+    "##########charsCount": true
   },
   "cache": {
     "storage": "memory",
