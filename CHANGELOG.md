@@ -1,3 +1,14 @@
+<a name="0.23.15"></a>
+## [0.23.15](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.14...v0.23.15) (2017-05-15)
+
+
+### Bug Fixes
+
+* elk ([fe8a82e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fe8a82e))
+* prepare charscount ([1ed1b60](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1ed1b60))
+
+
+
 <a name="0.23.14"></a>
 ## [0.23.14](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.13...v0.23.14) (2017-05-10)
 
