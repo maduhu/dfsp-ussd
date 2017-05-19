@@ -1,3 +1,8 @@
+<a name="0.23.16"></a>
+## [0.23.16](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.15...v0.23.16) (2017-05-19)
+
+
+
 <a name="0.23.15"></a>
 ## [0.23.15](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.14...v0.23.15) (2017-05-15)
 
