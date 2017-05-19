@@ -1,3 +1,13 @@
+<a name="0.23.17"></a>
+## [0.23.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.16...v0.23.17) (2017-05-19)
+
+
+### Bug Fixes
+
+* circle.yml ([9770b1f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9770b1f))
+
+
+
 <a name="0.23.16"></a>
 ## [0.23.16](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.15...v0.23.16) (2017-05-19)
 
