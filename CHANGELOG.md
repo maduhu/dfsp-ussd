@@ -1,3 +1,13 @@
+<a name="0.23.18"></a>
+## [0.23.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.17...v0.23.18) (2017-05-22)
+
+
+### Bug Fixes
+
+* log configuration ([4268ef9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4268ef9))
+
+
+
 <a name="0.23.17"></a>
 ## [0.23.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.16...v0.23.17) (2017-05-19)
 
