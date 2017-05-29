@@ -59,7 +59,7 @@
     "@leveloneproject/dfsp-mock": "0.x",
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.17.16"
+    "ut-tools": "^5.17.21"
   },
   "peerDependencies": {
     "request": "^2.81.0"
