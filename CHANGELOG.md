@@ -1,3 +1,14 @@
+<a name="0.23.19"></a>
+## [0.23.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.18...v0.23.19) (2017-05-29)
+
+
+### Bug Fixes
+
+* remove shrinkwrap and add it to the circle build pipeline ([b4e4897](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b4e4897))
+* update dependency to ut-run ([10e3f24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/10e3f24))
+
+
+
 <a name="0.23.18"></a>
 ## [0.23.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.17...v0.23.18) (2017-05-22)
 
