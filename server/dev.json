@@ -7,12 +7,17 @@
       "port": 30019
     }
   },
-  "stdOut": {
-    "useColor": false,
-    "mode": "long"
-  },
+  "stdOut": false,
   "log": {
     "streams": [
+      {
+        "level": "debug",
+        "stream": "ut-log-dfsp",
+        "streamConfig": {
+          "skip": [],
+          "metrics": {}
+        }
+      },
       {
         "level": "trace",
         "stream": "../logRotateStream",
@@ -49,7 +54,8 @@
     "timeOut": 3600,
     "expireRule": "refresh",
     "defaultPhone": "",
-    "defaultShortCode": "*123#"
+    "defaultShortCode": "*123#",
+    "##########charsCount": true
   },
   "cache": {
     "storage": "memory",

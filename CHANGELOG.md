@@ -1,3 +1,50 @@
+<a name="0.23.19"></a>
+## [0.23.19](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.18...v0.23.19) (2017-05-29)
+
+
+### Bug Fixes
+
+* remove shrinkwrap and add it to the circle build pipeline ([b4e4897](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/b4e4897))
+* update dependency to ut-run ([10e3f24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/10e3f24))
+
+
+
+<a name="0.23.18"></a>
+## [0.23.18](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.17...v0.23.18) (2017-05-22)
+
+
+### Bug Fixes
+
+* log configuration ([4268ef9](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/4268ef9))
+
+
+
+<a name="0.23.17"></a>
+## [0.23.17](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.16...v0.23.17) (2017-05-19)
+
+
+### Bug Fixes
+
+* circle.yml ([9770b1f](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/9770b1f))
+
+
+
+<a name="0.23.16"></a>
+## [0.23.16](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.15...v0.23.16) (2017-05-19)
+
+
+
+<a name="0.23.15"></a>
+## [0.23.15](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.14...v0.23.15) (2017-05-15)
+
+
+### Bug Fixes
+
+* elk ([fe8a82e](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/fe8a82e))
+* prepare charscount ([1ed1b60](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/1ed1b60))
+
+
+
 <a name="0.23.14"></a>
 ## [0.23.14](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.13...v0.23.14) (2017-05-10)
 

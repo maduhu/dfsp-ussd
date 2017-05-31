@@ -39,6 +39,7 @@ module.exports = {
     })
   },
   receive: function (params) {
+    delete params.pendingTransaction
     return params
   }
 }

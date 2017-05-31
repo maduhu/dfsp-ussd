@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "0.23.14",
+  "version": "0.23.19",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
@@ -32,23 +32,37 @@
     "version": "ut-version"
   },
   "dependencies": {
-    "joi": "9.0.4",
+    "joi": "10.5.0",
     "ut-bus": "^5.9.0",
     "ut-port-httpserver": "8.7.1",
     "ut-port-http": "^6.4.1",
     "ut-port-jsonrpc": "^5.6.4",
     "ut-port-script": "^5.5.1",
-    "ut-ussd": "^6.6.0",
+    "ut-ussd": "^6.7.7",
     "ut-cache": "^5.5.3",
     "ut-port-performance": "^5.4.7",
     "ut-port-console": "^6.2.5",
-    "ut-run": "^8.1.0",
-    "pm2": "2.0.12"
+    "ut-run": "^8.1.14",
+    "pm2": "2.0.12",
+    "ut-log-dfsp": "^5.0.1",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "@leveloneproject/dfsp-api": "0.x",
+    "@leveloneproject/dfsp-directory": "0.x",
+    "@leveloneproject/dfsp-rule": "0.x",
+    "@leveloneproject/dfsp-transfer": "0.x",
+    "@leveloneproject/dfsp-ledger": "1.x",
+    "@leveloneproject/dfsp-identity": "0.x",
+    "@leveloneproject/dfsp-account": "0.x",
+    "@leveloneproject/dfsp-subscription": "0.x",
+    "@leveloneproject/dfsp-mock": "0.x",
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.15.0"
+    "ut-tools": "^5.17.21"
+  },
+  "peerDependencies": {
+    "request": "^2.81.0"
   },
   "repository": {
     "type": "git",
