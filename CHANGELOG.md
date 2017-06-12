@@ -1,3 +1,13 @@
+<a name="0.23.21"></a>
+## [0.23.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.20...v0.23.21) (2017-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([245c11b](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/245c11b))
+
+
+
 <a name="0.23.20"></a>
 ## [0.23.20](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.19...v0.23.20) (2017-06-01)
 
