@@ -14,6 +14,7 @@ module.exports = {
         amount: Number(invoice.amount),
         destinationIdentifier: params.pendingTransaction.merchantIdentifier,
         destinationAccount: params.pendingTransaction.receiver,
+        spspServer: pendingTransaction.invoiceUrl.split('/receivers/')[0],
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
         transferType: params.pendingTransaction.transferCode
@@ -21,7 +22,6 @@ module.exports = {
       .then(result => {
         params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0
         params.pendingTransaction.commission = (result.commission && result.commission.amount) || 0
-        params.pendingTransaction.connectorFee = result.connectorFee
         return params
       })
     })

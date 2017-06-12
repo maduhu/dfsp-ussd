@@ -5,6 +5,7 @@ module.exports = {
       amount: params.transfer.destinationAmount,
       destinationIdentifier: params.transfer.identifier,
       destinationAccount: params.transfer.destinationAccount,
+      spspServer: params.transfer.spspServer,
       sourceAccount: params.user.sourceAccountName,
       sourceIdentifier: params.user.identifier,
       transferType: 'p2p'
@@ -12,7 +13,6 @@ module.exports = {
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
         params.transfer.fee = (result.fee && result.fee.amount) || 0
-        params.transfer.connectorFee = result.connectorFee
         return params
       })
       .catch((error) => {

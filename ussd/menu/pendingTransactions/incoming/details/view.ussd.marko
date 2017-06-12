@@ -1,6 +1,6 @@
 Pending transaction from ${params.pendingTransaction.name} for ${params.pendingTransaction.amount} ${params.pendingTransaction.currencyCode}
-plus local fee of ${params.pendingTransaction.fee}<if test="params.pendingTransaction.connectorFee != 0"> and connector fee of ${params.pendingTransaction.connectorFee}</if>.
-Total transaction amount: ${Number(params.pendingTransaction.amount) + Number(params.pendingTransaction.fee) + Number(params.pendingTransaction.connectorFee)} ${params.pendingTransaction.currencyCode}
+plus fee of ${params.pendingTransaction.fee}.
+Total transaction amount: ${Number(params.pendingTransaction.amount) + Number(params.pendingTransaction.fee)} ${params.pendingTransaction.currencyCode}
 Please enter your PIN to approve or select 2 to reject.
 <br/><a id="*" href="../approve"></a>
 <br/><a id="0" href="menu/home">0. Home</a>

@@ -381,7 +381,6 @@ test({
             }),
             cashin: joi.object().keys({
               commission: joi.number().valid(0),
-              connectorFee: joi.number().valid(1.05),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
@@ -444,7 +443,6 @@ test({
             }).unknown(),
             cashin: joi.object().keys({
               commission: joi.number().valid(0),
-              connectorFee: joi.number().valid(1.05),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
@@ -590,7 +588,6 @@ test({
             }),
             cashin: joi.object().keys({
               commission: joi.number().valid(0),
-              connectorFee: joi.number().valid(1.05),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
@@ -654,7 +651,6 @@ test({
             }).unknown(),
             cashin: joi.object().keys({
               commission: joi.number().valid(0),
-              connectorFee: joi.number().valid(1.05),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),

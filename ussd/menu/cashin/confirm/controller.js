@@ -5,6 +5,7 @@ module.exports = {
       amount: params.cashin.destinationAmount,
       destinationIdentifier: params.cashin.identifier,
       destinationAccount: params.cashin.destinationAccount,
+      spspServer: params.cashin.spspServer,
       sourceAccount: params.user.sourceAccountName,
       sourceIdentifier: params.user.identifier,
       transferType: 'cashOut'
@@ -12,7 +13,6 @@ module.exports = {
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
         params.cashin.fee = (result.fee && result.fee.amount) || 0
-        params.cashin.connectorFee = result.connectorFee
         params.cashin.commission = (result.commission && result.commission.amount) || 0
         return params
       })

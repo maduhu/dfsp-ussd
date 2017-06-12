@@ -11,6 +11,7 @@ module.exports = {
       params.cashin.destinationCurrency = result.currencyCode
       params.cashin.destinationAccount = result.account
       params.cashin.identifier = params.system.message
+      params.cashin.spspServer = result.spspServer
       params.cashin.receiver = result.spspServer + '/receivers/' + params.system.message
       return params
     })

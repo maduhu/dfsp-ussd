@@ -309,7 +309,6 @@ test({
               prevState: joi.string()
             }),
             transfer: joi.object().keys({
-              connectorFee: 1.05,
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
@@ -364,7 +363,6 @@ test({
               sourceAccount: joi.string()
             }).unknown(),
             transfer: joi.object().keys({
-              connectorFee: 1.05,
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
@@ -495,7 +493,6 @@ test({
               prevState: joi.string()
             }),
             transfer: joi.object().keys({
-              connectorFee: 1.05,
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
@@ -551,7 +548,6 @@ test({
               sourceAccount: joi.string()
             }).unknown(),
             transfer: joi.object().keys({
-              connectorFee: 1.05,
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
