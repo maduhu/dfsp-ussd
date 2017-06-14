@@ -21,8 +21,8 @@ module.exports = {
       })
       .then(result => {
         params.pendingTransaction.transferId = result.transferId
-        params.pendingTransaction.fee = (result.fee && result.fee.amount) || 0
-        params.pendingTransaction.commission = (result.commission && result.commission.amount) || 0
+        params.pendingTransaction.fee = result.fee.amount
+        params.pendingTransaction.commission = result.commission.amount
         return params
       })
     })

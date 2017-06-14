@@ -13,8 +13,8 @@ module.exports = {
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
         params.cashin.transferId = result.transferId
-        params.cashin.fee = (result.fee && result.fee.amount) || 0
-        params.cashin.commission = (result.commission && result.commission.amount) || 0
+        params.cashin.fee = result.fee.amount
+        params.cashin.commission = result.commission.amount
         return params
       })
       .catch((error) => {
