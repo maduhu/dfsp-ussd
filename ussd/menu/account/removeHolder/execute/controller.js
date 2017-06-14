@@ -1,7 +1,7 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('account.actorAccount.remove')({
-      accountNumber: params.user.actorAccountId
+      actorAccountId: params.user.actorAccountId
     })
     .then((result) => {
       var actorId = params.remove.actorId
