@@ -11,7 +11,7 @@ module.exports = {
       params.pendingTransaction.transferCode = (invoice.invoiceType === 'cashOut' ? 'cashOut' : 'invoice')
       return this.bus.importMethod('rule.decision.fetch')({
         currency: invoice.currencyCode,
-        amount: Number(invoice.amount),
+        amount: invoice.amount,
         destinationIdentifier: params.pendingTransaction.merchantIdentifier,
         destinationAccount: params.pendingTransaction.receiver,
         spspServer: pendingTransaction.invoiceUrl.split('/receivers/')[0],
