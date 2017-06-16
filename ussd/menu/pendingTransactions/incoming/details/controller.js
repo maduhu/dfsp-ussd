@@ -13,7 +13,7 @@ module.exports = {
         currency: invoice.currencyCode,
         amount: invoice.amount,
         destinationIdentifier: params.pendingTransaction.merchantIdentifier,
-        destinationAccount: params.pendingTransaction.receiver,
+        destinationAccount: invoice.account,
         spspServer: pendingTransaction.invoiceUrl.split('/receivers/')[0],
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,

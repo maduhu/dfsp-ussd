@@ -816,7 +816,9 @@ test({
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            context: joi.object().keys({}).required()
+            context: joi.object().keys({}).required(),
+            pendingTransaction: joi.any(),
+            pendingTransactions: joi.any()
           }).required()
         }).required()).error, null, 'return all params on home screen')
       }
@@ -847,7 +849,9 @@ test({
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            context: joi.object().keys({}).required()
+            context: joi.object().keys({}).required(),
+            pendingTransaction: joi.any(),
+            pendingTransactions: joi.any()
           }).required()
         }).required()).error, null, 'return all params on verify screen')
       }
