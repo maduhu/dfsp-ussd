@@ -8,7 +8,7 @@ module.exports = {
       spspServer: params.cashin.spspServer,
       sourceAccount: params.user.sourceAccountName,
       sourceIdentifier: params.user.identifier,
-      transferType: 'cashOut'
+      transferType: 'cashIn'
     }
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
