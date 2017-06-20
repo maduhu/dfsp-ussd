@@ -6,6 +6,11 @@ module.exports = {
   imports: ['ussd.start'],
   api: ['ussd'],
   port: 8019,
+  allowXFF: true,
+  disableXsrf: {
+    http: true,
+    ws: true
+  },
   bundle: 'ussd',
   validationPassThrough: true,
   dist: path.resolve(__dirname, '../dist'),
