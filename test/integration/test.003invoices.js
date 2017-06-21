@@ -733,7 +733,8 @@ test({
               receiver: joi.string().required(),
               status: joi.string().valid('pending').required(),
               transferCode: joi.string().valid('invoice').required(),
-              type: joi.string().valid('invoice').required()
+              type: joi.string().valid('invoice').required(),
+              transferId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -783,7 +784,8 @@ test({
               receiver: joi.string().required(),
               status: joi.string().valid('executed').required(),
               transferCode: joi.string().valid('invoice').required(),
-              type: joi.string().valid('invoice').required()
+              type: joi.string().valid('invoice').required(),
+              transferId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -885,7 +887,7 @@ test({
             ministatement: joi.array().items(joi.object().keys({
               amount: joi.string().valid('-' + AMOUNT).required(),
               date: joi.string().required(),
-              name: joi.string().valid(MERCHANT.firstName + ' ' + MERCHANT.lastName).required()
+              name: joi.string().valid(MERCHANT.firstName).required()
             }).required(), joi.object().keys({
               amount: joi.string().valid('-1.00').required(),
               date: joi.string().required(),
@@ -1017,7 +1019,7 @@ test({
             ministatement: joi.array().items(joi.object().keys({
               amount: joi.string().valid(AMOUNT).required(),
               date: joi.string().required(),
-              name: joi.string().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName).required()
+              name: joi.string().valid(CUSTOMER.firstName).required()
             }).required(), joi.object().keys({
               amount: joi.string().required(),
               date: joi.string().required(),
