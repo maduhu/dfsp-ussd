@@ -1,3 +1,18 @@
+<a name="0.23.23"></a>
+## [0.23.23](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.22...v0.23.23) (2017-06-20)
+
+
+
+<a name="0.23.22"></a>
+## [0.23.22](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.21...v0.23.22) (2017-06-20)
+
+
+### Bug Fixes
+
+* update ut-bus and ut-port-httpserver ([c770acc](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/c770acc))
+
+
+
 <a name="0.23.21"></a>
 ## [0.23.21](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.20...v0.23.21) (2017-06-12)
 
