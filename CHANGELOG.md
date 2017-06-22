@@ -1,3 +1,13 @@
+<a name="0.23.24"></a>
+## [0.23.24](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.23...v0.23.24) (2017-06-22)
+
+
+### Bug Fixes
+
+* fix managing primary accounts ([#33](https://github.com/LevelOneProject/dfsp-ussd/issues/33)) ([50df0df](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/commit/50df0df))
+
+
+
 <a name="0.23.23"></a>
 ## [0.23.23](https://github.com/softwaregroup-bg/@leveloneproject/dfsp-ussd/compare/v0.23.22...v0.23.23) (2017-06-20)
 
