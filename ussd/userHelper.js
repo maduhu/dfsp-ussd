@@ -7,6 +7,7 @@ module.exports = {
     result.user.currencySymbol = account.currencySymbol
     result.user.sourceAccountName = account.name
     result.user.sourceAccountNumber = accountNumber
+    result.user.sourceAccountType = account.accountType
     result.user.isDefault = acc.isDefault
     result.user.isSignatory = acc.isSignatory
     result.user.actorAccountId = acc.actorAccountId
