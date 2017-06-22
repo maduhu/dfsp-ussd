@@ -4,7 +4,7 @@ Select which action you would like to take:
 <var name="ind" value=0 />
 <br/><a id="0" href="menu/home">0. Home</a>
 <br/><a id="${++ind}" href="../add/name">${ind}. Add Account</a>
-<br/><a id="${++ind}" href="../edit">${ind}. Edit Account</a>
+<if test="params.user.sourceAccountType === 'mWallet'"><br/><a id="${++ind}" href="../edit">${ind}. Edit Account</a></if>
 <if test="params.user.isSignatory"><br/><a id="${++ind}" href="../close">${ind}. Close Account</a></if>
 <br/><a id="${++ind}" href="../info">${ind}. Account Info</a>
 <if test="params.user.isSignatory"><br/><a id="${++ind}" href="../addHolder/identifier">${ind}. Add Holder</a></if>
