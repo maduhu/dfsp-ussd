@@ -48,7 +48,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required()
             }).required(),
@@ -82,7 +82,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -132,7 +132,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -184,7 +184,7 @@ test({
             cashin: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -274,7 +274,7 @@ test({
             cashin: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -326,13 +326,13 @@ test({
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required(),
               spspServer: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -386,13 +386,13 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
               fee: 1,
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER.firstName),
               spspServer: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -449,7 +449,7 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
               fee: 1,
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER.firstName),
               spspServer: joi.string().required()
             }).required(),
@@ -484,7 +484,7 @@ test({
             cashin: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -536,13 +536,13 @@ test({
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required(),
               spspServer: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -597,14 +597,14 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
               fee: 1,
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER.firstName),
               spspServer: joi.string().required(),
               transferId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(AGENT.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -662,7 +662,7 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
               fee: 1,
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER.firstName),
               fulfillment: joi.string().required().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK'),
               status: joi.string().required().valid('executed'),
@@ -814,7 +814,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),

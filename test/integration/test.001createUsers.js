@@ -381,7 +381,7 @@ function createUser (user) {
               currency: joi.string().valid('USD').required(),
               dob: joi.string().valid(user.dob).required(),
               firstName: joi.string().valid(user.firstName).required(),
-              identifier: joi.string().valid(user.firstName).required(),
+              identifier: joi.string().required(),
               identifierTypeCode: joi.string().valid('eur').required(),
               lastName: joi.string().valid(user.lastName).required(),
               nationalId: joi.string().valid(user.nationalId).required(),

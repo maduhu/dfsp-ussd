@@ -46,7 +46,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -90,7 +90,7 @@ test({
             transfer: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -134,7 +134,7 @@ test({
             transfer: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -217,7 +217,7 @@ test({
             transfer: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -263,12 +263,12 @@ test({
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -316,12 +316,12 @@ test({
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
               commission: joi.number().optional(),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -371,7 +371,7 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
             }).required(),
             context: joi.object().keys({}).required()
@@ -405,7 +405,7 @@ test({
             transfer: joi.object().keys({}).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -451,12 +451,12 @@ test({
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -506,12 +506,12 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_1.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
@@ -564,7 +564,7 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName),
               fulfillment: joi.string().required().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK'),
               status: joi.string().required().valid('executed')
@@ -706,7 +706,7 @@ test({
             }),
             user: joi.object().keys({
               actorId: joi.string().required(),
-              identifier: joi.string().required().valid(CUSTOMER_2.firstName),
+              identifier: joi.string().required(),
               name: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
