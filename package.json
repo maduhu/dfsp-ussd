@@ -48,11 +48,11 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.1 <1.0.0",
+    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.6 <1.0.0",
     "@leveloneproject/dfsp-directory": "0.x",
     "@leveloneproject/dfsp-rule": "0.x",
     "@leveloneproject/dfsp-transfer": "0.x",
-    "@leveloneproject/dfsp-ledger": ">=2.0.0-quotes.0 <2.0.0",
+    "@leveloneproject/dfsp-ledger": ">=2.0.0-quotes.2 <2.0.0",
     "@leveloneproject/dfsp-identity": "0.x",
     "@leveloneproject/dfsp-account": "0.x",
     "@leveloneproject/dfsp-subscription": "0.x",

@@ -8,6 +8,7 @@ module.exports = {
       destinationAmount: params.cashin.destinationAmount,
       currency: params.cashin.destinationCurrency,
       fee: params.cashin.fee,
+      transferType: 'cashIn',
       memo: {
         fee: params.cashin.fee,
         commission: params.cashin.commission,

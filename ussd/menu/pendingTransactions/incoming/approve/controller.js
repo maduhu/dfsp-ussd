@@ -13,6 +13,7 @@ module.exports = {
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
         fee: params.pendingTransaction.fee,
+        transferType: params.pendingTransaction.transferCode,
         memo: {
           fee: params.pendingTransaction.fee,
           commission: params.pendingTransaction.commission,

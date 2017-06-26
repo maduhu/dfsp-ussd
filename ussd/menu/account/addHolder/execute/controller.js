@@ -4,7 +4,8 @@ module.exports = {
       actorId: '' + params.add.actorId,
       accountNumber: params.user.sourceAccountNumber,
       isDefault: false,
-      isSignatory: params.add.isSignatory
+      isSignatory: params.add.isSignatory,
+      identifier: params.add.identifier
     })
     .then((res) => {
       delete params.add

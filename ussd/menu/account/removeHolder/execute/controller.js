@@ -1,11 +1,14 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('account.actorAccount.remove')({
-      actorAccountId: params.user.actorAccountId
+      actorAccountId: params.remove.actorAccountId,
+      actorId: params.remove.actorId,
+      accountNumber: params.user.sourceAccountNumber
     })
     .then((result) => {
       var actorId = params.remove.actorId
       delete params.remove
+      delete params.holders
       return this.bus.importMethod('account.actorAccount.fetch')({
         actorId: actorId
       })
@@ -30,6 +33,7 @@ module.exports = {
     })
     .catch((error) => {
       delete params.remove
+      delete params.holders
       params.context = error
       return this.redirect('menu/error/generic')
     })

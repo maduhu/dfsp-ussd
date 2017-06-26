@@ -8,9 +8,14 @@ module.exports = {
         actorId: res.map((el) => parseInt(el.actorId))
       })
       .then((r) => {
-        params.context = {
-          holders: r.map((el) => ({name: el.firstName + ' ' + el.lastName, actorId: el.actorId}))
-        }
+        params.holders = res.map((el) => {
+          var user = r.find((e) => ('' + e.actorId) === el.actorId)
+          return {
+            name: user.firstName + ' ' + user.lastName,
+            actorId: el.actorId,
+            actorAccountId: el.actorAccountId
+          }
+        })
         return params
       })
     })
@@ -20,7 +25,7 @@ module.exports = {
     })
   },
   receive: function (params) {
-    params.remove = {actorId: params.system.input.requestParams.holderActorId}
+    params.remove = params.holders[params.system.input.requestParams.account]
     return this.bus.importMethod('account.actorAccount.fetch')({
       accountNumber: params.user.sourceAccountNumber
     })

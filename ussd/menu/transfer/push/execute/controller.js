@@ -8,6 +8,7 @@ module.exports = {
       destinationAmount: params.transfer.destinationAmount,
       currency: params.transfer.destinationCurrency,
       fee: params.transfer.fee,
+      transferType: 'p2p',
       memo: {
         fee: params.transfer.fee,
         transferCode: 'p2p',
