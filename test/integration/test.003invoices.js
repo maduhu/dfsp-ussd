@@ -12,7 +12,6 @@ const HOME = '0'
 const MINISTATEMENT = '6'
 const MERCHANT_MINISTATEMENT = '7'
 const AMOUNT = '42.00'
-const AMOUNT_NUMBER = 42.00
 
 test({
   type: 'integration',
