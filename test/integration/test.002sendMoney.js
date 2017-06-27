@@ -57,6 +57,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -101,6 +102,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -118,11 +120,11 @@ test({
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -135,7 +137,7 @@ test({
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -145,6 +147,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({
@@ -169,11 +172,11 @@ test({
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -201,11 +204,11 @@ test({
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -218,7 +221,7 @@ test({
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -228,6 +231,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -240,16 +244,16 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER_1.phoneNum,
-        message: CUSTOMER_2.firstName
+        message: CUSTOMER_2.identifier
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -262,14 +266,14 @@ test({
               spspServer: joi.string().required(),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
-              destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
+              destinationName: joi.string().required(),
               identifier: joi.string().required(),
               receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -279,6 +283,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -313,16 +318,16 @@ test({
               spspServer: joi.string().required(),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
-              destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
+              destinationName: joi.string().required(),
               fee: joi.number().optional(),
               commission: joi.number().optional(),
               identifier: joi.string().required(),
-              receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
+              receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -332,6 +337,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -372,7 +378,7 @@ test({
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
               identifier: joi.string().required(),
-              receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
+              receiver: joi.string().required()
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -406,7 +412,7 @@ test({
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -416,6 +422,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -428,7 +435,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER_1.phoneNum,
-        message: CUSTOMER_2.firstName
+        message: CUSTOMER_2.identifier
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -450,14 +457,14 @@ test({
               spspServer: joi.string().required(),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
-              destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
+              destinationName: joi.string().required(),
               identifier: joi.string().required(),
               receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -467,6 +474,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -484,11 +492,11 @@ test({
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -507,12 +515,12 @@ test({
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
               fee: joi.number().optional(),
               identifier: joi.string().required(),
-              receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName)
+              receiver: joi.string().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_1.firstName + ' ' + CUSTOMER_1.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -522,6 +530,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()
@@ -539,11 +548,11 @@ test({
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
           shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER_1.phoneNum),
+          sourceAddr: joi.string().required(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER_1.phoneNum),
+              phone: joi.string().required(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -562,10 +571,10 @@ test({
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
-              destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
+              destinationName: joi.string().required(),
               fee: joi.number().optional(),
               identifier: joi.string().required(),
-              receiver: joi.string().required().valid('http://localhost:8010/receivers/' + CUSTOMER_2.firstName),
+              receiver: joi.string().required(),
               fulfillment: joi.string().required().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK'),
               status: joi.string().required().valid('executed')
             }).required(),
@@ -707,7 +716,7 @@ test({
             user: joi.object().keys({
               actorId: joi.string().required(),
               identifier: joi.string().required(),
-              name: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
+              name: joi.string().required(),
               accounts: joi.array().required(),
               sourceAccount: joi.string().required(),
               currencyCode: joi.string().valid('USD').required(),
@@ -717,6 +726,7 @@ test({
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
               actorAccountId: joi.string().required(),
+              sourceAccountType: joi.string().required(),
               permissions: joi.array().required().items(joi.string().valid('p2p'), joi.string().valid('ministatement'), joi.string().valid('balanceCheck'))
             }).required(),
             context: joi.object().keys({}).required()

@@ -27,6 +27,7 @@ module.exports = {
         accountName: this.generateRandomNumber().toString(),
         role: '1',
         roleName: 'customer',
+        identifier: this.generateRandomNumber().toString(),
         pin: '1234'
       }
     }
@@ -45,6 +46,7 @@ module.exports = {
         accountName: this.generateRandomNumber().toString(),
         role: '2',
         roleName: 'merchant',
+        identifier: this.generateRandomNumber().toString(),
         pin: '1234'
       }
     }
@@ -63,6 +65,7 @@ module.exports = {
         accountName: this.generateRandomNumber().toString(),
         role: '3',
         roleName: 'agent',
+        identifier: this.generateRandomNumber().toString(),
         pin: '1234'
       }
     }
