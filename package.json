@@ -44,11 +44,11 @@
     "ut-port-console": "~6.2.13",
     "ut-run": "^8.1.14",
     "pm2": "2.0.12",
-    "ut-log-dfsp": "^5.0.1",
+    "ut-log-dfsp": "^5.0.12",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.6 <1.0.0",
+    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.11 <1.0.0",
     "@leveloneproject/dfsp-directory": "0.x",
     "@leveloneproject/dfsp-rule": "0.x",
     "@leveloneproject/dfsp-transfer": "0.x",

@@ -99,7 +99,7 @@ function createUser (user) {
     method: 'ussd.request',
     params: {
       phone: user.phoneNum,
-      message: FIRST_OPTION
+      message: user.identifier
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
@@ -253,6 +253,7 @@ function createUser (user) {
             firstName: joi.string().valid(user.firstName).required(),
             lastName: joi.string().valid(user.lastName).required(),
             dob: joi.string().valid(user.dob).required(),
+            number: joi.string().required(),
             nationalId: joi.string().valid(user.nationalId).required()
           }).required()
         }).required()
@@ -293,6 +294,7 @@ function createUser (user) {
             lastName: joi.string().valid(user.lastName).required(),
             dob: joi.string().valid(user.dob).required(),
             nationalId: joi.string().valid(user.nationalId).required(),
+            number: joi.string().required(),
             accountName: joi.string().valid(user.accountName).required()
           }).required()
         }).required()
@@ -332,6 +334,7 @@ function createUser (user) {
             dob: joi.string().valid(user.dob).required(),
             nationalId: joi.string().valid(user.nationalId).required(),
             accountName: joi.string().valid(user.accountName).required(),
+            number: joi.string().required(),
             roleName: joi.string().valid(user.roleName).required()
           }).required()
         }).required()
@@ -371,6 +374,7 @@ function createUser (user) {
             dob: joi.string().valid(user.dob).required(),
             nationalId: joi.string().valid(user.nationalId).required(),
             accountName: joi.string().valid(user.accountName).required(),
+            number: joi.string().required(),
             roleName: joi.string().valid(user.roleName).required(),
             password: joi.string().valid(user.pin).required(),
             result: joi.object().keys({
@@ -381,7 +385,7 @@ function createUser (user) {
               currency: joi.string().valid('USD').required(),
               dob: joi.string().valid(user.dob).required(),
               firstName: joi.string().valid(user.firstName).required(),
-              identifier: joi.string().valid(user.firstName).required(),
+              identifier: joi.string().required(),
               identifierTypeCode: joi.string().valid('eur').required(),
               lastName: joi.string().valid(user.lastName).required(),
               nationalId: joi.string().valid(user.nationalId).required(),
