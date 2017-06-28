@@ -44,7 +44,7 @@
     "ut-port-console": "~6.2.13",
     "ut-run": "^8.1.14",
     "pm2": "2.0.12",
-    "ut-log-dfsp": "^5.0.1",
+    "ut-log-dfsp": "^5.0.12",
     "lodash": "^4.17.4"
   },
   "devDependencies": {
