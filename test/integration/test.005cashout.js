@@ -796,7 +796,7 @@ test({
               status: joi.string().valid('pending').required(),
               transferCode: joi.string().valid('cashOut').required(),
               type: joi.string().valid('invoice').required(),
-              transferId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -847,7 +847,7 @@ test({
               status: joi.string().valid('executed').required(),
               transferCode: joi.string().valid('cashOut').required(),
               type: joi.string().valid('invoice').required(),
-              transferId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
             }).required(),
             context: joi.object().keys({}).required()
           }).required()

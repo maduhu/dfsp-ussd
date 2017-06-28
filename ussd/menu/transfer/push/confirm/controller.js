@@ -12,7 +12,7 @@ module.exports = {
     }
     return this.bus.importMethod('rule.decision.fetch')(msg)
       .then(result => {
-        params.transfer.transferId = result.transferId
+        params.transfer.paymentId = result.paymentId
         params.transfer.fee = result.fee.amount
         params.transfer.commission = result.commission.amount
         return params

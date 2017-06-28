@@ -507,7 +507,7 @@ test({
             }),
             transfer: joi.object().keys({
               spspServer: joi.string().required(),
-              transferId: joi.string().required(),
+              paymentId: joi.string().required(),
               commission: joi.number().optional(),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
@@ -566,7 +566,7 @@ test({
             }).unknown(),
             transfer: joi.object().keys({
               spspServer: joi.string().required(),
-              transferId: joi.string().required(),
+              paymentId: joi.string().required(),
               commission: joi.number().optional(),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
