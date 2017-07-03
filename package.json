@@ -56,7 +56,7 @@
     "@leveloneproject/dfsp-identity": "0.x",
     "@leveloneproject/dfsp-account": "0.x",
     "@leveloneproject/dfsp-subscription": "0.x",
-    "@leveloneproject/dfsp-mock": "0.x",
+    "@leveloneproject/dfsp-mock": ">=1.0.0-quotes.1 <1.0.0",
     "blue-tape": "1.0.0",
     "tap-xunit": "1.4.0",
     "ut-tools": "^5.17.26"

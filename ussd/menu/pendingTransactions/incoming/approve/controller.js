@@ -6,17 +6,20 @@ module.exports = {
     })
     .then((res) => {
       return this.bus.importMethod('transfer.push.execute')({
-        paymentId: params.pendingTransaction.paymentId,
+        paymentId: params.pendingTransaction.quote.paymentId,
         sourceIdentifier: params.user.identifier,
         sourceAccount: params.user.sourceAccount,
         receiver: params.pendingTransaction.receiver,
         destinationAmount: params.pendingTransaction.amount,
         currency: params.pendingTransaction.currencyCode,
-        fee: params.pendingTransaction.fee,
+        fee: params.pendingTransaction.quote.fee,
         transferType: params.pendingTransaction.transferCode,
+        ipr: params.pendingTransaction.quote.ipr,
+        sourceExpiryDuration: params.pendingTransaction.quote.sourceExpiryDuration,
+        connectorAccount: params.pendingTransaction.quote.connectorAccount,
         memo: {
-          fee: params.pendingTransaction.fee,
-          commission: params.pendingTransaction.commission,
+          fee: params.pendingTransaction.quote.fee,
+          commission: params.pendingTransaction.quote.commission,
           transferCode: params.pendingTransaction.transferCode,
           debitName: params.user.name,
           creditName: params.pendingTransaction.name

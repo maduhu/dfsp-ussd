@@ -20,9 +20,7 @@ module.exports = {
         transferType: params.pendingTransaction.transferCode
       })
       .then(result => {
-        params.pendingTransaction.paymentId = result.paymentId
-        params.pendingTransaction.fee = result.fee.amount
-        params.pendingTransaction.commission = result.commission.amount
+        params.pendingTransaction.quote = result
         return params
       })
     })

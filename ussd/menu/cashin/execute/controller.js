@@ -1,17 +1,20 @@
 module.exports = {
   send: function (params) {
     return this.bus.importMethod('transfer.push.execute')({
-      paymentId: params.cashin.paymentId,
+      paymentId: params.cashin.quote.paymentId,
       sourceIdentifier: params.user.identifier,
       sourceAccount: params.user.sourceAccount,
       receiver: params.cashin.receiver,
       destinationAmount: params.cashin.destinationAmount,
       currency: params.cashin.destinationCurrency,
-      fee: params.cashin.fee,
+      fee: params.cashin.quote.fee,
       transferType: 'cashIn',
+      ipr: params.cashin.quote.ipr,
+      sourceExpiryDuration: params.cashin.quote.sourceExpiryDuration,
+      connectorAccount: params.cashin.quote.connectorAccount,
       memo: {
-        fee: params.cashin.fee,
-        commission: params.cashin.commission,
+        fee: params.cashin.quote.fee,
+        commission: params.cashin.quote.commission,
         transferCode: 'cashIn',
         debitName: params.user.name,
         creditName: params.cashin.destinationName
