@@ -732,10 +732,8 @@ test({
             pendingTransaction: joi.object().keys({
               account: joi.string().required(),
               amount: joi.string().valid(AMOUNT).required(),
-              commission: joi.number().valid(0).required(),
               currencyCode: joi.string().valid('USD').required(),
               currencySymbol: joi.string().valid('$').required(),
-              fee: joi.number().valid(1).required(),
               invoiceId: joi.number().required(),
               invoiceInfo: joi.string().required(),
               invoiceNotificationId: joi.number().required(),
@@ -746,7 +744,7 @@ test({
               status: joi.string().valid('pending').required(),
               transferCode: joi.string().valid('invoice').required(),
               type: joi.string().valid('invoice').required(),
-              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              quote: joi.object().required()
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
@@ -782,11 +780,8 @@ test({
             pendingTransaction: joi.object().keys({
               account: joi.string().required(),
               amount: joi.string().valid(AMOUNT).required(),
-              commission: joi.number().valid(0).required(),
               currencyCode: joi.string().valid('USD').required(),
               currencySymbol: joi.string().valid('$').required(),
-              fee: joi.number().valid(1).required(),
-              fulfillment: joi.string().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK').required(),
               invoiceId: joi.number().required(),
               invoiceInfo: joi.string().required(),
               invoiceNotificationId: joi.number().required(),
@@ -794,10 +789,9 @@ test({
               merchantIdentifier: joi.string().required(),
               name: joi.string().valid(MERCHANT.firstName + ' ' + MERCHANT.lastName).required(),
               receiver: joi.string().required(),
-              status: joi.string().valid('executed').required(),
               transferCode: joi.string().valid('invoice').required(),
               type: joi.string().valid('invoice').required(),
-              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              quote: joi.object().required()
             }).required(),
             context: joi.object().keys({}).required()
           }).required()

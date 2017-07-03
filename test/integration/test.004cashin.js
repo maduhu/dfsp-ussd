@@ -386,11 +386,9 @@ test({
               prevState: joi.string()
             }),
             cashin: joi.object().keys({
-              commission: joi.number().valid(0),
               destinationAccount: joi.string().required(),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER.firstName + ' ' + CUSTOMER.lastName),
-              fee: 1,
               identifier: joi.string().required(),
               receiver: joi.string().required(),
               spspServer: joi.string().required()
@@ -599,16 +597,14 @@ test({
               prevState: joi.string()
             }),
             cashin: joi.object().keys({
-              commission: joi.number().valid(0),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required(),
-              fee: 1,
               identifier: joi.string().required(),
               receiver: joi.string().required(),
               spspServer: joi.string().required(),
-              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              quote: joi.object().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
@@ -665,18 +661,14 @@ test({
               sourceAccount: joi.string()
             }).unknown(),
             cashin: joi.object().keys({
-              commission: joi.number().valid(0),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required(),
-              fee: 1,
               identifier: joi.string().required(),
               receiver: joi.string().required(),
-              fulfillment: joi.string().required().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK'),
-              status: joi.string().required().valid('executed'),
               spspServer: joi.string().required(),
-              paymentId: joi.string().required().regex(/^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$/)
+              quote: joi.object().required()
             }).required(),
             context: joi.object().keys({}).required()
           }).required()

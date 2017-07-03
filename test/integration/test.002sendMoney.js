@@ -507,15 +507,13 @@ test({
             }),
             transfer: joi.object().keys({
               spspServer: joi.string().required(),
-              paymentId: joi.string().required(),
-              commission: joi.number().optional(),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required().valid(CUSTOMER_2.firstName + ' ' + CUSTOMER_2.lastName),
-              fee: joi.number().optional(),
               identifier: joi.string().required(),
-              receiver: joi.string().required()
+              receiver: joi.string().required(),
+              quote: joi.object().required()
             }).required(),
             user: joi.object().keys({
               actorId: joi.string().required(),
@@ -566,17 +564,13 @@ test({
             }).unknown(),
             transfer: joi.object().keys({
               spspServer: joi.string().required(),
-              paymentId: joi.string().required(),
-              commission: joi.number().optional(),
               destinationAccount: joi.string().required(),
               destinationAmount: joi.string().required().valid(AMOUNT),
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required(),
-              fee: joi.number().optional(),
               identifier: joi.string().required(),
               receiver: joi.string().required(),
-              fulfillment: joi.string().required().valid('oCKAINnWMdlw8Vpvz8jMBdIOguJls1lMo6kBT6ERSrh11MDK'),
-              status: joi.string().required().valid('executed')
+              quote: joi.object().required()
             }).required(),
             context: joi.object().keys({}).required()
           }).required()
