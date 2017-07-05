@@ -569,6 +569,8 @@ test({
               destinationCurrency: joi.string().valid('USD').required(),
               destinationName: joi.string().required(),
               identifier: joi.string().required(),
+              status: joi.any(),
+              fulfillment: joi.any(),
               receiver: joi.string().required(),
               quote: joi.object().required()
             }).required(),

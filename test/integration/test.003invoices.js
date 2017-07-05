@@ -789,6 +789,8 @@ test({
               merchantIdentifier: joi.string().required(),
               name: joi.string().valid(MERCHANT.firstName + ' ' + MERCHANT.lastName).required(),
               receiver: joi.string().required(),
+              fulfillment: joi.any(),
+              status: joi.any(),
               transferCode: joi.string().valid('invoice').required(),
               type: joi.string().valid('invoice').required(),
               quote: joi.object().required()

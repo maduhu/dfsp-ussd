@@ -667,6 +667,8 @@ test({
               destinationName: joi.string().required(),
               identifier: joi.string().required(),
               receiver: joi.string().required(),
+              fulfillment: joi.any(),
+              status: joi.any(),
               spspServer: joi.string().required(),
               quote: joi.object().required()
             }).required(),
