@@ -5,6 +5,8 @@ var config = require('./../lib/appConfig')
 var joi = require('joi')
 const CUSTOMER_1 = commonFunc.getCustomer('customer1')
 const CUSTOMER_2 = commonFunc.getCustomer('customer2')
+const CUSTOMER_3 = commonFunc.getCustomer('customer3')
+const CUSTOMER_4 = commonFunc.getCustomer('customer4')
 const MERCHANT = commonFunc.getMerchant('merchant')
 const AGENT = commonFunc.getAgent('agent')
 const INIT_MSG = '*123#'
@@ -23,6 +25,8 @@ test({
     return run(test, bus, [].concat(
       createUser(CUSTOMER_1),
       createUser(CUSTOMER_2),
+      createUser(CUSTOMER_3),
+      createUser(CUSTOMER_4),
       createUser(MERCHANT),
       createUser(AGENT)
     ))

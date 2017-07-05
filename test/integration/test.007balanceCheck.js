@@ -3,11 +3,10 @@ var test = require('ut-run/test')
 var commonFunc = require('./../lib/commonFunctions.js')
 var config = require('./../lib/appConfig')
 var joi = require('joi')
-const CUSTOMER = commonFunc.getCustomer('customer1')
+const SECOND_CUSTOMER = commonFunc.getCustomer('customer2')
 const INIT_MSG = '*123#'
 const FIRST_OPTION = '1'
-const SECOND_OPTION = '2'
-const THIRD_OPTION = '3'
+const FIFTH_OPTION = '5'
 
 test({
   type: 'integration',
@@ -23,7 +22,7 @@ test({
       name: 'Login',
       method: 'ussd.request',
       params: {
-        phone: CUSTOMER.phoneNum,
+        phone: SECOND_CUSTOMER.phoneNum,
         message: INIT_MSG
       },
       result: (result, assert) => {
@@ -40,11 +39,11 @@ test({
     },
     {
       // manage account screen
-      name: 'Manage account menu',
+      name: 'Check balance',
       method: 'ussd.request',
       params: {
-        phone: CUSTOMER.phoneNum,
-        message: THIRD_OPTION
+        phone: SECOND_CUSTOMER.phoneNum,
+        message: FIFTH_OPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -55,15 +54,29 @@ test({
             context: joi.object()
           }),
           sourceAddr: joi.any()
-        })).error, null, 'Check info in manage account screen')
+        })).error, null, 'Balance check')
       }
     },
     {
-      // add account screen
-      name: 'Add account menu',
+      name: 'Enter wrong pin',
       method: 'ussd.request',
       params: {
-        phone: CUSTOMER.phoneNum,
+        phone: SECOND_CUSTOMER.phoneNum,
+        message: 'wrong'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check error wrong pin')
+      }
+    },
+    {
+      name: 'Try again - return back',
+      method: 'ussd.request',
+      params: {
+        phone: SECOND_CUSTOMER.phoneNum,
         message: FIRST_OPTION
       },
       result: (result, assert) => {
@@ -71,16 +84,15 @@ test({
           shortMessage: joi.string(),
           debug: joi.object(),
           sourceAddr: joi.any()
-        })).error, null, 'Check info in add account screen')
+        })).error, null, 'Check error wrong pin')
       }
     },
     {
-      // enter account name screen
-      name: 'Enter account name',
+      name: 'Enter account holder identifiername',
       method: 'ussd.request',
       params: {
-        phone: CUSTOMER.phoneNum,
-        message: new Date().toISOString()
+        phone: SECOND_CUSTOMER.phoneNum,
+        message: SECOND_CUSTOMER.pin
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -91,33 +103,13 @@ test({
       }
     },
     {
-      name: 'Set primary account',
-      method: 'ussd.request',
+      name: 'Close session',
+      method: 'ussd.closeSession',
       params: {
-        phone: CUSTOMER.phoneNum,
-        message: SECOND_OPTION
+        phone: SECOND_CUSTOMER.phoneNum
       },
       result: (result, assert) => {
-        assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string(),
-          debug: joi.object(),
-          sourceAddr: joi.any()
-        })).error, null, 'Check info in add account screen')
-      }
-    },
-    {
-      name: 'Enter pin to confirm',
-      method: 'ussd.request',
-      params: {
-        phone: CUSTOMER.phoneNum,
-        message: CUSTOMER.pin
-      },
-      result: (result, assert) => {
-        assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string(),
-          debug: joi.object(),
-          sourceAddr: joi.any()
-        })).error, null, 'Check info in add account screen')
+        assert.true(result.shortMessage.indexOf('Session Closed') > -1, 'Session Closed')
       }
     }]
     )
