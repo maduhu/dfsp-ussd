@@ -33,12 +33,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               meta: joi.object(),
               routes: joi.object(),
@@ -46,16 +46,16 @@ test({
               prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required()
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on choose account screen')
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on choose account screen')
       }
     }, {
       // choose account
@@ -67,12 +67,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               meta: joi.object(),
               routes: joi.object(),
@@ -80,33 +80,26 @@ test({
               prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // cash out screen
@@ -118,47 +111,40 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
-              message: joi.string().valid(THIRD_OPTION),
+              message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
-            cashOut: joi.object().keys({}).required(),
+            }).unknown(),
+            cashOut: joi.object(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on cash out screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on cash out screen')
       }
     }, {
       // wrong receiver
@@ -170,12 +156,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -183,41 +169,34 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
-            cashOut: joi.object().keys({}).required(),
+            }).unknown(),
+            cashOut: joi.object(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
             context: joi.object().keys({
-              code: joi.number().valid(-1).required(),
-              errorPrint: joi.string().required(),
+              code: joi.number(),
+              errorPrint: joi.string(),
               print: joi.string(),
-              method: joi.string().required(),
-              stackInfo: joi.array().required(),
-              type: joi.string().valid('dfsp.spsp.noaccount').required()
-            }).required()
-          }).required()
-        }).required()).error, null, 'return all params on destination number screen with wrong receiver')
+              method: joi.string(),
+              stackInfo: joi.array(),
+              type: joi.string()
+            }).unknown()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen with wrong receiver')
       }
     }, {
       // back to home screen
@@ -229,12 +208,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -242,14 +221,14 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            cashOut: joi.object().keys({}).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+            cashOut: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // cash out screen
@@ -261,47 +240,40 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
-              message: joi.string().valid(THIRD_OPTION),
+              message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
-            cashOut: joi.object().keys({}).required(),
+            }).unknown(),
+            cashOut: joi.object(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on cash out screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on cash out screen')
       }
     }, {
       // enter receiver
@@ -313,12 +285,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -326,38 +298,31 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             cashOut: joi.object().keys({
-              destinationName: joi.string().required(),
-              identifier: joi.string().required(),
-              spspServer: joi.string().valid('http://localhost:8010').required()
-            }).required(),
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on destination number screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen')
       }
     }, {
       // enter invalid amount
@@ -369,12 +334,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().regex(/Wrong Input/).required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string().regex(/Wrong Input/),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -382,38 +347,31 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             cashOut: joi.object().keys({
-              destinationName: joi.string().required(),
-              identifier: joi.string().required(),
-              spspServer: joi.string().valid('http://localhost:8010').required()
-            }).required(),
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on enter invalid amount screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on enter invalid amount screen')
       }
     }, {
       // back to home screen
@@ -425,12 +383,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -438,18 +396,18 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
             cashOut: joi.object().keys({
-              destinationName: joi.string().required(),
-              identifier: joi.string().required(),
-              spspServer: joi.string().valid('http://localhost:8010').required()
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // cash out screen
@@ -461,47 +419,40 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
-              message: joi.string().valid(THIRD_OPTION),
+              message: joi.string(),
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
-            cashOut: joi.object().keys({}).required(),
+            }).unknown(),
+            cashOut: joi.object(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on cash out screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on cash out screen')
       }
     }, {
       // enter receiver
@@ -513,12 +464,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -526,38 +477,31 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             cashOut: joi.object().keys({
-              destinationName: joi.string().required(),
-              identifier: joi.string().required(),
-              spspServer: joi.string().valid('http://localhost:8010').required()
-            }).required(),
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on destination number screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen')
       }
     }, {
       // enter amount
@@ -569,12 +513,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().regex(/Cash-out request sent/).required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -582,39 +526,32 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             cashOut: joi.object().keys({
-              destinationName: joi.string().required(),
-              identifier: joi.string().required(),
-              spspServer: joi.string().valid('http://localhost:8010').required(),
-              destinationAmount: joi.string().valid(AMOUNT).required()
-            }).required(),
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string(),
+              destinationAmount: joi.string()
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on enter amount screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on enter amount screen')
       }
     }, {
       name: 'Close session',
@@ -635,12 +572,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               meta: joi.object(),
               routes: joi.object(),
@@ -648,30 +585,26 @@ test({
               prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountNumber: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // prending transactions
@@ -683,12 +616,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -696,41 +629,37 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountNumber: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
             pendingTransactions: joi.array().items(joi.object().keys({
-              identifier: joi.string().required(),
-              invoiceNotificationId: joi.number().required(),
-              invoiceUrl: joi.string().required(),
-              memo: joi.string().required(),
-              status: joi.string().valid('pending').required()
-            })).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on prending transactions screen')
+              identifier: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceUrl: joi.string(),
+              memo: joi.string(),
+              status: joi.string()
+            })),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on prending transactions screen')
       }
     }, {
       // prending transaction details
-      name: 'prending transaction details menu',
+      name: 'pending transaction details menu',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
@@ -738,12 +667,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -751,54 +680,50 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountNumber: joi.string().required().valid(CUSTOMER.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
             pendingTransactions: joi.array().items(joi.object().keys({
-              identifier: joi.string().required(),
-              invoiceNotificationId: joi.number().required(),
-              invoiceUrl: joi.string().required(),
-              memo: joi.string().required(),
-              status: joi.string().valid('pending').required()
-            })).required(),
+              identifier: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceUrl: joi.string(),
+              memo: joi.string(),
+              status: joi.string()
+            })),
             pendingTransaction: joi.object().keys({
-              account: joi.string().valid('http://localhost:8014/ledger/accounts/' + AGENT.accountName).required(),
-              amount: joi.string().valid(AMOUNT).required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              invoiceId: joi.number().required(),
-              invoiceInfo: joi.string().required(),
-              invoiceNotificationId: joi.number().required(),
-              invoiceType: joi.string().valid('cashOut').required(),
-              merchantIdentifier: joi.string().required(),
-              name: joi.string().required(),
-              receiver: joi.string().required(),
-              status: joi.string().valid('pending').required(),
-              transferCode: joi.string().valid('cashOut').required(),
-              type: joi.string().valid('invoice').required(),
-              quote: joi.object().required()
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on prending transaction details screen')
+              account: joi.string(),
+              amount: joi.string().valid(AMOUNT),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              invoiceId: joi.number(),
+              invoiceInfo: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceType: joi.string(),
+              merchantIdentifier: joi.string(),
+              name: joi.string(),
+              receiver: joi.string(),
+              status: joi.string().valid('pending'),
+              transferCode: joi.string(),
+              type: joi.string(),
+              quote: joi.object()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on prending transaction details screen')
       }
     }, {
       // verify screen
@@ -810,12 +735,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -823,31 +748,31 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
             pendingTransaction: joi.object().keys({
-              account: joi.string().valid('http://localhost:8014/ledger/accounts/' + AGENT.accountName).required(),
-              amount: joi.string().valid(AMOUNT).required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              invoiceId: joi.number().required(),
-              invoiceInfo: joi.string().required(),
-              invoiceNotificationId: joi.number().required(),
-              invoiceType: joi.string().valid('cashOut').required(),
-              merchantIdentifier: joi.string().required(),
-              name: joi.string().required(),
-              receiver: joi.string().required(),
+              account: joi.string(),
+              amount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              invoiceId: joi.number(),
+              invoiceInfo: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceType: joi.string(),
+              merchantIdentifier: joi.string(),
+              name: joi.string(),
+              receiver: joi.string(),
               status: joi.any(),
               fulfillment: joi.any(),
-              transferCode: joi.string().valid('cashOut').required(),
-              type: joi.string().valid('invoice').required(),
-              quote: joi.object().required()
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on verify screen')
+              transferCode: joi.string(),
+              type: joi.string(),
+              quote: joi.object()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on verify screen')
       }
     }, {
       // back to home screen
@@ -859,12 +784,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -872,13 +797,13 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // go to ministatement screen
@@ -890,12 +815,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -903,13 +828,13 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on ministatement pin screen')
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on ministatement pin screen')
       }
     }, {
       // verify screen
@@ -921,12 +846,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(CUSTOMER.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(CUSTOMER.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -934,26 +859,26 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
             ministatement: joi.array().items(joi.object().keys({
-              amount: joi.string().valid('-' + AMOUNT).required(),
-              date: joi.string().required(),
-              name: joi.string().required()
-            }).required(), joi.object().keys({
-              amount: joi.string().valid('-1.00').required(),
-              date: joi.string().required(),
-              name: joi.string().valid('fee').required()
-            }).required(), joi.object().keys({
-              amount: joi.string().required(),
-              date: joi.string().required(),
-              name: joi.string().required()
+              amount: joi.string(),
+              date: joi.string(),
+              name: joi.string()
+            }), joi.object().keys({
+              amount: joi.string(),
+              date: joi.string(),
+              name: joi.string()
+            }), joi.object().keys({
+              amount: joi.string(),
+              date: joi.string(),
+              name: joi.string()
             })),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on ministatement screen')
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on ministatement screen')
       }
     }, {
       name: 'Close session',
@@ -974,12 +899,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               meta: joi.object(),
               routes: joi.object(),
@@ -987,16 +912,16 @@ test({
               prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required().valid(AGENT.firstName + ' ' + AGENT.lastName),
-              accounts: joi.array().required()
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on choose account screen')
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on choose account screen')
       }
     }, {
       // choose account
@@ -1008,12 +933,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               meta: joi.object(),
               routes: joi.object(),
@@ -1021,33 +946,26 @@ test({
               prevState: joi.string(),
               state: joi.string(),
               requestParams: joi.object()
-            }),
+            }).unknown(),
             user: joi.object().keys({
-              actorId: joi.string().required(),
-              identifier: joi.string().required(),
-              name: joi.string().required(),
-              accounts: joi.array().required(),
-              sourceAccount: joi.string().required(),
-              currencyCode: joi.string().valid('USD').required(),
-              currencySymbol: joi.string().valid('$').required(),
-              sourceAccountName: joi.string().required().valid(AGENT.accountName),
-              sourceAccountNumber: joi.string().required().valid(AGENT.accountName),
-              sourceAccountType: joi.string().required(),
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
               isDefault: joi.boolean().truthy(),
               isSignatory: joi.boolean().truthy(),
-              actorAccountId: joi.string().required(),
-              permissions: joi.array().required().items(
-                joi.string().valid('p2p'),
-                joi.string().valid('cashIn'),
-                joi.string().valid('cashOut'),
-                joi.string().valid('invoice'),
-                joi.string().valid('ministatement'),
-                joi.string().valid('balanceCheck')
-              )
-            }).required(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // go to ministatement screen
@@ -1059,12 +977,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -1072,13 +990,13 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on home screen')
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
       }
     }, {
       // verify screen
@@ -1090,12 +1008,12 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string().required(),
-          sourceAddr: joi.string().required().valid(AGENT.phoneNum),
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
           debug: joi.object().keys({
             system: joi.object().keys({
               expire: joi.string(),
-              phone: joi.string().required().valid(AGENT.phoneNum),
+              phone: joi.string(),
               backtrack: joi.array(),
               routes: joi.object(),
               meta: joi.object(),
@@ -1103,22 +1021,14 @@ test({
               state: joi.string(),
               requestParams: joi.object(),
               prevState: joi.string()
-            }),
+            }).unknown(),
             user: joi.object().keys({
               sourceAccount: joi.string()
             }).unknown(),
-            ministatement: joi.array().items(joi.object().keys({
-              amount: joi.string().valid(AMOUNT).required(),
-              date: joi.string().required(),
-              name: joi.string().required()
-            }).required(), joi.object().keys({
-              amount: joi.string().required(),
-              date: joi.string().required(),
-              name: joi.string().required()
-            })),
-            context: joi.object().keys({}).required()
-          }).required()
-        }).required()).error, null, 'return all params on ministatement screen')
+            ministatement: joi.array(),
+            context: joi.object()
+          })
+        })).error, null, 'return all params on ministatement screen')
       }
     }, {
       name: 'Close session',

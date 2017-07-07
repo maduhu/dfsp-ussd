@@ -44,12 +44,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             meta: joi.object(),
             routes: joi.object(),
@@ -57,13 +57,13 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required()
-        }).required()
-      }).required()).error, null, 'return all params on home screen')
+          context: joi.object().keys({})
+        }).unknown()
+      }).unknown()).error, null, 'return all params on home screen')
     }
   }, {
     // open an account screen
@@ -75,12 +75,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -88,14 +88,14 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object()
-        }).required()
-      }).required()).error, null, 'return all params on open an account screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on open an account screen')
     }
   }, {
     // Enter your existing user number or skip
@@ -107,12 +107,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -120,14 +120,14 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object()
-        }).required()
-      }).required()).error, null, 'return all params on open an account screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on open an account screen')
     }
   }, {
     // first name
@@ -139,12 +139,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -152,14 +152,14 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object()
-        }).required()
-      }).required()).error, null, 'return all params on enter first name screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter first name screen')
     }
   }, {
     // last name
@@ -171,12 +171,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -184,14 +184,14 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object()
-        }).required()
-      }).required()).error, null, 'return all params on enter last name screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter last name screen')
     }
   }, {
     // dob
@@ -203,12 +203,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -216,14 +216,14 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object()
-        }).required()
-      }).required()).error, null, 'return all params on enter date of bitrh screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter date of bitrh screen')
     }
   }, {
     // national id
@@ -235,12 +235,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -248,20 +248,20 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object().keys({
-            firstName: joi.string().valid(user.firstName).required(),
-            lastName: joi.string().valid(user.lastName).required(),
-            dob: joi.string().valid(user.dob).required(),
-            number: joi.string().required(),
-            nationalId: joi.string().valid(user.nationalId).required()
-          }).required()
-        }).required()
-      }).required()).error, null, 'return all params on enter national id screen')
+            firstName: joi.string(),
+            lastName: joi.string(),
+            dob: joi.string(),
+            number: joi.string(),
+            nationalId: joi.string()
+          }).unknown()
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter national id screen')
     }
   }, {
     // account name
@@ -273,12 +273,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -286,23 +286,23 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
           context: joi.object().keys({
-            roles: joi.array().required()
-          }).required(),
+            roles: joi.array()
+          }).unknown(),
           open: joi.object().keys({
-            firstName: joi.string().valid(user.firstName).required(),
-            lastName: joi.string().valid(user.lastName).required(),
-            dob: joi.string().valid(user.dob).required(),
-            nationalId: joi.string().valid(user.nationalId).required(),
-            number: joi.string().required(),
-            accountName: joi.string().valid(user.accountName).required()
-          }).required()
-        }).required()
-      }).required()).error, null, 'return all params on enter an account name screen')
+            firstName: joi.string(),
+            lastName: joi.string(),
+            dob: joi.string(),
+            nationalId: joi.string(),
+            number: joi.string(),
+            accountName: joi.string()
+          }).unknown()
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter an account name screen')
     }
   }, {
     // role
@@ -314,12 +314,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -327,22 +327,22 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object().keys({
-            firstName: joi.string().valid(user.firstName).required(),
-            lastName: joi.string().valid(user.lastName).required(),
-            dob: joi.string().valid(user.dob).required(),
-            nationalId: joi.string().valid(user.nationalId).required(),
-            accountName: joi.string().valid(user.accountName).required(),
-            number: joi.string().required(),
-            roleName: joi.string().valid(user.roleName).required()
-          }).required()
-        }).required()
-      }).required()).error, null, 'return all params on enter role screen')
+            firstName: joi.string(),
+            lastName: joi.string(),
+            dob: joi.string(),
+            nationalId: joi.string(),
+            accountName: joi.string(),
+            number: joi.string(),
+            roleName: joi.string()
+          }).unknown()
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter role screen')
     }
   }, {
     // pin
@@ -354,12 +354,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -367,39 +367,39 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
+          }).unknown(),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown(),
-          context: joi.object().keys({}).required(),
+          context: joi.object().keys({}),
           open: joi.object().keys({
-            firstName: joi.string().valid(user.firstName).required(),
-            lastName: joi.string().valid(user.lastName).required(),
-            dob: joi.string().valid(user.dob).required(),
-            nationalId: joi.string().valid(user.nationalId).required(),
-            accountName: joi.string().valid(user.accountName).required(),
-            number: joi.string().required(),
-            roleName: joi.string().valid(user.roleName).required(),
-            password: joi.string().valid(user.pin).required(),
+            firstName: joi.string(),
+            lastName: joi.string(),
+            dob: joi.string(),
+            nationalId: joi.string(),
+            accountName: joi.string(),
+            number: joi.string(),
+            roleName: joi.string(),
+            password: joi.string(),
             result: joi.object().keys({
-              account: joi.string().required(),
-              accountName: joi.string().valid(user.accountName).required(),
-              accountNumber: joi.string().valid(user.accountName).required(),
-              actorId: joi.string().required(),
-              currency: joi.string().valid('USD').required(),
-              dob: joi.string().valid(user.dob).required(),
-              firstName: joi.string().valid(user.firstName).required(),
-              identifier: joi.string().required(),
-              identifierTypeCode: joi.string().valid('eur').required(),
-              lastName: joi.string().valid(user.lastName).required(),
-              nationalId: joi.string().valid(user.nationalId).required(),
-              password: joi.string().valid(user.pin).required(),
-              phoneNumber: joi.string().valid(user.phoneNum).required(),
-              roleName: joi.string().valid(user.roleName).required()
-            }).required()
-          }).required()
-        }).required()
-      }).required()).error, null, 'return all params on enter PIN screen')
+              account: joi.string(),
+              accountName: joi.string(),
+              accountNumber: joi.string(),
+              actorId: joi.string(),
+              currency: joi.string(),
+              dob: joi.string(),
+              firstName: joi.string(),
+              identifier: joi.string(),
+              identifierTypeCode: joi.string(),
+              lastName: joi.string(),
+              nationalId: joi.string(),
+              password: joi.string(),
+              phoneNumber: joi.string(),
+              roleName: joi.string()
+            }).unknown()
+          }).unknown()
+        }).unknown()
+      }).unknown()).error, null, 'return all params on enter PIN screen')
     }
   }, {
     // account
@@ -411,12 +411,12 @@ function createUser (user) {
     },
     result: (result, assert) => {
       assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string().required(),
-        sourceAddr: joi.string().required().valid(user.phoneNum),
+        shortMessage: joi.string(),
+        sourceAddr: joi.string(),
         debug: joi.object().keys({
           system: joi.object().keys({
             expire: joi.string(),
-            phone: joi.string().required().valid(user.phoneNum),
+            phone: joi.string(),
             backtrack: joi.array(),
             routes: joi.object(),
             meta: joi.object(),
@@ -424,13 +424,13 @@ function createUser (user) {
             prevState: joi.string(),
             state: joi.string(),
             requestParams: joi.object()
-          }),
-          context: joi.object().keys({}).required(),
+          }).unknown(),
+          context: joi.object().keys({}),
           user: joi.object().keys({
             sourceAccount: joi.string()
           }).unknown()
-        }).required()
-      }).required()).error, null, 'return all params on account created screen')
+        }).unknown()
+      }).unknown()).error, null, 'return all params on account created screen')
     }
   }, {
     name: 'Close session',
