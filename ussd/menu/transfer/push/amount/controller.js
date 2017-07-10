@@ -3,16 +3,17 @@ module.exports = {
     if (params.transfer.destinationAccount) {
       return params
     }
-    return this.bus.importMethod('spsp.transfer.payee.get')({
+    return this.bus.importMethod('ist.directory.user.get')({
       identifier: params.system.message
     })
     .then((result) => {
-      params.transfer.destinationName = result.name
-      params.transfer.destinationCurrency = result.currencyCode
-      params.transfer.destinationAccount = result.account
+      var spspServer = result.directory_details.find((el) => el.preferred).providerUrl
+      params.transfer.destinationName = result.dfsp_details.name
+      params.transfer.destinationCurrency = result.dfsp_details.currencyCode
+      params.transfer.destinationAccount = result.dfsp_details.account
       params.transfer.identifier = params.system.message
-      params.transfer.spspServer = result.spspServer
-      params.transfer.receiver = result.spspServer + '/receivers/' + params.system.message
+      params.transfer.spspServer = spspServer
+      params.transfer.receiver = spspServer + '/receivers/' + params.system.message
       return params
     })
     .catch((error) => {

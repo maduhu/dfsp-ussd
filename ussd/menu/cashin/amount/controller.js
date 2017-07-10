@@ -3,16 +3,17 @@ module.exports = {
     if (params.cashin.destinationAccount) {
       return params
     }
-    return this.bus.importMethod('spsp.transfer.payee.get')({
+    return this.bus.importMethod('ist.directory.user.get')({
       identifier: params.system.message
     })
     .then((result) => {
-      params.cashin.destinationName = result.name
-      params.cashin.destinationCurrency = result.currencyCode
-      params.cashin.destinationAccount = result.account
+      var spspServer = result.directory_details.find((el) => el.preferred).providerUrl
+      params.cashin.destinationName = result.dfsp_details.name
+      params.cashin.destinationCurrency = result.dfsp_details.currencyCode
+      params.cashin.destinationAccount = result.dfsp_details.account
       params.cashin.identifier = params.system.message
-      params.cashin.spspServer = result.spspServer
-      params.cashin.receiver = result.spspServer + '/receivers/' + params.system.message
+      params.cashin.spspServer = spspServer
+      params.cashin.receiver = spspServer + '/receivers/' + params.system.message
       return params
     })
     .catch((error) => {

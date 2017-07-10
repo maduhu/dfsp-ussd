@@ -3,12 +3,12 @@ module.exports = {
     if (params.cashOut.destinationAccount) {
       return params
     }
-    return this.bus.importMethod('spsp.transfer.payee.get')({
+    return this.bus.importMethod('ist.directory.user.get')({
       identifier: params.system.message
     })
     .then((result) => {
-      params.cashOut.destinationName = result.name
-      params.cashOut.spspServer = result.spspServer
+      params.cashOut.destinationName = result.dfsp_details.name
+      params.cashOut.spspServer = result.directory_details.find((el) => el.preferred).providerUrl
       params.cashOut.identifier = params.system.message
       return params
     })
