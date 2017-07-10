@@ -362,6 +362,16 @@ test({
           }).unknown()
         }).unknown()).error, null, 'Check that account has been created')
       }
+    },
+    {
+      name: 'Close session',
+      method: 'ussd.closeSession',
+      params: {
+        phone: CUSTOMER.phoneNum
+      },
+      result: (result, assert) => {
+        assert.true(result.shortMessage.indexOf('Session Closed') > -1, 'Session Closed')
+      }
     }
     ]
     )
