@@ -8,7 +8,7 @@ module.exports = {
     })
     .then((result) => {
       params.invoice.destinationName = result.dfsp_details.name
-      params.invoice.spspServer = result.result.directory_details.find((el) => el.preferred).providerUrl
+      params.invoice.spspServer = result.directory_details.find((el) => el.preferred).providerUrl
       params.invoice.identifier = params.system.message
       return params
     })
