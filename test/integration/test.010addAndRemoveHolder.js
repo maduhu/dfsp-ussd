@@ -8,6 +8,7 @@ const SECOND_CUSTOMER = commonFunc.getCustomer('customer3')
 const INIT_MSG = '*123#'
 const THIRD_OPTION = '3'
 const FIFTH_OPTION = '5'
+const HOME = '0'
 
 test({
   type: 'integration',
@@ -19,7 +20,6 @@ test({
   peerImplementations: config.peerImplementations,
   steps: function (test, bus, run) {
     return run(test, bus, [{
-      // home screen
       name: 'Login',
       method: 'ussd.request',
       params: {
@@ -39,7 +39,6 @@ test({
       }
     },
     {
-      // manage account screen
       name: 'Manage account menu',
       method: 'ussd.request',
       params: {
@@ -101,6 +100,81 @@ test({
           debug: joi.object(),
           sourceAddr: joi.any()
         })).error, null, 'Check info in edit account screen')
+      }
+    },
+    {
+      name: 'Enter pin to confirm',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: CUSTOMER.pin
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
+      name: 'Navigate to the home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check home screen')
+      }
+    },
+    {
+      name: 'Navigate to the manage account screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '3'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check manage account screen')
+      }
+    },
+    {
+      name: 'Select remove holder',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '6'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check list with account holders')
+      }
+    },
+    {
+      name: 'Select holder to be removed',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '2'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check list with account holders')
       }
     },
     {
