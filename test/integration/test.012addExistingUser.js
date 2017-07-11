@@ -200,6 +200,37 @@ test({
       result: (result, assert) => {
         assert.true(result.shortMessage.indexOf('Session Closed') > -1, 'Session Closed')
       }
+    },
+    {
+      name: 'Login',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: INIT_MSG
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            user: joi.object(),
+            subscribers: joi.array(),
+            users: joi.array(),
+            context: joi.object()
+          })
+        })).error, null, 'Log user - add account')
+      }
+    },
+    {
+      name: 'Close session',
+      method: 'ussd.closeSession',
+      params: {
+        phone: CUSTOMER.phoneNum
+      },
+      result: (result, assert) => {
+        assert.true(result.shortMessage.indexOf('Session Closed') > -1, 'Session Closed')
+      }
     }
     ]
     )
