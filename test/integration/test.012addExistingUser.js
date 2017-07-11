@@ -192,6 +192,21 @@ test({
       }
     },
     {
+      name: 'Navigate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '0'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {

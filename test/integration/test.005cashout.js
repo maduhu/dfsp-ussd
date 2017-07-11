@@ -553,6 +553,43 @@ test({
           }).unknown()
         })).error, null, 'return all params on enter amount screen')
       }
+    },
+    {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: AGENT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            cashOut: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
     }, {
       name: 'Close session',
       method: 'ussd.closeSession',

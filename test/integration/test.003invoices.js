@@ -1163,6 +1163,26 @@ test({
       }
     },
     {
+      name: 'Navigate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check home screen - ivoices merchant')
+      }
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {

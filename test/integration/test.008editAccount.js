@@ -5,6 +5,7 @@ var config = require('./../lib/appConfig')
 var joi = require('joi')
 const CUSTOMER = commonFunc.getCustomer('customer3')
 const INIT_MSG = '*123#'
+const HOME = '0'
 const SECOND_OPTION = '2'
 const THIRD_OPTION = '3'
 
@@ -108,6 +109,21 @@ test({
       params: {
         phone: CUSTOMER.phoneNum,
         message: CUSTOMER.pin
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
+      name: 'Enter pin to confirm',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
