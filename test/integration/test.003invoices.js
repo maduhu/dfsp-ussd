@@ -1676,7 +1676,48 @@ test({
           }).unknown()
         })).error, null, 'return all params on verify screen')
       }
-    }, {
+    },
+    {
+      name: 'Enter wrong PIN',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            user: joi.object(),
+            ministatement: joi.array(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check error screen')
+      }
+    },
+    {
+      name: 'Return to enter pin screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            user: joi.object(),
+            ministatement: joi.array(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'Check enter pin screen')
+      }
+    },
+    {
       // verify screen
       name: 'Enter PIN',
       method: 'ussd.request',
@@ -1720,7 +1761,8 @@ test({
           }).unknown()
         })).error, null, 'return all params on ministatement screen')
       }
-    }, {
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {

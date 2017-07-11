@@ -58,6 +58,36 @@ test({
       }
     },
     {
+      name: 'Enter wrong pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check error pin message')
+      }
+    },
+    {
+      name: 'Return to enter pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
       name: 'Enter pin to confirm',
       method: 'ussd.request',
       params: {
@@ -174,6 +204,36 @@ test({
             }).unknown()
           }).unknown()
         }).unknown()).error, null, 'Confirm matched user')
+      }
+    },
+    {
+      name: 'Enter wrong pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check error pin message')
+      }
+    },
+    {
+      name: 'Return to enter pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
       }
     },
     {
