@@ -518,7 +518,651 @@ test({
           }).unknown()
         })).error, null, 'return all params on enter amount screen')
       }
+    },
+    {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
     }, {
+      // sell goods screen
+      name: 'sell goods menu',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on sell goods screen')
+      }
+    }, {
+      // enter receiver
+      name: 'Enter destination number',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: CUSTOMER.identifier
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen')
+      }
+    }, {
+      // enter amount
+      name: 'Enter amount',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: AMOUNT
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string(),
+              destinationAmount: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on enter amount screen')
+      }
+    },
+    {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
+    }, {
+      // sell goods screen
+      name: 'sell goods menu',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on sell goods screen')
+      }
+    }, {
+      // enter receiver
+      name: 'Enter destination number',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: CUSTOMER.identifier
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen')
+      }
+    }, {
+      // enter amount
+      name: 'Enter amount',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: AMOUNT
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string(),
+              destinationAmount: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on enter amount screen')
+      }
+    },
+    {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
+    }, {
+      // sell goods screen
+      name: 'sell goods menu',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on sell goods screen')
+      }
+    }, {
+      // enter receiver
+      name: 'Enter destination number',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: CUSTOMER.identifier
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on destination number screen')
+      }
+    }, {
+      // enter amount
+      name: 'Enter amount',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: AMOUNT
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              spspServer: joi.string(),
+              destinationAmount: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on enter amount screen')
+      }
+    },
+    {
+      name: 'Navigate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check home screen - ivoices merchant')
+      }
+    },
+    {
+      name: 'Pending transactions screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: '3'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check incoming and outgoing transactions screen')
+      }
+    },
+    {
+      name: 'Outgoing transactions screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: '2'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check outgoing transactions screen')
+      }
+    },
+    {
+      name: 'Outgoing transaction - details',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: FIRST_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check outgoing transaction detail')
+      }
+    },
+    {
+      name: 'Cancel invoice - merchant',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().valid('Transaction Rejected! \n\n0. Home'),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            invoice: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check that transaction has been canceled')
+      }
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {
@@ -740,6 +1384,213 @@ test({
         })).error, null, 'return all params on verify screen')
       }
     }, {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            context: joi.object().keys({}),
+            pendingTransaction: joi.any(),
+            pendingTransactions: joi.any()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
+    },
+    {
+      // prending transactions
+      name: 'prending transactions menu',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            pendingTransactions: joi.array().items(joi.object().keys({
+              identifier: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceUrl: joi.string(),
+              memo: joi.string(),
+              status: joi.string().valid('pending')
+            })),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on prending transactions screen')
+      }
+    },
+    {
+      // prending transaction details
+      name: 'pending transaction details menu',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            pendingTransactions: joi.array().items(joi.object().keys({
+              identifier: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceUrl: joi.string(),
+              memo: joi.string(),
+              status: joi.string()
+            })),
+            pendingTransaction: joi.object().keys({
+              account: joi.string(),
+              amount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              invoiceId: joi.number(),
+              invoiceInfo: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceType: joi.string(),
+              merchantIdentifier: joi.string(),
+              name: joi.string(),
+              receiver: joi.string(),
+              status: joi.string(),
+              transferCode: joi.string(),
+              type: joi.string(),
+              quote: joi.object()
+            }).unknown(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on prending transaction details screen')
+      }
+    },
+    {
+      // prending transactions
+      name: 'reject prending transaction',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().valid('Transaction Rejected! \n\n0. Home'),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            pendingTransactions: joi.array().items(joi.object().keys({
+              identifier: joi.string(),
+              invoiceNotificationId: joi.number(),
+              invoiceUrl: joi.string(),
+              memo: joi.string(),
+              status: joi.string().valid('pending')
+            })),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'Check transaction has been rejected')
+      }
+    },
+    {
       // back to home screen
       name: 'Home screen',
       method: 'ussd.request',
