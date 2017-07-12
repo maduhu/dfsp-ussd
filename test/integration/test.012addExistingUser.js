@@ -263,7 +263,99 @@ test({
           shortMessage: joi.string(),
           debug: joi.object(),
           sourceAddr: joi.any()
+        })).error, null, 'Check home screen')
+      }
+    },
+    {
+      name: 'Select add user - again',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: SEVENTH_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check info in manage account screen')
+      }
+    },
+    {
+      name: 'Enter pin to confirm',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: CUSTOMER.pin
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
         })).error, null, 'Pin confirmation')
+      }
+    },
+    {
+      name: 'Select existing user',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check enter identifier screen')
+      }
+    },
+    {
+      name: 'Enter identifier',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: SECOND_CUSTOMER.identifier
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string().required(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              prevState: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object()
+            }),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            context: joi.object(),
+            open: joi.object()
+          }).unknown()
+        })).error, null, 'Check matching user')
+      }
+    },
+    {
+      name: 'Navigate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '0'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check home screen')
       }
     },
     {

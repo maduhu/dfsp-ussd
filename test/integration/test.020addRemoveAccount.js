@@ -107,7 +107,37 @@ test({
       }
     },
     {
-      name: 'Enter pin to confirm',
+      name: 'Enter wrong pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check error message')
+      }
+    },
+    {
+      name: 'Return back to enter correct pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
+      name: 'Return back to enter correct pin',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
@@ -149,6 +179,96 @@ test({
           debug: joi.object(),
           sourceAddr: joi.any()
         })).error, null, 'Check home screen')
+      }
+    },
+    {
+      name: 'Manage account menu',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: THIRD_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check info in manage account screen')
+      }
+    },
+    {
+      name: 'Add account menu',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check info in add account screen')
+      }
+    },
+    {
+      name: 'Enter account name',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: ACCOUNT_NAME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Enter account name')
+      }
+    },
+    {
+      name: 'Set primary account',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: THIRD_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check set primary account screen')
+      }
+    },
+    {
+      name: 'Enter pin to confirm',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: CUSTOMER.pin
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Pin confirmation')
+      }
+    },
+    {
+      name: 'Navigate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check select account screen')
       }
     },
     {
@@ -677,6 +797,37 @@ test({
           }).unknown(),
           sourceAddr: joi.any()
         })).error, null, 'Check that the account has been deleted')
+      }
+    },
+    {
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        }).unknown()).error, null, 'Check home screen')
       }
     },
     {

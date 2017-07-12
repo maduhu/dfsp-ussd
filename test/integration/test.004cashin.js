@@ -576,6 +576,64 @@ test({
       method: 'ussd.request',
       params: {
         phone: AGENT.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            cashin: joi.object().keys({
+              destinationAccount: joi.string(),
+              destinationAmount: joi.string(),
+              destinationCurrency: joi.string(),
+              destinationName: joi.string(),
+              identifier: joi.string(),
+              receiver: joi.string(),
+              fulfillment: joi.any(),
+              status: joi.any(),
+              spspServer: joi.string(),
+              quote: joi.object()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'Check wrong pin error message')
+      }
+    },
+    {
+      name: 'Return to enter correct pin',
+      method: 'ussd.request',
+      params: {
+        phone: AGENT.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check home screen')
+      }
+    },
+    {
+      name: 'Enter PIN',
+      method: 'ussd.request',
+      params: {
+        phone: AGENT.phoneNum,
         message: AGENT.pin
       },
       result: (result, assert) => {
@@ -611,9 +669,10 @@ test({
             }).unknown(),
             context: joi.object()
           }).unknown()
-        })).error, null, 'return all params on verify screen')
+        })).error, null, 'Check wrong pin error message')
       }
-    }, {
+    },
+    {
       // back to home screen
       name: 'Home screen',
       method: 'ussd.request',
@@ -644,7 +703,8 @@ test({
           }).unknown()
         })).error, null, 'return all params on home screen')
       }
-    }, {
+    },
+    {
       // go to ministatement screen
       name: 'Ministatement screen',
       method: 'ussd.request',
@@ -675,7 +735,8 @@ test({
           }).unknown()
         })).error, null, 'return all params on verify pin screen')
       }
-    }, {
+    },
+    {
       // verify screen
       name: 'Enter PIN',
       method: 'ussd.request',
@@ -719,7 +780,40 @@ test({
           }).unknown()
         })).error, null, 'return all params on ministatement screen')
       }
-    }, {
+    },
+    {
+      // back to home screen
+      name: 'Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: AGENT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {

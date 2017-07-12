@@ -535,7 +535,55 @@ test({
           })
         })).error, null, 'return all params on amount screen')
       }
-    }, {
+    },
+    {
+      // verify screen
+      name: 'Enter wrong PIN',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER_1.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object()
+        })).error, null, 'Check error message - wrong pin')
+      }
+    },
+    {
+      name: 'Return to enter correct pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER_1.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            user: joi.object().keys({
+              sourceAccount: joi.string()
+            }).unknown(),
+            context: joi.object().keys({})
+          }).unknown()
+        })).error, null, 'return all params on home screen')
+      }
+    },
+    {
       // verify screen
       name: 'Enter PIN',
       method: 'ussd.request',
@@ -578,7 +626,8 @@ test({
           })
         })).error, null, 'return all params on verify screen')
       }
-    }, {
+    },
+    {
       // back to home screen
       name: 'Home screen',
       method: 'ussd.request',
