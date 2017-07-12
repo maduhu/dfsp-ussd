@@ -66,7 +66,98 @@ test({
           }).unknown()
         })).error, null, 'return all params on home screen')
       }
-    }, {
+    },
+    {
+      name: 'Pending transactions',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: '3'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object()
+        })).error, null, 'Check transactions')
+      }
+    },
+    {
+      name: 'Incoming transactions',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object()
+        })).error, null, 'Check incoming transactions')
+      }
+    },
+    {
+      name: 'Return to Home screen',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object()
+        })).error, null, 'Check incoming transactions')
+      }
+    },
+    {
+      name: 'sell goods menu',
+      method: 'ussd.request',
+      params: {
+        phone: MERCHANT.phoneNum,
+        message: SECOND_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          sourceAddr: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object().keys({
+              expire: joi.string(),
+              phone: joi.string(),
+              backtrack: joi.array(),
+              routes: joi.object(),
+              meta: joi.object(),
+              message: joi.string(),
+              state: joi.string(),
+              requestParams: joi.object(),
+              prevState: joi.string()
+            }).unknown(),
+            invoice: joi.object().keys({}),
+            user: joi.object().keys({
+              actorId: joi.string(),
+              identifier: joi.string(),
+              name: joi.string(),
+              accounts: joi.array(),
+              sourceAccount: joi.string(),
+              currencyCode: joi.string(),
+              currencySymbol: joi.string(),
+              sourceAccountName: joi.string(),
+              sourceAccountNumber: joi.string(),
+              sourceAccountType: joi.string(),
+              isDefault: joi.boolean().truthy(),
+              isSignatory: joi.boolean().truthy(),
+              actorAccountId: joi.string(),
+              permissions: joi.array()
+            }).unknown(),
+            context: joi.object()
+          }).unknown()
+        })).error, null, 'return all params on sell goods screen')
+      }
+    },
+    {
       // sell goods screen
       name: 'sell goods menu',
       method: 'ussd.request',
@@ -111,7 +202,8 @@ test({
           }).unknown()
         })).error, null, 'return all params on sell goods screen')
       }
-    }, {
+    },
+    {
       // wrong receiver
       name: 'Enter destination number',
       method: 'ussd.request',
