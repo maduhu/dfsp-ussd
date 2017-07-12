@@ -283,6 +283,21 @@ test({
       }
     },
     {
+      name: 'Nagivate to home screen',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: HOME
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check select account screen')
+      }
+    },
+    {
       name: 'Close session',
       method: 'ussd.closeSession',
       params: {

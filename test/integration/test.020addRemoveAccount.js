@@ -137,7 +137,7 @@ test({
       }
     },
     {
-      name: 'Return back to enter correct pin',
+      name: 'Enter correct pin',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
@@ -771,6 +771,36 @@ test({
           debug: joi.object(),
           sourceAddr: joi.any()
         })).error, null, 'Check close account screen')
+      }
+    },
+    {
+      name: 'Enter wrong customer pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: 'fail'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check error message')
+      }
+    },
+    {
+      name: 'Return to enter correct pin',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: '1'
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check pin validation')
       }
     },
     {

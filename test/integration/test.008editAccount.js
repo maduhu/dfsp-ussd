@@ -119,7 +119,7 @@ test({
       }
     },
     {
-      name: 'Enter pin to confirm',
+      name: 'Check home screen',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
