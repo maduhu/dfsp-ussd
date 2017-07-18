@@ -14,7 +14,7 @@ module.exports = {
         amount: invoice.amount,
         destinationIdentifier: params.pendingTransaction.merchantIdentifier,
         destinationAccount: invoice.account,
-        spspServer: pendingTransaction.invoiceUrl.split('/receivers/')[0],
+        spspServer: pendingTransaction.invoiceUrl.split('/invoices')[0],
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
         transferType: params.pendingTransaction.transferCode
