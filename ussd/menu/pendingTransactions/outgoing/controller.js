@@ -4,7 +4,7 @@ module.exports = {
       merchantIdentifier: params.user.identifier,
       account: params.user.sourceAccount,
       status: ['pending'],
-      invoiceType: ['standard', 'pending', 'product']
+      invoiceType: ['standard', 'pending', 'product', 'cashOut']
     }).then(function (res) {
       if (Array.isArray(res) && res.length) {
         params.pendingTransactions = res

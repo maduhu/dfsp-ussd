@@ -6,7 +6,15 @@ Welcome ${params.user.name}!
 <if test="params.user.permissions.indexOf('invoice') > -1"><br/><a id="${++ind}" href="../invoice/destination">${ind}. Sell Goods</a></if>
 <if test="params.user.permissions.indexOf('cashIn') > -1"><br/><a id="${++ind}" href="../cashin/destination?proceed=1">${ind}. Cash In</a></if>
 <if test="params.user.permissions.indexOf('cashOut') > -1"><br/><a id="${++ind}" href="../cashout/destination?proceed=1">${ind}. Cash Out</a></if>
-<if test="params.user.isSignatory"><br/><a id="${++ind}" href="../pendingTransactions/${params.user.permissions.indexOf('invoice') > -1 ? 'choose' : 'incoming'}">${ind}. Pending Transactions</a></if>
+<if test="params.user.isSignatory"><br/>
+    <if test="~params.user.permissions.indexOf('invoice') || ~params.user.permissions.indexOf('cashOut')">
+        <a id="${++ind}" href="../pendingTransactions/choose">${ind}. Pending Transactions</a>
+    </if>
+    <else>
+        <a id="${++ind}" href="../pendingTransactions/incoming">${ind}. Pending Transactions</a>
+    </else>
+
+</if>
 <br/><a id="${++ind}" href="../account/manage">${ind}. Manage Account</a>
 <br/><a id="${++ind}" href="../account/switch">${ind}. Switch Account</a>
 <if test="params.user.permissions.indexOf('balanceCheck') > -1"><br/><a id="${++ind}" href="../balanceCheck">${ind}. Check Balance</a></if>

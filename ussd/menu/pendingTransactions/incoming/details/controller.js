@@ -17,7 +17,7 @@ module.exports = {
         spspServer: pendingTransaction.invoiceUrl.split('/invoices')[0],
         sourceAccount: params.user.sourceAccountName,
         sourceIdentifier: params.user.identifier,
-        transferType: params.pendingTransaction.transferCode
+        transferType: params.pendingTransaction.transferCode + '_' + invoice.invoiceId
       })
       .then(result => {
         params.pendingTransaction.quote = result
