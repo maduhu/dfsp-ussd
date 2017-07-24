@@ -9,6 +9,7 @@ const CUSTOMER_3 = commonFunc.getCustomer('customer3')
 const CUSTOMER_4 = commonFunc.getCustomer('customer4')
 const CUSTOMER_5 = commonFunc.getCustomer('customer5')
 const CUSTOMER_6 = commonFunc.getCustomer('customer6')
+const CUSTOMER_7 = commonFunc.getCustomer('customer7')
 const MERCHANT = commonFunc.getMerchant('merchant')
 const AGENT = commonFunc.getAgent('agent')
 const INIT_MSG = '*123#'
@@ -31,6 +32,7 @@ test({
       createUser(CUSTOMER_4),
       createUser(CUSTOMER_5),
       createUser(CUSTOMER_6),
+      createUser(CUSTOMER_7),
       createUser(MERCHANT),
       createUser(AGENT)
     ))

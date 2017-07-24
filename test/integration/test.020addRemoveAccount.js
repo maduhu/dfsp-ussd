@@ -3,7 +3,7 @@ var test = require('ut-run/test')
 var commonFunc = require('./../lib/commonFunctions.js')
 var config = require('./../lib/appConfig')
 var joi = require('joi')
-const CUSTOMER = commonFunc.getCustomer('customer1')
+const CUSTOMER = commonFunc.getCustomer('customer7')
 const CUSTOMER_2 = commonFunc.getCustomer('customer2')
 const INIT_MSG = '*123#'
 const FIRST_OPTION = '1'
@@ -291,7 +291,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
-        message: '3'
+        message: THIRD_OPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
