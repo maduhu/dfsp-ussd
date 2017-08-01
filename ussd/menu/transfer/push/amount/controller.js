@@ -7,7 +7,7 @@ module.exports = {
       identifier: params.system.message
     })
     .then((result) => {
-      var spspServer = result.directory_details.find((el) => el.preferred).providerUrl
+      var spspServer = result.directory_details.find((el) => el.primary).providerUrl
       params.transfer.destinationName = result.dfsp_details.name
       params.transfer.destinationCurrency = result.dfsp_details.currencyCode
       params.transfer.destinationAccount = result.dfsp_details.account

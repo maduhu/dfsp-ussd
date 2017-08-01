@@ -8,7 +8,7 @@ module.exports = {
     })
     .then((result) => {
       params.cashOut.destinationName = result.dfsp_details.name
-      params.cashOut.spspServer = result.directory_details.find((el) => el.preferred).providerUrl
+      params.cashOut.spspServer = result.directory_details.find((el) => el.primary).providerUrl
       params.cashOut.identifier = params.system.message
       return params
     })
