@@ -12,7 +12,7 @@ const THIRD_OPTION = '3'
 const HOME = '0'
 const MINISTATEMENT = '6'
 const AGENT_MINISTATEMENT = '8'
-const AMOUNT = '1242.00'
+const AMOUNT = '42.00'
 
 test({
   type: 'integration',

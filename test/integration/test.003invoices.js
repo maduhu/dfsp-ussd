@@ -11,7 +11,7 @@ const SECOND_OPTION = '2'
 const HOME = '0'
 const MINISTATEMENT = '6'
 const MERCHANT_MINISTATEMENT = '7'
-const AMOUNT = '1242.00'
+const AMOUNT = '42.00'
 
 test({
   type: 'integration',
@@ -1476,8 +1476,8 @@ test({
             pendingTransaction: joi.object().keys({
               account: joi.string(),
               amount: joi.string(),
-              currencyCode: joi.string().valid('TZS').required(),
-              currencySymbol: joi.string().valid('TSh').required(),
+              currencyCode: joi.string().valid('USD').required(),
+              currencySymbol: joi.string().valid('$').required(),
               invoiceId: joi.number(),
               invoiceInfo: joi.string(),
               invoiceNotificationId: joi.number(),
