@@ -12,7 +12,7 @@ const THIRD_OPTION = '3'
 const FIFTH_OPTION = '5'
 const HOME = '0'
 const ACCOUNT_NAME = new Date().toISOString()
-const FULL_AMOUNT = '995'
+const FULL_AMOUNT = '99500'
 
 test({
   type: 'integration',
