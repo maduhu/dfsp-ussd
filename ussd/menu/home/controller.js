@@ -6,6 +6,12 @@ module.exports = {
     } else if (params.user.sourceAccount) {
       return params
     }
+    if (!params.system.phone.match(/^\+?[1-9]\d{8,14}$/)) {
+      params.context = {
+        errorPrint: 'Invalid phone number. Valid phone numbers start with non-zero digit followed by up to 14 digits.'
+      }
+      return this.redirect('menu/error/generic')
+    }
     var promise = Promise.resolve()
     if (!params.user.actorId) {
       promise = promise.then(() => {

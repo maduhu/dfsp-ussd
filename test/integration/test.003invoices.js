@@ -517,7 +517,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: MERCHANT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -698,7 +698,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: MERCHANT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -879,7 +879,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: MERCHANT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -1060,7 +1060,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: MERCHANT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({

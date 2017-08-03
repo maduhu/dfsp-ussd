@@ -5,7 +5,7 @@ var config = require('./../lib/appConfig')
 var joi = require('joi')
 
 const USER_TO_ADD_NEGATIVE = {
-  phoneNum: commonFunc.generateRandomNumber().toString(),
+  phoneNum: '1' + commonFunc.generateRandomNumber().toString().slice(-8),
   firstName: 'firstName' + commonFunc.generateRandomNumber(),
   lastName: 'lastName' + commonFunc.generateRandomNumber(),
   dob: 'fail',
@@ -67,38 +67,6 @@ test({
       params: {
         phone: USER_TO_ADD_NEGATIVE.phoneNum,
         message: FIRST_OPTION
-      },
-      result: (result, assert) => {
-        assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string(),
-          sourceAddr: joi.string(),
-          debug: joi.object().keys({
-            system: joi.object().keys({
-              expire: joi.string(),
-              phone: joi.string(),
-              backtrack: joi.array(),
-              routes: joi.object(),
-              meta: joi.object(),
-              message: joi.string(),
-              prevState: joi.string(),
-              state: joi.string(),
-              requestParams: joi.object()
-            }).unknown(),
-            user: joi.object().keys({
-              sourceAccount: joi.string()
-            }).unknown(),
-            context: joi.object().keys({}),
-            open: joi.object()
-          }).unknown()
-        }).unknown()).error, null, 'return all params on open an account screen')
-      }
-    },
-    {
-      name: 'Skip user number',
-      method: 'ussd.request',
-      params: {
-        phone: USER_TO_ADD_NEGATIVE.phoneNum,
-        message: USER_TO_ADD_NEGATIVE.identifier
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({

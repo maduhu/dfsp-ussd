@@ -77,7 +77,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
-        message: SECOND_CUSTOMER.identifier
+        message: SECOND_CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -171,7 +171,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
-        message: SECOND_CUSTOMER.identifier
+        message: SECOND_CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({

@@ -23,7 +23,7 @@ module.exports = {
   receive: function (params) {
     if (params.system.input.requestParams.proceed) {
       return this.bus.importMethod('identity.check')({
-        username: params.user.identifier,
+        username: params.system.phone,
         password: params.system.message
       })
       .then((result) => {
