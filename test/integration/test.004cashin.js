@@ -280,7 +280,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: AGENT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -299,7 +299,7 @@ test({
               prevState: joi.string()
             }).unknown(),
             cashin: joi.object().keys({
-              destinationAccount: joi.string(),
+              destinationAccount: joi.string().required(),
               destinationCurrency: joi.string(),
               destinationName: joi.string(),
               identifier: joi.string(),
@@ -470,7 +470,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: AGENT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -489,7 +489,7 @@ test({
               prevState: joi.string()
             }).unknown(),
             cashin: joi.object().keys({
-              destinationAccount: joi.string(),
+              destinationAccount: joi.string().required(),
               destinationCurrency: joi.string(),
               destinationName: joi.string(),
               identifier: joi.string(),
