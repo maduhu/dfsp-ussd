@@ -49,18 +49,18 @@
   },
   "devDependencies": {
     "@leveloneproject/dfsp-account": "0.x",
-    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.53 <1.0.0",
+    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.54 <1.0.0",
     "@leveloneproject/dfsp-directory": "0.x",
     "@leveloneproject/dfsp-identity": "0.x",
-    "@leveloneproject/dfsp-ledger": ">=2.0.0-quotes.18 <2.0.0",
-    "@leveloneproject/dfsp-mock": ">=1.0.0-quotes.15 <1.0.0",
+    "@leveloneproject/dfsp-ledger": ">=2.0.0-quotes.19 <2.0.0",
+    "@leveloneproject/dfsp-mock": ">=1.0.0-quotes.16 <1.0.0",
     "@leveloneproject/dfsp-rule": "0.x",
     "@leveloneproject/dfsp-subscription": "0.x",
     "@leveloneproject/dfsp-transfer": "0.x",
     "blue-tape": "1.0.0",
     "supertest": "^3.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.17.26"
+    "ut-tools": "^5.18.0"
   },
   "peerDependencies": {
     "request": "^2.81.0"
