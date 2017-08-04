@@ -60,7 +60,7 @@
     "blue-tape": "1.0.0",
     "supertest": "^3.0.0",
     "tap-xunit": "1.4.0",
-    "ut-tools": "^5.17.26"
+    "ut-tools": "^5.18.0"
   },
   "peerDependencies": {
     "request": "^2.81.0"
