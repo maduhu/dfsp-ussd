@@ -19,7 +19,7 @@ Welcome ${params.user.name}!
 <br/><a id="${++ind}" href="../account/switch">${ind}. Switch Account</a>
 <if test="params.user.permissions.indexOf('balanceCheck') > -1"><br/><a id="${++ind}" href="../balanceCheck">${ind}. Check Balance</a></if>
 <if test="params.user.permissions.indexOf('ministatement') > -1"><br/><a id="${++ind}" href="../ministatement">${ind}. Mini Statement</a></if>
-<br/><a id="${++ind}" href="../user/add/checkPin">${ind}. Add User</a>
+<br/><a id="${++ind}" href="../managePhone">${ind}. Manage Phone</a>
 </if>
 <else>
 <br/><a id="1" href="../account/manage">1. Manage Account</a>
