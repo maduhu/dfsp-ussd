@@ -281,7 +281,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: AGENT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -301,7 +301,7 @@ test({
             }).unknown(),
             cashOut: joi.object().keys({
               destinationName: joi.string(),
-              identifier: joi.string(),
+              identifier: joi.string().required(),
               spspServer: joi.string()
             }).unknown(),
             user: joi.object().keys({
@@ -460,7 +460,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: AGENT.phoneNum,
-        message: CUSTOMER.identifier
+        message: CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -480,7 +480,7 @@ test({
             }).unknown(),
             cashOut: joi.object().keys({
               destinationName: joi.string(),
-              identifier: joi.string(),
+              identifier: joi.string().required(),
               spspServer: joi.string()
             }).unknown(),
             user: joi.object().keys({
