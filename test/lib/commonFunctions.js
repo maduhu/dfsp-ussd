@@ -19,7 +19,7 @@ module.exports = {
   getCustomer: function (identifier) {
     if (!testCustomers[identifier]) {
       testCustomers[identifier] = {
-        phoneNum: this.generateRandomNumber().toString(),
+        phoneNum: '1' + this.generateRandomNumber().toString().slice(-8),
         firstName: 'firstName' + this.generateRandomNumber(),
         lastName: 'lastName' + this.generateRandomNumber(),
         dob: '1911-11-11',
@@ -38,7 +38,7 @@ module.exports = {
   getMerchant: function (identifier) {
     if (!testMerchants[identifier]) {
       testMerchants[identifier] = {
-        phoneNum: this.generateRandomNumber().toString(),
+        phoneNum: '1' + this.generateRandomNumber().toString().slice(-8),
         firstName: 'firstName' + this.generateRandomNumber(),
         lastName: 'lastName' + this.generateRandomNumber(),
         dob: '1911-11-11',
@@ -57,7 +57,7 @@ module.exports = {
   getAgent: function (identifier) {
     if (!testAgents[identifier]) {
       testAgents[identifier] = {
-        phoneNum: this.generateRandomNumber().toString(),
+        phoneNum: '1' + this.generateRandomNumber().toString().slice(-8),
         firstName: 'firstName' + this.generateRandomNumber(),
         lastName: 'lastName' + this.generateRandomNumber(),
         dob: '1911-11-11',

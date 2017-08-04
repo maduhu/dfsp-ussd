@@ -104,38 +104,6 @@ function createUser (user) {
       }).unknown()).error, null, 'return all params on open an account screen')
     }
   }, {
-    // Enter your existing user number or skip
-    name: 'Skip user number',
-    method: 'ussd.request',
-    params: {
-      phone: user.phoneNum,
-      message: user.identifier
-    },
-    result: (result, assert) => {
-      assert.equals(joi.validate(result, joi.object().keys({
-        shortMessage: joi.string(),
-        sourceAddr: joi.string(),
-        debug: joi.object().keys({
-          system: joi.object().keys({
-            expire: joi.string(),
-            phone: joi.string(),
-            backtrack: joi.array(),
-            routes: joi.object(),
-            meta: joi.object(),
-            message: joi.string(),
-            prevState: joi.string(),
-            state: joi.string(),
-            requestParams: joi.object()
-          }).unknown(),
-          user: joi.object().keys({
-            sourceAccount: joi.string()
-          }).unknown(),
-          context: joi.object().keys({}),
-          open: joi.object()
-        }).unknown()
-      }).unknown()).error, null, 'return all params on open an account screen')
-    }
-  }, {
     // first name
     name: 'Enter first name',
     method: 'ussd.request',
