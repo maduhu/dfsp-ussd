@@ -1,6 +1,6 @@
 {
   "name": "@leveloneproject/dfsp-ussd",
-  "version": "1.0.0-quotes.33",
+  "version": "1.0.0-quotes.34",
   "description": "DFSP ussd demo",
   "main": "index.js",
   "scripts": {
