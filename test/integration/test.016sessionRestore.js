@@ -45,7 +45,7 @@ test({
             phone: CUSTOMER.phoneNum,
             message: FIRST_OPTION
           }), 60000)
-        });
+        })
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
