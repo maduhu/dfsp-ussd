@@ -39,11 +39,30 @@ test({
       }
     },
     {
-      name: 'Select add user',
+      name: 'Select manage phone',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
         message: SEVENTH_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }),
+          sourceAddr: joi.any()
+        })).error, null, 'Select manage phone')
+      }
+    },
+    {
+      name: 'Select add user',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -122,7 +141,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
-        message: SECOND_CUSTOMER.identifier
+        message: SECOND_CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -267,11 +286,26 @@ test({
       }
     },
     {
-      name: 'Select add user - again',
+      name: 'Select menage phone - again',
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
         message: SEVENTH_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object(),
+          sourceAddr: joi.any()
+        })).error, null, 'Check info in manage account screen')
+      }
+    },
+    {
+      name: 'Select add user - again',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
@@ -316,7 +350,7 @@ test({
       method: 'ussd.request',
       params: {
         phone: CUSTOMER.phoneNum,
-        message: SECOND_CUSTOMER.identifier
+        message: SECOND_CUSTOMER.phoneNum
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({

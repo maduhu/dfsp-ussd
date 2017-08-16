@@ -62,6 +62,25 @@ test({
       }
     },
     {
+      name: 'Select add user',
+      method: 'ussd.request',
+      params: {
+        phone: CUSTOMER.phoneNum,
+        message: FIRST_OPTION
+      },
+      result: (result, assert) => {
+        assert.equals(joi.validate(result, joi.object().keys({
+          shortMessage: joi.string(),
+          debug: joi.object().keys({
+            system: joi.object(),
+            user: joi.object(),
+            context: joi.object()
+          }),
+          sourceAddr: joi.any()
+        })).error, null, 'Check info in manage account screen')
+      }
+    },
+    {
       name: 'Enter pin to confirm',
       method: 'ussd.request',
       params: {
