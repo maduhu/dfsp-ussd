@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@leveloneproject/dfsp-account": "0.x",
-    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.59 <1.0.0",
+    "@leveloneproject/dfsp-api": ">=1.0.0-quotes.61 <1.0.0",
     "@leveloneproject/dfsp-directory": "0.x",
     "@leveloneproject/dfsp-identity": "0.x",
     "@leveloneproject/dfsp-ledger": ">=2.0.0-quotes.21 <2.0.0",
