@@ -280,7 +280,7 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string(),
+          shortMessage: joi.string().regex(/Holder removed!/),
           debug: joi.object(),
           sourceAddr: joi.any()
         })).error, null, 'Pin confirmation')

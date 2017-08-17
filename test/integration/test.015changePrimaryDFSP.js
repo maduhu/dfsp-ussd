@@ -5,7 +5,6 @@ var config = require('./../lib/appConfig')
 var joi = require('joi')
 const CUSTOMER = commonFunc.getCustomer('customer4')
 const INIT_MSG = '*123#'
-const FIRST_OPTION = '1'
 const SECOND_OPTION = '2'
 const SEVENTH_OPTION = '7'
 
