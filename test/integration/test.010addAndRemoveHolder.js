@@ -220,7 +220,7 @@ test({
       },
       result: (result, assert) => {
         assert.equals(joi.validate(result, joi.object().keys({
-          shortMessage: joi.string(),
+          shortMessage: joi.string().regex(new RegExp(SECOND_CUSTOMER.firstName + ' ' + SECOND_CUSTOMER.lastName)),
           debug: joi.object(),
           sourceAddr: joi.any()
         })).error, null, 'Check manage account screen')
